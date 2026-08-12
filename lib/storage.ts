@@ -1,6 +1,7 @@
 "use client";
 
 import { EstadoTarjeta } from "./srs";
+import type { Intento } from "./calibracion";
 
 /**
  * Persistencia local. Sin cuentas, sin servidor, sin telemetría.
@@ -14,11 +15,13 @@ export interface RegistroDominio { temaSlug: string; nivel: 0 | 1 | 2 | 3 | 4; f
 export interface Estado {
   tarjetas: Record<string, EstadoTarjeta>;
   dominio: RegistroDominio[];
+  /** Historial del modo calibración: confianza declarada frente a acierto real. */
+  calibracion: Intento[];
   racha: { ultimoDia: string | null; dias: number };
   ajustes: { nuevasPorDia: number };
 }
 
-const inicial: Estado = { tarjetas: {}, dominio: [], racha: { ultimoDia: null, dias: 0 }, ajustes: { nuevasPorDia: 30 } };
+const inicial: Estado = { tarjetas: {}, dominio: [], calibracion: [], racha: { ultimoDia: null, dias: 0 }, ajustes: { nuevasPorDia: 30 } };
 
 export function leer(): Estado {
   if (typeof window === "undefined") return inicial;

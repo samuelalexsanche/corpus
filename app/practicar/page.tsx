@@ -1,20 +1,21 @@
 import Link from "next/link";
-import { RefreshCw, Brain, Stethoscope, ScanSearch, GitBranch, ArrowRight } from "lucide-react";
+import { RefreshCw, Brain, Stethoscope, ScanSearch, GitBranch, Gauge, Mic, Shuffle, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { metaPagina } from "@/lib/seo";
 import { TEMAS } from "@/content/temas";
 import { MORFEMAS } from "@/content/morfemas";
+import { TODAS_LAS_CARTAS } from "@/lib/cartas";
 import { CASOS } from "@/content/casos";
 
 export const metadata = metaPagina({
   titulo: "Modos de práctica",
-  descripcion: "Cinco formas de estudiar medicina con recuperación activa: repetición espaciada, recall en frío, casos clínicos por etapas, decodificación de términos y predicción de consecuencias.",
+  descripcion: "Ocho formas de estudiar medicina con recuperación activa: repetición espaciada, repaso mezclado, calibración de confianza, explicación en voz alta, recuperación en frío, casos clínicos por etapas, decodificación de términos y predicción de consecuencias.",
   ruta: "/practicar",
   keywords: ["practicar medicina", "flashcards medicina", "casos clínicos para estudiar", "recall activo medicina"],
 });
 
-const nTarjetas = TEMAS.reduce((n, t) => n + t.tarjetas.length, 0) + MORFEMAS.length;
+const nTarjetas = TODAS_LAS_CARTAS.length;
 const nRecall = TEMAS.reduce((n, t) => n + t.recall.length, 0);
 const nPredic = TEMAS.reduce((n, t) => n + (t.predicciones?.length ?? 0), 0);
 
@@ -25,6 +26,15 @@ const MODOS = [
   { icon: Brain, titulo: "Recall en frío", href: "/practicar/recall", cuenta: `${nRecall} preguntas`,
     texto: "Campo en blanco, sin apuntes ni pistas salvo que las pidas. Escribes el mecanismo completo, después comparas con la referencia y te calificas del 0 al 4.",
     regla: "Por debajo de 3 el tema no está terminado." },
+  { icon: Shuffle, titulo: "Repaso mezclado", href: "/practicar/mezcla", cuenta: "mismas tarjetas",
+    texto: "Las mismas tarjetas pero alternando temas en vez de agruparlos por materia. Nunca dos seguidas de lo mismo mientras haya alternativa.",
+    regla: "Se siente peor y funciona mejor. La dificultad es la señal." },
+  { icon: Gauge, titulo: "Calibración", href: "/practicar/calibracion", cuenta: "¿sabes cuándo sabes?",
+    texto: "Declaras tu confianza antes de ver la respuesta y al final se compara con lo que acertaste de verdad. Mide si te fías de ti mismo con motivo.",
+    regla: "Fallar sintiéndose seguro es el modo de falla peligroso." },
+  { icon: Mic, titulo: "Explícalo en voz alta", href: "/practicar/explicar", cuenta: `${nRecall} preguntas`,
+    texto: "Tres minutos, hablando, sin apuntes y a alguien que no estudia medicina. Después comparas con la referencia.",
+    regla: "Si necesitas la palabra técnica para explicarlo, no lo entendiste." },
   { icon: Stethoscope, titulo: "Casos clínicos", href: "/practicar/casos", cuenta: `${CASOS.length} casos`,
     texto: "El caso se revela por etapas. Comprometes tu razonamiento antes de recibir el siguiente dato, igual que en la consulta real.",
     regla: "Un caso bien trabajado vale por diez páginas leídas." },

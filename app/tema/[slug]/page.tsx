@@ -6,6 +6,7 @@ import { TEMAS, getTema } from "@/content/temas";
 import { getBloque } from "@/content/curriculum";
 import { RecallCard } from "@/components/recall-card";
 import { DiagramaCircuito } from "@/components/diagrama-circuito";
+import { ExportarAnki } from "@/components/exportar-anki";
 import { JsonLd } from "@/components/jsonld";
 import { ldArticulo, ldFAQ, ldMigas, metaPagina } from "@/lib/seo";
 
@@ -196,6 +197,12 @@ export default async function TemaPage({ params }: { params: Promise<{ slug: str
               <Link href="/practicar/tarjetas" className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline">
                 Practicarlas <ArrowRight className="h-3.5 w-3.5" />
               </Link>
+              <div className="mt-4 border-t border-border pt-4">
+                <ExportarAnki
+                  cartas={t.tarjetas.map((c) => ({ front: c.front, back: c.back, mazo: t.titulo }))}
+                  compacto
+                />
+              </div>
             </div>
 
             <div className="rounded-xl border border-border bg-card p-5">

@@ -1,7 +1,6 @@
-import { FlashcardSession, CartaBase } from "@/components/flashcard-session";
+import { FlashcardSession } from "@/components/flashcard-session";
 import { ExportarAnki } from "@/components/exportar-anki";
-import { TEMAS } from "@/content/temas";
-import { MORFEMAS, DISTINCIONES, DESCOMPOSICIONES } from "@/content/morfemas";
+import { TODAS_LAS_CARTAS as cartas } from "@/lib/cartas";
 import { metaPagina } from "@/lib/seo";
 
 export const metadata = metaPagina({
@@ -10,13 +9,6 @@ export const metadata = metaPagina({
   ruta: "/practicar/tarjetas",
   keywords: ["flashcards medicina", "anki medicina español", "repetición espaciada", "tarjetas terminología médica"],
 });
-
-const cartas: CartaBase[] = [
-  ...MORFEMAS.map((m, i) => ({ id: `morf-${i}`, front: `¿Qué significa el morfema ${m.m}?`, back: `${m.sig}.<br><em>Ej.: ${m.ej}</em>`, mazo: "Terminología · morfemas" })),
-  ...DISTINCIONES.map((d, i) => ({ id: `dist-${i}`, front: d.q, back: d.a, mazo: "Terminología · distinciones" })),
-  ...DESCOMPOSICIONES.map((d, i) => ({ id: `desc-${i}`, front: `Descompón el término: <strong>${d.t}</strong>`, back: d.d, mazo: "Terminología · descomposición" })),
-  ...TEMAS.flatMap((t) => t.tarjetas.map((c, i) => ({ id: `${t.slug}-${i}`, front: c.front, back: c.back, mazo: t.titulo }))),
-];
 
 export default function TarjetasPage() {
   return (

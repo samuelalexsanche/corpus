@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Brain, Layers, Stethoscope, RefreshCw, ScanSearch, GitBranch } from "lucide-react";
+import { ArrowRight, Brain, Gauge, Layers, Mic, Shuffle, Stethoscope, RefreshCw, ScanSearch, GitBranch } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -27,6 +27,9 @@ const FAQ = [
 const MODOS = [
   { icon: RefreshCw, titulo: "Repetición espaciada", texto: "Tarjetas que reaparecen justo cuando estás por olvidarlas, ni antes ni después. Nunca de reconocimiento: siempre tienes que producir la respuesta.", href: "/practicar/tarjetas" },
   { icon: Brain, titulo: "Recall en frío", texto: "Papel en blanco, sin apuntes. Reconstruyes el mecanismo y después comparas contra la referencia y te calificas honesto del 0 al 4.", href: "/practicar/recall" },
+  { icon: Gauge, titulo: "Calibración", texto: "Dices tu confianza antes de ver la respuesta y al final se compara con lo que acertaste. Lo que mide no es cuánto sabes, sino si sabes cuándo lo sabes.", href: "/practicar/calibracion" },
+  { icon: Mic, titulo: "Explícalo en voz alta", texto: "Tres minutos hablando, sin apuntes, a alguien que no estudia medicina. Es donde aparecen los huecos que la lectura tapa.", href: "/practicar/explicar" },
+  { icon: Shuffle, titulo: "Repaso mezclado", texto: "Temas alternados en vez de agrupados. Se siente más difícil que estudiar por bloques, y por eso mismo funciona mejor.", href: "/practicar/mezcla" },
   { icon: Stethoscope, titulo: "Casos clínicos por etapas", texto: "El caso se revela por partes. Comprometes un diferencial antes de recibir más datos, como en la consulta real.", href: "/practicar/casos" },
   { icon: ScanSearch, titulo: "Decodificador de términos", texto: "Descompón cualquier término médico en sus morfemas. 249 piezas que abren miles de palabras.", href: "/practicar/terminologia" },
   { icon: GitBranch, titulo: "Predice qué pasa", texto: "«¿Qué le pasa al cuerpo si cambio esto?». El formato que separa entender un mecanismo de haberlo memorizado.", href: "/practicar/predicciones" },

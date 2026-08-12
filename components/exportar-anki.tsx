@@ -4,7 +4,13 @@ import { Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { aAnki, mazosDe, NOMBRE_ARCHIVO, type CartaExportable } from "@/lib/anki";
 
-export function ExportarAnki({ cartas }: { cartas: CartaExportable[] }) {
+export function ExportarAnki({
+  cartas, compacto = false,
+}: {
+  cartas: CartaExportable[];
+  /** Versión reducida para la barra lateral de un tema: sin selector de mazos. */
+  compacto?: boolean;
+}) {
   const mazos = useMemo(() => mazosDe(cartas), [cartas]);
   // Sin selección explícita se entiende «todo»: es lo que quiere quien llega
   // aquí por primera vez, y evita un estado inicial de cero tarjetas.
@@ -28,6 +34,20 @@ export function ExportarAnki({ cartas }: { cartas: CartaExportable[] }) {
     a.click();
     URL.revokeObjectURL(url);
   };
+
+  if (compacto) {
+    return (
+      <div>
+        <p className="text-sm font-semibold">Llevártelas a Anki</p>
+        <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
+          Solo las tarjetas de este tema, en un mazo propio. Se importan sin configurar nada.
+        </p>
+        <Button variant="outline" size="sm" className="mt-3" onClick={descargar} disabled={cartas.length === 0}>
+          <Download className="mr-2 h-4 w-4" /> Descargar {cartas.length}
+        </Button>
+      </div>
+    );
+  }
 
   return (
     <section aria-labelledby="exportar-anki" className="rounded-xl border border-border bg-card p-6">

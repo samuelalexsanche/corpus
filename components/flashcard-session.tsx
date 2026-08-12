@@ -6,10 +6,18 @@ import { Progress } from "@/components/ui/progress";
 import { BOTONES, Calidad, EstadoTarjeta, nuevaTarjeta, revisar, estaVencida } from "@/lib/srs";
 import { leer, actualizar, marcarDiaActivo } from "@/lib/storage";
 import { cn } from "@/lib/utils";
+import { intercalar } from "@/lib/intercalar";
 
 export interface CartaBase { id: string; front: string; back: string; mazo: string }
 
-export function FlashcardSession({ cartas, nuevasPorDia = 30 }: { cartas: CartaBase[]; nuevasPorDia?: number }) {
+export function FlashcardSession({
+  cartas, nuevasPorDia = 30, intercalado = false,
+}: {
+  cartas: CartaBase[];
+  nuevasPorDia?: number;
+  /** Mezcla temas en vez de agruparlos. Ver `lib/intercalar.ts`. */
+  intercalado?: boolean;
+}) {
   const [montado, setMontado] = useState(false);
   const [estados, setEstados] = useState<Record<string, EstadoTarjeta>>({});
   const [i, setI] = useState(0);
@@ -27,9 +35,20 @@ export function FlashcardSession({ cartas, nuevasPorDia = 30 }: { cartas: CartaB
       if (!e) nuevas.push(c);
       else if (estaVencida(e)) vencidas.push(c);
     }
-    // Repasos vencidos SIEMPRE primero. Es la regla que sostiene el sistema.
-    return [...vencidas, ...nuevas.slice(0, nuevasPorDia)];
-  }, [cartas, estados, montado, nuevasPorDia]);
+    // Repasos vencidos SIEMPRE primero. Es la regla que sostiene el sistema, y
+    // el intercalado no la rompe: mezcla temas dentro de cada grupo, no entre
+    // ellos. Un repaso vencido que se retrasa se pierde.
+    //
+    // El orden importa: hay que intercalar **antes** de recortar la tanda del
+    // día. La baraja empieza con 249 morfemas, así que quedarse con las
+    // primeras 30 y mezclarlas después da 30 tarjetas del mismo mazo, que es
+    // exactamente lo contrario de lo que este modo persigue.
+    if (!intercalado) return [...vencidas, ...nuevas.slice(0, nuevasPorDia)];
+    return [
+      ...intercalar(vencidas, (c) => c.mazo),
+      ...intercalar(nuevas, (c) => c.mazo).slice(0, nuevasPorDia),
+    ];
+  }, [cartas, estados, montado, nuevasPorDia, intercalado]);
 
   if (!montado) return <div className="rounded-xl border border-border p-10 text-center text-muted-foreground">Cargando…</div>;
 

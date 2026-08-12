@@ -63,6 +63,9 @@ content/          TODO el contenido, tipado
   en Google hasta que enseñen algo.
 
 lib/
+  cartas.ts       La baraja completa. La comparten tarjetas, mezcla y calibración
+  calibracion.ts  Confianza declarada frente a acierto real
+  intercalar.ts   Reordena para alternar temas en vez de agruparlos
   indice.ts       Índice de búsqueda sobre temas, unidades, casos, bloques y morfemas
   srs.ts          SM-2. Mantener legible: un estudiante debe poder auditarlo
   decodificar.ts  Descomposición de términos en morfemas. Lógica del decodificador

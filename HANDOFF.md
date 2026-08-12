@@ -15,12 +15,14 @@ estricto en verde, 176 tests en verde. ~6,200 líneas en 52 archivos fuente.
 | Sistema de diseño | ✅ Completo (claro/oscuro, tokens, accesible) |
 | Currículum | ✅ 13 bloques, 81 unidades |
 | Temas desarrollados | 🟡 10 de 81 unidades — **sigue siendo el cuello de botella** |
-| Modos de estudio | ✅ 5 modos funcionando |
+| Modos de estudio | ✅ 8 modos funcionando |
 | Ruta personalizada | ✅ planificador en /curriculum |
 | SRS | ✅ SM-2 con persistencia local exportable |
 | Diagramas | 🟡 lazos de control ✅, vías y curvas pendientes |
 | Casos clínicos | 🟡 6 |
-| Exportar a Anki | ✅ texto separado por tabuladores |
+| Exportar a Anki | ✅ global y por tema |
+| Buscador | ✅ sobre temas, unidades, casos y morfemas |
+| Cobertura del currículum | ✅ las 81 unidades tienen página |
 | SEO técnico | ✅ Completo |
 | GEO | ✅ llms.txt, JSON-LD, robots generativo |
 | Documentación | ✅ 6 documentos |
