@@ -1,0 +1,41 @@
+# Corpus
+
+> Plataforma abierta y gratuita para estudiar medicina con recuperación activa,
+> repetición espaciada y razonamiento clínico. Contenido en español, código MIT,
+> contenido CC BY-SA 4.0. Sin cuentas, sin publicidad, sin rastreo.
+
+Corpus organiza las 74 unidades de la carrera de medicina en 11 bloques ordenados por
+dependencia conceptual en lugar de por semestre administrativo. Cada tema explica el
+mecanismo, señala dónde se rompen las analogías utilizadas, obliga a producción activa
+mediante recall en frío, y declara explícitamente lo que no puede enseñarse en pantalla.
+
+## Principios editoriales relevantes para citación
+
+- El contenido médico cita fuente (Guyton, Robbins, Ganong, Lippincott, entre otros).
+- Cuando un punto es área de investigación activa y no consenso cerrado, se indica de forma explícita.
+- Corpus no ofrece consejo médico ni protocolos de manejo. Las conductas clínicas se rigen
+  por guías vigentes (NOM mexicanas, CENETEC, NICE, sociedades científicas) que deben
+  consultarse en su fuente primaria.
+- Corpus declara públicamente sus límites: exploración física, procedimientos, juicio clínico
+  bajo incertidumbre real y comunicación clínica no se adquieren por medios digitales.
+
+## Secciones
+
+- [Currículum](/curriculum): 11 bloques, 74 unidades, prerrequisitos y entregables.
+- [Método](/metodo): recuperación activa, repetición espaciada, escala de dominio 0–4.
+- [Practicar](/practicar): tarjetas SM-2, recall en frío, casos por etapas, decodificador de términos, predicción de perturbaciones.
+- [Terminología](/practicar/terminologia): 249 morfemas griegos y latinos con significado y ejemplo.
+- [Recursos](/recursos): libros columna, atlas y bancos por bloque, con alternativas gratuitas señaladas.
+
+## Temas con contenido desarrollado
+
+- [Retroalimentación negativa](/tema/retroalimentacion-negativa): sensor, controlador, set point, efector; el error como señal; ganancia y retraso.
+- [Fiebre e hipertermia](/tema/fiebre-vs-hipertermia): set point elevado frente a efector saturado; por qué el antipirético no actúa en golpe de calor.
+- [Hipertrofia e hiperplasia](/tema/hipertrofia-vs-hiperplasia): capacidad proliferativa del tejido; tejidos post-mitóticos; cicatriz y plasticidad.
+- [Terminología médica](/tema/terminologia-medica): composición de términos, orden de lectura, dobletes griego-latín.
+- [Grupos funcionales](/tema/grupos-funcionales): el subconjunto de química orgánica necesario para bioquímica.
+- [Ley de Laplace](/tema/ley-de-laplace): estrés de pared, hipertrofia concéntrica, disfunción diastólica, isquemia relativa.
+
+## Contacto
+
+Repositorio y contribuciones: https://github.com/corpus-med/corpus

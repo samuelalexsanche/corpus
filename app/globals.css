@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 30% 98%;
+    --foreground: 200 20% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 200 20% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 20% 12%;
+    --primary: 186 62% 26%;
+    --primary-foreground: 180 40% 97%;
+    --secondary: 190 24% 94%;
+    --secondary-foreground: 195 35% 22%;
+    --muted: 195 20% 95%;
+    --muted-foreground: 200 12% 42%;
+    --accent: 24 88% 52%;
+    --accent-foreground: 30 40% 99%;
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 152 52% 32%;
+    --success-foreground: 150 40% 98%;
+    --border: 195 18% 88%;
+    --input: 195 18% 88%;
+    --ring: 186 62% 32%;
+    --radius: 0.7rem;
+  }
+
+  .dark {
+    --background: 200 26% 8%;
+    --foreground: 190 16% 92%;
+    --card: 200 24% 11%;
+    --card-foreground: 190 16% 92%;
+    --popover: 200 24% 11%;
+    --popover-foreground: 190 16% 92%;
+    --primary: 178 58% 48%;
+    --primary-foreground: 200 30% 8%;
+    --secondary: 200 18% 18%;
+    --secondary-foreground: 190 16% 92%;
+    --muted: 200 18% 16%;
+    --muted-foreground: 195 12% 62%;
+    --accent: 26 90% 58%;
+    --accent-foreground: 20 30% 10%;
+    --destructive: 0 62% 52%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 152 46% 46%;
+    --success-foreground: 150 30% 8%;
+    --border: 200 16% 20%;
+    --input: 200 16% 22%;
+    --ring: 178 58% 44%;
+  }
+
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv02","cv03","cv04","cv11";
+    text-rendering: optimizeLegibility;
+  }
+  ::selection { @apply bg-primary/20; }
+  :focus-visible { @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background; }
+}
+
+@layer components {
+  .prose-medical { @apply text-[15.5px] leading-[1.75] text-foreground/90; }
+  .prose-medical p { @apply mb-4; }
+  .prose-medical strong { @apply font-semibold text-foreground; }
+  .grain {
+    background-image: radial-gradient(hsl(var(--foreground)/0.045) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
