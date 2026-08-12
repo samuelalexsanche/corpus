@@ -30,8 +30,10 @@ producir nada, esa función va en contra del producto. Verifícalo antes.
 
 ```bash
 npm install
-npm run dev        # http://localhost:3000
-npm run build      # debe pasar antes de cualquier commit
+npm run dev           # http://localhost:3000
+npm run build         # debe pasar antes de cualquier commit
+npm run build:export  # sitio estático en out/ (lo que se publica)
+npm run og            # regenera las imágenes Open Graph
 npm run typecheck
 ```
 
@@ -91,11 +93,23 @@ Al añadir un tema, `generateStaticParams` lo recoge solo y entra al sitemap aut
 ## Gotchas
 
 - **Next 16: los `params` de página son `Promise`.** `async function Page({ params }: { params: Promise<{slug: string}> })` y luego `await params`.
-- `/og` debe usar `runtime = "nodejs"`. El runtime edge está deprecado y emite warning.
+- **Ya no existe la ruta `/og`.** Las imágenes Open Graph son archivos en `public/og/`
+  generados por `npm run og`. `lib/og.ts` mapea ruta → archivo y es el contrato compartido
+  entre el generador y `metaPagina`; si tocas el nombrado, tócalo en los dos lados.
+  `public/og/` está en `.gitignore`: se regenera en cada build.
+- **Al añadir un tema, bloque o caso hay que regenerar las OG** (`npm run og`). El build de
+  despliegue ya lo hace, pero en local la imagen no aparece hasta que corras el script.
+- **Rutas de metadatos con `output: export`** necesitan `export const dynamic = "force-static"`.
+  Ya lo tienen `app/sitemap.ts` y `app/robots.ts`.
+- **Canónicas y sitemap pasan por `urlAbs()`**, que fuerza la barra final. El export emite
+  `ruta/index.html`, así que `/tema/x/` es la URL que el hosting sirve de verdad. No construyas
+  URLs absolutas concatenando `SITIO.url` a mano.
 - `content/morfemas.ts` está **generado** desde `../anki/2026-08-11_bloque0_morfemas-medicos.csv`.
   Si editas morfemas, decide si la fuente de verdad pasa a ser el TS y documéntalo.
-- Para desplegar estático descomenta `output: 'export'` en `next.config.mjs`. Ojo: eso rompe
-  `/og`, que necesita runtime. Alternativa: generar las OG como archivos estáticos.
+- **El sitio vive en un Pages de proyecto**, bajo `/corpus`. Eso es `BASE_PATH` en
+  `next.config.mjs` y `NEXT_PUBLIC_SITE_URL` en `lib/seo.ts`, ambos fijados en
+  `.github/workflows/pages.yml`. Al pasar a dominio propio: `BASE_PATH` vacío y la URL nueva,
+  en los dos sitios a la vez.
 - `npm install` dentro de carpetas montadas en red es lentísimo. Si va a paso de tortuga,
   instala en un directorio local.
 

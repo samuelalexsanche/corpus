@@ -35,7 +35,9 @@ export function metaPagina({
   const url = urlAbs(ruta);
   const tituloCompleto = ruta === "/" ? `${SITIO.nombre} — ${SITIO.tagline}` : `${titulo} · ${SITIO.nombre}`;
   return {
-    title: tituloCompleto,
+    // `absolute` porque el título ya trae el sufijo del sitio; sin esto el
+    // template del layout lo añade otra vez ("… · Corpus · Corpus").
+    title: { absolute: tituloCompleto },
     description: descripcion,
     keywords: keywords.length ? keywords : undefined,
     alternates: { canonical: url },

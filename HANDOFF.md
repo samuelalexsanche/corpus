@@ -22,7 +22,7 @@ cero errores, cero warnings. ~4,900 líneas en 44 archivos fuente. 396 KB sin `n
 | GEO | ✅ llms.txt, JSON-LD, robots generativo |
 | Documentación | ✅ 6 documentos |
 | Tests | ❌ No hay. Ver tarea 6 |
-| Despliegue | ❌ No desplegado |
+| Despliegue | ✅ https://samuelalexsanche.github.io/corpus |
 
 ## 2. Arranque en 2 minutos
 
@@ -48,18 +48,22 @@ campo.** Quien usa esto estudia sin profesor que lo corrija.
 
 ## 4. Tareas priorizadas
 
-### P0 — Desplegarlo
+### P0 — Desplegarlo ✅
 
-Sin esto nada de lo demás importa.
+Hecho. Vive en https://samuelalexsanche.github.io/corpus, publicado desde `master` por
+`.github/workflows/pages.yml` con el despliegue nativo de Pages (sin rama `gh-pages`).
 
-1. `git init`, repo en GitHub, licencia ya está (MIT + CC BY-SA).
-2. Deploy en Vercel. Es gratis y el proyecto es estático.
-3. Definir dominio y actualizar `SITIO.url` en `lib/seo.ts`. Ahora apunta a un placeholder
-   (`corpus.study`) y de eso dependen canónicas, sitemap y JSON-LD.
-4. Verificar con Rich Results Test que el JSON-LD valida.
+Queda una decisión abierta: **el dominio**. Mientras sea un Pages de proyecto, el sitio cuelga
+de `/corpus`, y eso vive en dos variables que deben moverse juntas — `BASE_PATH` y
+`NEXT_PUBLIC_SITE_URL`, ambas en el workflow. Dos consecuencias mientras siga así:
 
-**Aceptación:** el sitio carga en producción, `/sitemap.xml` y `/robots.txt` responden, y
-Search Console no reporta errores de datos estructurados.
+- `robots.txt` de un Pages de proyecto **no lo respeta Google**: solo cuenta el del dominio
+  raíz, que aquí es `samuelalexsanche.github.io`. El archivo se genera igual, pero no manda.
+- Cambiar de dominio después invalida canónicas y obliga a reindexar. Cuanto antes se decida,
+  menos cuesta.
+
+Falta también pasar el JSON-LD por Rich Results Test (los cuatro tipos parsean, pero no se han
+validado contra el schema de Google).
 
 ### P1 — Contenido del Bloque 0
 
