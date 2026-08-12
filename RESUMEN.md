@@ -32,7 +32,7 @@ regla que rige nuestras sesiones, convertida en producto.
 
 ## Qué está construido y funcionando
 
-**Compila limpio: 38 páginas estáticas, 0 errores, TypeScript estricto en verde.**
+**Compila limpio: 39 páginas estáticas, 0 errores, TypeScript estricto en verde, 176 tests en verde.**
 
 ### Contenido cargado
 

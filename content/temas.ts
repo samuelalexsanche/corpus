@@ -580,6 +580,641 @@ export const TEMAS: Tema[] = [
     relacionados: ["hipertrofia-vs-hiperplasia", "retroalimentacion-negativa"],
     deudaPractica: "La hipertrofia ventricular se sospecha en la exploración por el desplazamiento y las características del choque de la punta. Palpar eso es una habilidad manual que no se adquiere en pantalla.",
   },
+  {
+    slug: "ph-pka-ionizacion",
+    titulo: "pH, pKa e ionización: por qué las moléculas del cuerpo tienen carga",
+    tituloSEO: "pH, pKa e ionización en bioquímica: Henderson-Hasselbalch, zwitteriones y buffers fisiológicos",
+    bloque: "andamiaje",
+    unidad: "B0.1 · Química general",
+    nivel: "fundamento",
+    minutos: 22,
+    resumen:
+      "El pKa dice a qué pH un grupo suelta su protón. Comparar el pKa de un grupo con el pH del medio predice si esa molécula está cargada o neutra, y esa carga decide si atraviesa una membrana, si se une a su receptor y si el riñón la retiene. Es también la base del equilibrio ácido-base.",
+    porQueImporta:
+      "Bioquímica se siente imposible cuando uno no sabe leer cargas. Por qué un aminoácido es un ion con dos cargas al pH de la sangre, por qué el sitio activo de una enzima necesita un residuo protonado, por qué un fármaco ácido se absorbe donde se absorbe: todo eso son la misma pregunta repetida. Y el equilibrio ácido-base, que es de lo más rentable de toda la medicina interna, no es más que este tema aplicado a un buffer concreto.",
+    secciones: [
+      {
+        titulo: "Dos números que hay que dejar de confundir",
+        cuerpo: [
+          "El **pH** describe el medio: cuántos protones libres hay. El **pKa** describe la molécula: con cuánta fuerza retiene el suyo. Uno es una propiedad del entorno y el otro una propiedad química fija de cada grupo funcional. Confundirlos es el error que arruina el resto del tema.",
+          "El pKa se define como el pH al que el grupo está exactamente mitad protonado y mitad desprotonado. Esa definición operativa es la que conviene retener, porque convierte el pKa en un punto de referencia contra el cual comparar cualquier medio.",
+          "De ahí sale la única regla que hace falta memorizar: **si el pH está por debajo del pKa, el grupo conserva su protón; si el pH está por encima, lo suelta.** Un ácido protonado es neutro y desprotonado es negativo; una base protonada es positiva y desprotonada es neutra. Con eso ya se puede predecir la carga de casi cualquier molécula fisiológica.",
+          "La versión cuantitativa es la ecuación de **Henderson-Hasselbalch**: pH = pKa + log([forma desprotonada]/[forma protonada]). No hay que derivarla; hay que ver que cuando las dos formas están igualadas el logaritmo vale cero y el pH iguala al pKa, y que cada unidad de pH de diferencia multiplica o divide por diez la proporción entre las dos formas.",
+        ],
+      },
+      {
+        titulo: "Por qué un aminoácido tiene dos cargas a la vez",
+        cuerpo: [
+          "Un aminoácido tiene, como mínimo, dos grupos ionizables. El **carboxilo** en posición alfa es un ácido fuerte para lo que se ve en biología: su pKa ronda 2. El **amino** alfa es una base, con un pKa alrededor de 9 a 10. Los valores exactos varían de un aminoácido a otro y se consultan en tabla, pero el orden de magnitud es el que importa.",
+          "Ahora aplica la regla al pH de la sangre, que está entre 7.35 y 7.45. El pH está muy por encima de 2, así que el carboxilo ya soltó su protón y quedó como carboxilato, con carga negativa. El mismo pH está por debajo de 9, así que el amino conserva su protón y está como amonio, con carga positiva.",
+          "El resultado es una molécula con una carga negativa y una positiva simultáneamente y carga neta cero: un **zwitterión**. No es una curiosidad de examen. Es la razón por la que los aminoácidos son sólidos con puntos de fusión altos y muy solubles en agua, y por la que no cruzan membranas por difusión simple sino que necesitan transportadores.",
+          "Las cadenas laterales añaden su propio pKa y ahí está lo interesante. El imidazol de la **histidina** tiene un pKa cercano a 6, que es el único que cae lo bastante próximo al pH fisiológico como para que el residuo esté parcialmente protonado en condiciones normales. Por eso la histidina aparece una y otra vez en sitios activos de enzimas y por eso es el residuo que más contribuye al poder amortiguador de las proteínas.",
+        ],
+      },
+      {
+        titulo: "Buffers: por qué el pH de la sangre casi no se mueve",
+        cuerpo: [
+          "Un **buffer** es una mezcla de un ácido débil y su base conjugada. Cuando entran protones, la base los captura; cuando se pierden, el ácido los repone. La consecuencia es que el pH cambia mucho menos de lo que cambiaría en agua pura ante la misma carga de ácido.",
+          "La capacidad de amortiguar es máxima cuando el pH del medio iguala al pKa del buffer, porque ahí hay reservas iguales de las dos formas y el sistema puede encajar golpes en las dos direcciones. Fuera de una unidad de pH a cada lado del pKa, la reserva de una de las dos formas se agota y el buffer deja de servir.",
+          "Aquí aparece algo que a primera vista contradice lo anterior. El principal buffer del plasma es el par **dióxido de carbono y bicarbonato**, cuyo pKa aparente en plasma es 6.1, más de una unidad por debajo del pH sanguíneo. Por la regla que acabamos de dar debería ser un buffer mediocre, y sin embargo es el que más trabajo hace.",
+          "La explicación es que no es un sistema cerrado. El pulmón elimina CO₂ tan rápido como haga falta y el riñón regula la reabsorción de bicarbonato. Un buffer abierto, con dos órganos ajustando sus dos componentes por separado, rinde mucho más que lo que su pKa sugiere sobre el papel. Los buffers intracelulares importantes —fosfato, con un pKa cercano a 6.8, y las proteínas a través de sus histidinas— sí están más cerca del pH que amortiguan.",
+        ],
+      },
+      {
+        titulo: "La carga decide a dónde va la molécula",
+        cuerpo: [
+          "Una membrana es una bicapa de lípidos: su interior es hidrófobo. Una molécula neutra la atraviesa por difusión simple; una molécula cargada, no. Ese solo hecho convierte la pregunta «¿a qué pH está este grupo?» en una pregunta sobre distribución en el organismo.",
+          "De ahí sale el fenómeno del **atrapamiento iónico**. Si una molécula puede cruzar una membrana solo en su forma neutra, y del otro lado encuentra un pH que la ioniza, queda atrapada: entró neutra y no puede salir cargada. Así se acumulan compartimentos enteros de fármacos ácidos o básicos según el pH de cada compartimento, sin que exista ningún transportador activo de por medio.",
+          "El mismo razonamiento explica el sitio activo de una enzima. Si la catálisis necesita que un residuo done un protón y otro lo acepte, el pH del medio tiene que dejar a esos residuos en el estado de protonación correcto. Por eso cada enzima tiene un pH óptimo y por eso la pepsina del estómago y la tripsina del intestino, que hacen un trabajo parecido, trabajan a pH radicalmente distintos.",
+        ],
+      },
+    ],
+    analogia: {
+      campo: "Sistemas de referencia",
+      texto:
+        "El pKa funciona como el punto de congelación de una sustancia: es una constante propia de la molécula, y lo que decide su estado no es esa constante sino cómo se compara con la temperatura —aquí, el pH— del entorno en el que está.",
+      dondeSeRompe:
+        "La analogía sugiere un umbral limpio, y la ionización no lo es: es un equilibrio. A una unidad de pH del pKa todavía queda un 10 % de la molécula en la otra forma, y ese 10 % a veces es justo la fracción que hace el trabajo. El agua no está un 10 % congelada a un grado por encima de cero; una molécula sí está parcialmente ionizada cerca de su pKa.",
+    },
+    diagrama: {
+      variable: "pH del líquido extracelular",
+      setPoint: "7.35 a 7.45",
+      sensor: "Quimiorreceptores centrales y periféricos",
+      controlador: "Centro respiratorio del tronco",
+      efector: "Ventilación pulmonar",
+      correccion: "elimina o retiene CO₂",
+      perturbacion: "Carga ácida metabólica",
+      incognita: "efector",
+      aceptadas: ["ventilacion", "respiracion", "pulmon", "musculos respiratorios"],
+    },
+    recall: [
+      {
+        pregunta: "Explica, sin mirar, por qué un aminoácido está cargado dos veces al pH de la sangre y qué consecuencia tiene eso.",
+        referencia:
+          "Un aminoácido tiene un carboxilo alfa con pKa cercano a 2 y un amino alfa con pKa entre 9 y 10. Al pH de la sangre, que está entre 7.35 y 7.45, el pH está muy por encima del pKa del carboxilo, así que ese grupo ya soltó su protón y queda como carboxilato negativo. El mismo pH está por debajo del pKa del amino, así que ese grupo conserva su protón y queda como amonio positivo. La molécula resultante tiene una carga de cada signo y carga neta cero: es un zwitterión. La consecuencia es que se comporta como una sal —muy soluble en agua, punto de fusión alto— y que no atraviesa membranas por difusión simple, por lo que necesita transportadores específicos.",
+        pistas: [
+          "¿Cuántos grupos ionizables tiene como mínimo un aminoácido?",
+          "Compara el pH de la sangre con cada uno de los dos pKa por separado.",
+          "Si el pH está por encima del pKa, ¿el grupo conserva o suelta su protón?",
+        ],
+      },
+      {
+        pregunta: "El buffer bicarbonato tiene un pKa de 6.1 y la sangre está a 7.4. ¿Por qué no es un mal buffer, si está a más de una unidad de su pKa?",
+        referencia:
+          "Porque la regla de que un buffer solo sirve a menos de una unidad de su pKa se cumple en un sistema cerrado, y este no lo es. El componente ácido es CO₂, que el pulmón puede eliminar o retener ajustando la ventilación en segundos, y el componente básico es el bicarbonato, cuya reabsorción regula el riñón en horas o días. Al ser un sistema abierto con dos órganos controlando los dos componentes de forma independiente, la capacidad efectiva del par supera con mucho a la que predice su pKa sobre el papel. Los buffers cerrados del organismo, como el fosfato con pKa cercano a 6.8 y las proteínas a través de las histidinas, sí operan cerca del pH que amortiguan.",
+        pistas: [
+          "¿Qué supone la regla del «pKa ± 1» sobre las cantidades de las dos formas?",
+          "¿De dónde sale y a dónde va el CO₂ del plasma?",
+          "¿Qué órgano regula cada uno de los dos componentes del par?",
+        ],
+      },
+    ],
+    perturbaciones: [
+      {
+        escenario: "Una persona hiperventila de forma sostenida por ansiedad.",
+        pregunta: "¿Qué le pasa al pH de la sangre y por qué, razonándolo desde el par CO₂/bicarbonato?",
+        respuesta:
+          "Hiperventilar elimina CO₂ más rápido de lo que se produce, así que baja la concentración del componente ácido del par. En la ecuación de Henderson-Hasselbalch el cociente entre base y ácido sube, y con él sube el pH: aparece una alcalosis de origen respiratorio. Es la demostración de que el pulmón es un regulador de pH y no solo un órgano de oxigenación. Si la situación se prolonga, el riñón responde reduciendo la reabsorción de bicarbonato, con lo que baja también el numerador y el cociente vuelve a acercarse a su valor normal: eso es la compensación renal, y es lenta porque el riñón trabaja en horas mientras el pulmón trabaja en segundos.",
+      },
+      {
+        escenario: "Una enzima con una histidina catalítica se traslada de un medio a pH 7.4 a un medio a pH 4.",
+        pregunta: "¿Qué le pasa a esa histidina y por qué puede perderse la actividad?",
+        respuesta:
+          "El imidazol de la histidina tiene un pKa cercano a 6. A pH 7.4 el pH está por encima del pKa, así que una fracción apreciable del residuo está desprotonada y puede actuar aceptando un protón del sustrato. A pH 4 el pH está dos unidades por debajo del pKa, de modo que prácticamente todo el residuo está protonado y cargado positivamente: ya no puede aceptar nada. Si el mecanismo catalítico dependía de esa aceptación, la enzima deja de funcionar aunque su estructura siga intacta. Es la razón mecanicista de que cada enzima tenga un pH óptimo, y conviene distinguirla de la desnaturalización, que es un daño estructural y no un simple cambio de protonación.",
+      },
+    ],
+    errores: [
+      {
+        error: "Creer que un pKa bajo significa que la molécula está poco ionizada.",
+        correccion:
+          "Es al revés en la mayoría de las situaciones fisiológicas. Un pKa bajo indica un ácido fuerte, que suelta su protón con facilidad; como el pH del cuerpo está muy por encima de ese pKa, el grupo está casi por completo desprotonado, es decir, casi por completo ionizado. Lo que decide la ionización nunca es el pKa solo, sino su comparación con el pH del medio.",
+      },
+      {
+        error: "Usar «ácido» y «protonado» como sinónimos.",
+        correccion:
+          "Un ácido es una molécula capaz de ceder un protón, y una vez que lo cede queda desprotonada y con carga negativa. Al pH del cuerpo la mayoría de los ácidos biológicos están precisamente en su forma desprotonada, o sea aniónica. Por eso el lenguaje del laboratorio habla de lactato y no de ácido láctico, de piruvato y no de ácido pirúvico: los sufijos no son un capricho, describen la especie que realmente existe en el plasma.",
+      },
+      {
+        error: "Pensar que un buffer impide que el pH cambie.",
+        correccion:
+          "Un buffer no fija el pH, solo amortigua su variación. Ante una carga de ácido el pH baja igualmente; lo que hace el buffer es que baje una fracción de lo que bajaría sin él. Además su capacidad es finita: cuando la reserva de la forma que captura protones se agota, el pH cae de golpe. Esa transición brusca es la razón de que un paciente pueda parecer estable y descompensarse en poco tiempo.",
+      },
+      {
+        error: "Tratar la ecuación de Henderson-Hasselbalch como una fórmula que hay que memorizar y sustituir.",
+        correccion:
+          "Su valor no está en el cálculo sino en las dos lecturas cualitativas que permite: que cuando las dos formas se igualan el pH coincide con el pKa, y que cada unidad de diferencia entre pH y pKa cambia la proporción entre las dos formas por un factor de diez. Quien retiene esas dos lecturas predice cargas sin escribir la ecuación; quien solo memoriza la fórmula se queda sin nada cuando el examen pregunta por un mecanismo.",
+      },
+    ],
+    tarjetas: [
+      { front: "¿Qué significa exactamente el pKa de un grupo ionizable?", back: "El pH al que ese grupo está mitad protonado y mitad desprotonado." },
+      { front: "Si el pH del medio está por encima del pKa de un grupo, ¿conserva o suelta su protón?", back: "Lo suelta: queda desprotonado." },
+      { front: "¿Qué pKa aproximado tiene el carboxilo alfa de un aminoácido?", back: "Alrededor de 2." },
+      { front: "¿Qué cadena lateral de aminoácido tiene un pKa cercano al pH fisiológico?", back: "El imidazol de la histidina, con pKa próximo a 6." },
+      { front: "¿A qué pH es máxima la capacidad amortiguadora de un buffer?", back: "Cuando el pH del medio iguala al pKa del buffer." },
+      { front: "¿Qué órgano regula el componente ácido del par CO₂/bicarbonato?", back: "El pulmón, ajustando la ventilación." },
+      { front: "¿Por qué un zwitterión no atraviesa una membrana por difusión simple?", back: "Porque tiene cargas y el interior de la bicapa es hidrófobo." },
+    ],
+    faq: [
+      {
+        q: "¿Cuál es la diferencia entre pH y pKa?",
+        a: "El pH es una propiedad del medio: mide cuántos protones libres hay en la disolución. El pKa es una propiedad fija de cada grupo ionizable de una molécula e indica el pH al que ese grupo está mitad protonado y mitad desprotonado. El pH cambia según dónde esté la molécula; el pKa no cambia. La ionización se predice comparando los dos: si el pH está por encima del pKa el grupo suelta su protón, y si está por debajo lo conserva.",
+      },
+      {
+        q: "¿Por qué los aminoácidos son zwitteriones al pH fisiológico?",
+        a: "Porque tienen dos grupos ionizables con pKa muy separados. El carboxilo alfa tiene un pKa cercano a 2, muy por debajo del pH de la sangre, así que está desprotonado y con carga negativa. El amino alfa tiene un pKa entre 9 y 10, por encima del pH de la sangre, así que está protonado y con carga positiva. La molécula lleva las dos cargas a la vez y su carga neta es cero, que es la definición de zwitterión.",
+      },
+      {
+        q: "¿Para qué sirve la ecuación de Henderson-Hasselbalch?",
+        a: "Relaciona el pH de una disolución con el pKa de un ácido débil y la proporción entre su forma desprotonada y su forma protonada: pH = pKa + log([A⁻]/[HA]). En la práctica sirve para dos cosas: saber en qué proporción está ionizada una molécula a un pH dado, y entender el equilibrio ácido-base, donde el par CO₂/bicarbonato se analiza con esta misma relación.",
+      },
+      {
+        q: "¿Por qué la sangre mantiene un pH tan estrecho, entre 7.35 y 7.45?",
+        a: "Porque el estado de protonación de las proteínas depende del pH, y de ese estado dependen su forma y su actividad catalítica. Un desplazamiento de unas décimas cambia la carga de residuos como la histidina en sitios activos de enzimas y en la hemoglobina, y con ello altera funciones que no toleran variación. El organismo lo sostiene combinando buffers químicos de acción inmediata con la regulación respiratoria del CO₂, en segundos, y la regulación renal del bicarbonato, en horas o días.",
+      },
+    ],
+    fuentes: [
+      "Lehninger, Principios de bioquímica (Nelson y Cox), capítulo sobre el agua, la ionización y los sistemas amortiguadores",
+      "Lippincott Illustrated Reviews: Bioquímica, capítulo introductorio de aminoácidos y pH",
+      "Guyton y Hall, Tratado de fisiología médica, capítulo de regulación del equilibrio ácido-base",
+    ],
+    relacionados: ["grupos-funcionales", "terminologia-medica"],
+    deudaPractica:
+      "Interpretar una gasometría real —decidir si un trastorno es respiratorio o metabólico, si hay compensación y si es aguda o crónica— exige practicar con casos y con el contexto clínico del paciente delante. Este tema da el mecanismo; la lectura de gasometrías es una habilidad aparte que se entrena con series de casos reales.",
+  },
+
+  {
+    slug: "quiralidad",
+    titulo: "Quiralidad: por qué una enzima acepta una forma y rechaza su espejo",
+    tituloSEO: "Quiralidad en bioquímica: enantiómeros, aminoácidos L, azúcares D y por qué importa en farmacología",
+    bloque: "andamiaje",
+    unidad: "B0.2 · Química orgánica funcional",
+    nivel: "fundamento",
+    minutos: 18,
+    resumen:
+      "Dos moléculas con los mismos átomos y los mismos enlaces pueden ser imágenes especulares no superponibles. En un tubo de ensayo se comportan igual; dentro de un organismo, no, porque las enzimas y los receptores también son quirales. De ahí que la vida use aminoácidos L y azúcares D, y que dos formas del mismo fármaco puedan hacer cosas distintas.",
+    porQueImporta:
+      "Es el punto donde la química deja de ser una lista de fórmulas y pasa a explicar por qué la biología es selectiva. Sin quiralidad no se entiende por qué una enzima reconoce a su sustrato y no a algo casi idéntico, por qué la fórmula plana de un libro esconde información esencial, ni por qué en farmacología dos compuestos con la misma fórmula molecular pueden tener efectos diferentes.",
+    secciones: [
+      {
+        titulo: "Qué hace quiral a una molécula",
+        cuerpo: [
+          "Un objeto es **quiral** cuando su imagen en el espejo no se puede superponer sobre él. Las manos son el ejemplo canónico, y de ahí viene la palabra: *cheir* es mano en griego. Una mano derecha y una izquierda tienen las mismas partes en la misma disposición relativa y aun así no encajan una sobre otra.",
+          "En química orgánica el caso más frecuente es el **carbono asimétrico**: un carbono unido a cuatro sustituyentes distintos. Como los cuatro enlaces apuntan hacia los vértices de un tetraedro, hay dos formas de colocar cuatro grupos diferentes alrededor de él, y esas dos formas son imágenes especulares no superponibles.",
+          "Cada una de esas dos formas es un **enantiómero**. Tienen exactamente los mismos átomos, los mismos enlaces y las mismas conexiones; lo único que difiere es la disposición en el espacio. Cuando una molécula tiene más de un centro quiral aparecen estereoisómeros que no son imágenes especulares entre sí, y a esos se les llama **diastereómeros**; a diferencia de los enantiómeros, sí tienen propiedades físicas distintas y por eso se pueden separar por métodos ordinarios.",
+        ],
+      },
+      {
+        titulo: "Idénticos, salvo en un entorno quiral",
+        cuerpo: [
+          "Dos enantiómeros tienen el mismo punto de fusión, la misma solubilidad, la misma densidad y el mismo espectro. En un entorno no quiral son indistinguibles, y esa es justamente la razón por la que separarlos es difícil y caro.",
+          "Se distinguen en dos situaciones. La primera es la luz polarizada: cada enantiómero desvía el plano de polarización el mismo ángulo pero en sentidos opuestos, y de ahí vienen los signos (+) y (−). La segunda es un **entorno quiral**, y es la que importa en medicina.",
+          "Aquí está el nudo del tema. Las proteínas están hechas de aminoácidos L, así que están construidas de una sola mano: el sitio activo de una enzima y el bolsillo de unión de un receptor son cavidades quirales. Una cavidad quiral distingue enantiómeros por la misma razón que un guante derecho distingue manos. No es una preferencia energética sutil, es geometría: si tres puntos de contacto tienen que coincidir a la vez, la imagen especular solo puede acertar dos.",
+          "Por eso la vida es estereoespecífica de arriba abajo. Las proteínas usan **aminoácidos L**, los ácidos nucleicos y el metabolismo energético usan **azúcares D**, y las enzimas que procesan unos no tocan a los otros. Es una convención que la vida terrestre fijó una vez y de la que ya no se movió.",
+        ],
+      },
+      {
+        titulo: "Tres sistemas de nombres que no significan lo mismo",
+        cuerpo: [
+          "Esta es la parte que tropieza a todo el mundo, y merece decirse explícitamente: existen tres notaciones distintas y no son intercambiables.",
+          "La notación **D/L** compara la configuración de la molécula con la del gliceraldehído, la molécula de referencia que se eligió históricamente. Es la que se usa en bioquímica para aminoácidos y azúcares, y es una clasificación por parentesco estructural, no por comportamiento óptico.",
+          "La notación **R/S**, del sistema de Cahn-Ingold-Prelog, asigna prioridades a los cuatro sustituyentes según número atómico y mira si el orden gira en el sentido de las agujas del reloj o al contrario. Es rigurosa, describe cada centro por separado y es la que usa la química orgánica moderna.",
+          "Los signos **(+) y (−)**, a veces escritos como *d* y *l* minúsculas, indican hacia dónde desvía la luz polarizada esa sustancia. Es un dato medido en el laboratorio, no deducible de la estructura.",
+          "La consecuencia práctica: **saber que un aminoácido es L no permite deducir si es (+) o (−), ni tampoco si es R o S.** Son tres preguntas diferentes sobre la misma molécula. La mayoría de los aminoácidos L son S, pero la cisteína no lo es, y no por una excepción biológica sino porque el azufre cambia el orden de prioridades del sistema R/S.",
+        ],
+      },
+      {
+        titulo: "Qué cambia esto en farmacología",
+        cuerpo: [
+          "Muchos fármacos tienen al menos un centro quiral. Como su diana es una proteína, y una proteína es un entorno quiral, los dos enantiómeros pueden unirse con afinidades distintas: uno puede ser el activo mientras el otro es menos activo, inactivo, o activo sobre una diana diferente.",
+          "Además el organismo entero es quiral, no solo la diana. Las enzimas que metabolizan un fármaco y los transportadores que lo mueven también distinguen enantiómeros, de modo que dos formas del mismo compuesto pueden absorberse, distribuirse y eliminarse a velocidades distintas.",
+          "El caso más citado es el de la **talidomida**, y conviene contarlo bien porque la versión popular es engañosa. Es cierto que los dos enantiómeros no tienen la misma actividad. Pero también está documentado que en condiciones fisiológicas se interconvierten, es decir, que administrar solo el enantiómero considerado seguro no habría evitado la aparición del otro en el organismo. La lección correcta no es «bastaba con separar los enantiómeros», sino que la estereoquímica hay que evaluarla junto con lo que el cuerpo le hace a la molécula.",
+        ],
+      },
+    ],
+    analogia: {
+      campo: "Objetos cotidianos",
+      texto:
+        "Una enzima frente a su sustrato funciona como un guante frente a una mano: el guante derecho no es «mejor» que el izquierdo, simplemente solo uno de los dos entra, y por pura geometría.",
+      dondeSeRompe:
+        "El guante sugiere un encaje rígido, y hace décadas que ese modelo se abandonó. La descripción vigente es la de ajuste inducido: la proteína cambia de conformación al unirse, y tanto ella como el ligando son flexibles. Además el guante insinúa que el enantiómero equivocado simplemente no se une, cuando lo habitual es que se una con menos afinidad, y a veces a otra diana, lo cual es una fuente real de efectos no buscados.",
+    },
+    recall: [
+      {
+        pregunta: "Explica por qué una enzima distingue entre dos enantiómeros si en un tubo de ensayo son químicamente idénticos.",
+        referencia:
+          "Dos enantiómeros tienen las mismas propiedades físicas y químicas mientras el entorno no sea quiral, porque solo difieren en la disposición espacial de sus sustituyentes. Una enzima no es un entorno neutro: está construida con aminoácidos L, de modo que su sitio activo es una cavidad con una mano definida. El reconocimiento exige que varios puntos de contacto —enlaces de hidrógeno, interacciones iónicas, contactos hidrófobos— coincidan simultáneamente en el espacio, y una imagen especular no puede satisfacerlos todos a la vez aunque tenga exactamente los mismos grupos. Es el mismo motivo por el que un guante derecho no admite una mano izquierda: no hay diferencia de composición, solo de geometría.",
+        pistas: [
+          "¿En qué se diferencian y en qué no se diferencian dos enantiómeros?",
+          "¿De qué está hecho el sitio activo de una enzima y qué tienen de particular esos componentes?",
+          "¿Cuántos puntos de contacto tienen que coincidir a la vez para que haya reconocimiento?",
+        ],
+      },
+      {
+        pregunta: "¿Qué significan D/L, R/S y (+)/(−), y por qué no se pueden deducir unos de otros?",
+        referencia:
+          "Son tres notaciones que responden a preguntas distintas sobre la misma molécula. D/L clasifica la configuración por comparación con el gliceraldehído de referencia y es la que se usa en bioquímica para aminoácidos y azúcares. R/S es el sistema de Cahn-Ingold-Prelog: ordena los cuatro sustituyentes por prioridad según número atómico y describe el sentido de giro de ese orden, centro por centro. Los signos (+) y (−) indican el sentido en que la sustancia desvía el plano de la luz polarizada, y son un dato experimental que se mide, no algo que se derive de la estructura. Por eso saber que un aminoácido es L no dice si es R o S ni si es (+) o (−): la mayoría de los aminoácidos L resultan ser S, pero la cisteína es R porque el azufre altera el orden de prioridades.",
+        pistas: [
+          "Una de las tres notaciones se mide en un aparato en vez de deducirse en el papel: ¿cuál?",
+          "¿Con qué molécula de referencia se compara la notación D/L?",
+          "¿Qué criterio usa el sistema R/S para ordenar los sustituyentes?",
+        ],
+      },
+    ],
+    perturbaciones: [
+      {
+        escenario: "Se sintetiza en el laboratorio un aminoácido idéntico a uno natural pero en su forma D.",
+        pregunta: "¿Qué le pasará cuando entre en contacto con la maquinaria de síntesis de proteínas de una célula?",
+        respuesta:
+          "No se incorporará a la proteína. La maquinaria de traducción está construida a partir de componentes quirales y selecciona aminoácidos L en varios pasos independientes: las enzimas que cargan cada aminoácido sobre su ARN de transferencia discriminan la configuración, y el propio ribosoma impone restricciones geométricas al sitio donde se forma el enlace peptídico. El aminoácido D es un compuesto perfectamente estable y con la misma fórmula, pero para ese sistema es una llave con la muesca al revés. Conviene añadir que los aminoácidos D existen en la naturaleza y no son un artefacto de laboratorio: aparecen, por ejemplo, en la pared celular de las bacterias, que los usa precisamente porque las enzimas que degradan proteínas normales no la reconocen.",
+      },
+      {
+        escenario: "Un fármaco quiral se administra como mezcla de partes iguales de sus dos enantiómeros, es decir, como racémico.",
+        pregunta: "¿Qué se puede y qué no se puede predecir sobre su comportamiento en el organismo?",
+        respuesta:
+          "Se puede predecir que los dos enantiómeros se enfrentarán a un entorno quiral en cada etapa: la diana, las enzimas que lo metabolizan y los transportadores que lo mueven, todos ellos hechos de proteína. Por tanto es esperable que difieran en afinidad por la diana y en velocidad de eliminación. Lo que no se puede predecir sin datos es cuál de las dos posibilidades ocurre: que el segundo enantiómero sea inerte, que sea menos potente sobre la misma diana, que actúe sobre otra distinta, o que se convierta en el primero dentro del organismo. Esa última posibilidad, la interconversión, es la que hace que separar enantiómeros no garantice nada por sí sola, y es lo que documenta el caso de la talidomida.",
+      },
+    ],
+    errores: [
+      {
+        error: "Creer que la D de un azúcar y la L de un aminoácido indican hacia dónde desvían la luz polarizada.",
+        correccion:
+          "No lo indican. D y L son etiquetas de configuración, asignadas por comparación con el gliceraldehído de referencia, y describen parentesco estructural. El sentido de rotación de la luz se mide en un polarímetro y se escribe con (+) o (−). Existen azúcares D que son levorrotatorios y aminoácidos L que son dextrorrotatorios: la coincidencia de letras es histórica y no implica ninguna relación.",
+      },
+      {
+        error: "Pensar que basta con que un carbono tenga cuatro sustituyentes para que la molécula sea quiral.",
+        correccion:
+          "Hacen falta cuatro sustituyentes distintos entre sí. Si dos son iguales, la imagen especular se superpone sobre el original girando la molécula y no hay quiralidad. Además la quiralidad es una propiedad de la molécula entera, no de un átomo: existen compuestos meso, que tienen centros quirales y aun así son aquirales porque un plano de simetría interno hace que un centro cancele al otro.",
+      },
+      {
+        error: "Suponer que si un enantiómero es el activo, el otro simplemente no hace nada.",
+        correccion:
+          "Es una de las tres posibilidades y no la única. El segundo enantiómero puede ser inactivo, puede ser menos potente sobre la misma diana, puede unirse a una diana distinta y producir efectos no buscados, o puede convertirse en el primero dentro del organismo. Cuál de ellas ocurre es una cuestión empírica que se resuelve con datos de esa molécula concreta, no razonando desde la estructura.",
+      },
+      {
+        error: "Leer una fórmula plana como si contuviera toda la información de la molécula.",
+        correccion:
+          "Una fórmula plana no distingue enantiómeros: los dos se dibujan igual sobre el papel. La información estereoquímica se representa con cuñas y líneas discontinuas, o con proyecciones específicas como la de Fischer. Ignorar esa capa es lo que hace que dos moléculas con comportamiento biológico muy distinto parezcan la misma en un apunte.",
+      },
+    ],
+    tarjetas: [
+      { front: "¿Qué condición debe cumplir un carbono para ser un centro quiral?", back: "Estar unido a cuatro sustituyentes distintos entre sí." },
+      { front: "¿Qué son dos enantiómeros?", back: "Imágenes especulares no superponibles de la misma molécula." },
+      { front: "¿En qué propiedad física medible se diferencian dos enantiómeros?", back: "En el sentido en que desvían el plano de la luz polarizada." },
+      { front: "¿Qué configuración tienen los aminoácidos que la vida usa para construir proteínas?", back: "L." },
+      { front: "¿Qué configuración tienen los azúcares del metabolismo energético y de los ácidos nucleicos?", back: "D." },
+      { front: "¿Qué informa la notación (+)/(−) que no informa la notación D/L?", back: "El sentido real de rotación de la luz polarizada, que se mide experimentalmente." },
+      { front: "¿Qué son dos diastereómeros?", back: "Estereoisómeros que no son imágenes especulares entre sí." },
+      { front: "¿Por qué un compuesto meso es aquiral pese a tener centros quirales?", back: "Porque un plano de simetría interno hace que sus centros se cancelen." },
+    ],
+    faq: [
+      {
+        q: "¿Qué es la quiralidad en química?",
+        a: "Una molécula es quiral cuando su imagen en el espejo no se puede superponer sobre ella, igual que ocurre con las manos. El caso más común es el de un carbono unido a cuatro sustituyentes distintos, que admite dos disposiciones espaciales diferentes. Cada una de esas dos formas se llama enantiómero, y aunque tienen los mismos átomos y los mismos enlaces, no son la misma molécula.",
+      },
+      {
+        q: "¿Por qué las proteínas están hechas solo de aminoácidos L?",
+        a: "Porque la maquinaria que las fabrica es ella misma quiral y selecciona la configuración L en varios pasos: las enzimas que cargan cada aminoácido sobre su ARN de transferencia discriminan la configuración, y el ribosoma impone restricciones geométricas adicionales. El origen de que la vida eligiera L y no D sigue siendo un problema abierto en el estudio del origen de la vida; lo que sí está establecido es que la elección, una vez hecha, quedó fijada en toda la biología conocida.",
+      },
+      {
+        q: "¿Cuál es la diferencia entre D/L y R/S?",
+        a: "D/L clasifica la configuración comparando la molécula con el gliceraldehído de referencia y es la notación habitual en bioquímica para aminoácidos y azúcares. R/S es el sistema de Cahn-Ingold-Prelog: ordena los cuatro sustituyentes de cada centro por prioridad según su número atómico y describe si ese orden gira a favor o en contra de las agujas del reloj. R/S es más riguroso y describe cada centro por separado, y no se puede deducir de D/L ni al revés.",
+      },
+      {
+        q: "¿Por qué importa la quiralidad en los medicamentos?",
+        a: "Porque la diana de un fármaco suele ser una proteína, y una proteína es un entorno quiral capaz de distinguir enantiómeros. Los dos enantiómeros de un mismo fármaco pueden diferir en afinidad por la diana, y también en cómo se absorben, se metabolizan y se eliminan, porque las enzimas y transportadores implicados también son quirales. Además algunos enantiómeros se interconvierten en el organismo, de modo que administrar uno solo no garantiza que el otro no aparezca.",
+      },
+    ],
+    fuentes: [
+      "Klein, Organic Chemistry as a Second Language, secciones de estereoquímica y configuración",
+      "Lehninger, Principios de bioquímica (Nelson y Cox), capítulo de aminoácidos y estereoquímica de biomoléculas",
+      "Katzung, Farmacología básica y clínica, apartado sobre estereoisomería de los fármacos",
+    ],
+    relacionados: ["grupos-funcionales", "ph-pka-ionizacion"],
+  },
+
+  {
+    slug: "biologia-celular",
+    titulo: "Biología celular: la célula como sistema de compartimentos",
+    tituloSEO: "Biología celular para medicina: organelos, membranas, tráfico vesicular y ciclo celular",
+    bloque: "andamiaje",
+    unidad: "B0.3 · Biología celular",
+    nivel: "fundamento",
+    minutos: 24,
+    resumen:
+      "Una célula no es una bolsa con orgánulos flotando: es un conjunto de compartimentos separados por membranas, cada uno con su propio ambiente químico, y un sistema de transporte que mueve material entre ellos con dirección. Entender esa lógica convierte histología y patología en consecuencias en lugar de listas.",
+    porQueImporta:
+      "Es el prerrequisito real de histología y de patología, y casi nadie lo revisa antes. Una célula que secreta mucho tiene un aspecto concreto al microscopio, y ese aspecto es una consecuencia directa de qué compartimento tiene hipertrofiado. Enfermedades enteras se explican como fallos de un compartimento o de una ruta de transporte, y el cáncer es en gran medida un trastorno del control del ciclo celular. Sin esta base, todo eso se memoriza; con ella, se deduce.",
+    secciones: [
+      {
+        titulo: "La membrana es lo que crea el problema y la solución",
+        cuerpo: [
+          "La unidad de organización de la célula es la **bicapa lipídica**. Los fosfolípidos son anfipáticos: tienen una cabeza polar que busca el agua y dos colas hidrófobas que la evitan. En medio acuoso se ordenan solos en una doble capa con las colas hacia dentro, y esa estructura se forma sin gasto de energía ni instrucciones, por pura consecuencia de la geometría de la molécula.",
+          "El interior hidrófobo de la bicapa es una barrera para todo lo que tenga carga o sea muy polar. Ahí está a la vez el problema y la solución: la membrana impide el paso libre, lo que obliga a que exista maquinaria de transporte, pero al impedirlo permite mantener a ambos lados composiciones distintas. Sin esa diferencia no habría potencial de membrana, ni gradientes que almacenen energía, ni compartimentos con químicas incompatibles conviviendo en la misma célula.",
+          "La membrana no es una lámina rígida sino un mosaico fluido: las proteínas se desplazan lateralmente y el colesterol modula la fluidez. Y no es simétrica: la composición de la cara interna y la externa es distinta, y esa asimetría es información. La exposición de fosfatidilserina en la cara externa, por ejemplo, es una de las señales que marcan a una célula que está muriendo por apoptosis para que sea retirada.",
+        ],
+      },
+      {
+        titulo: "Cada orgánulo es un ambiente químico distinto",
+        cuerpo: [
+          "El **núcleo** guarda el ADN y lo separa del citoplasma. Esa separación es lo que permite que en eucariotas la transcripción y la traducción ocurran en momentos y lugares distintos, y que entre las dos quepa toda la regulación del procesamiento del ARN.",
+          "El **retículo endoplásmico rugoso** debe su aspecto a los ribosomas adheridos a su cara citosólica. Ahí se sintetizan las proteínas destinadas a ser secretadas, a insertarse en membranas o a acabar en un lisosoma. Una célula plasmática, que produce anticuerpos a gran escala, tiene el retículo rugoso enormemente desarrollado, y por eso su citoplasma se tiñe intensamente con colorantes básicos.",
+          "El **retículo endoplásmico liso** no tiene ribosomas y hace otras tres cosas: sintetiza lípidos y esteroides, participa en el metabolismo de compuestos exógenos en el hepatocito, y almacena calcio. En el músculo esa última función está tan especializada que el compartimento recibe nombre propio, retículo sarcoplásmico, y es la pieza que acopla la excitación con la contracción.",
+          "El **aparato de Golgi** recibe lo que sale del retículo y lo procesa de forma direccional, desde su cara cis hacia la trans: modifica cadenas de azúcares, corta precursores y clasifica cada proteína hacia su destino. Es a la vez taller de acabado y oficina de correos.",
+          "Los **lisosomas** contienen hidrolasas ácidas y mantienen en su interior un pH en torno a 5, mucho más ácido que el citosol. Esa acidez no es un detalle: es lo que hace que sus enzimas solo funcionen dentro, de modo que una fuga menor al citosol neutro no digiere la célula. Los **peroxisomas** son otro compartimento aparte, especializado en oxidaciones que generan peróxido de hidrógeno —que su propia catalasa descompone— y en la degradación de ácidos grasos de cadena muy larga que la mitocondria no procesa.",
+          "Las **mitocondrias** tienen doble membrana, y la interna está muy plegada en crestas para aumentar la superficie donde ocurre la fosforilación oxidativa. Conservan ADN propio, se heredan por vía materna y una célula contiene muchas copias, de modo que puede coexistir ADN mitocondrial normal y mutado en la misma célula: esa mezcla se llama heteroplasmia y es la razón de que las enfermedades mitocondriales se expresen de forma tan variable.",
+        ],
+      },
+      {
+        titulo: "El tráfico vesicular tiene dirección y etiquetas",
+        cuerpo: [
+          "El material no se difunde entre compartimentos: viaja en vesículas que se desprenden de una membrana y se fusionan con otra. Y no viaja al azar. Cada vesícula lleva marcadores que determinan con qué membrana se fusiona, de modo que el sistema tiene una direccionalidad estricta.",
+          "La ruta principal es la **vía secretora**: la proteína se sintetiza en el retículo rugoso, pasa al Golgi, lo recorre de cis a trans mientras se modifica, y desde la red trans se despacha hacia su destino, sea la membrana plasmática, el exterior de la célula o un lisosoma. En sentido contrario, la **endocitosis** introduce material desde fuera, que pasa por endosomas y termina con frecuencia en un lisosoma.",
+          "El mecanismo de clasificación merece detenerse porque es el ejemplo más limpio de que aquí hay etiquetas y no azar. Las enzimas destinadas al lisosoma reciben en el Golgi una marca química, la **manosa-6-fosfato**, y un receptor la reconoce y las desvía a la ruta correcta. Si falla la enzima que coloca esa marca, las hidrolasas no se etiquetan, el receptor no las reconoce y la célula las secreta al exterior en lugar de enviarlas al lisosoma. El resultado es una enfermedad en la que los lisosomas están vacíos de enzimas mientras estas se acumulan en la sangre: es la enfermedad de células I o mucolipidosis tipo II.",
+          "Ese caso enseña la lógica general de las **enfermedades por depósito lisosomal**. Si falta una hidrolasa concreta, su sustrato se acumula dentro del lisosoma; qué órgano sufre y con qué gravedad depende de dónde se produce más ese sustrato. La enfermedad de Tay-Sachs, por déficit de hexosaminidasa A, y la de Gaucher, por déficit de glucocerebrosidasa, son dos ejemplos del mismo patrón.",
+        ],
+      },
+      {
+        titulo: "El ciclo celular y sus puntos de control",
+        cuerpo: [
+          "Dividirse ordenadamente exige duplicar el ADN una sola vez y repartirlo con exactitud. El ciclo se divide en interfase —**G1**, **S** y **G2**— y **mitosis**. En G1 la célula crece y decide si va a dividirse; en S duplica el ADN; en G2 se prepara y verifica; en M se reparte el material y se divide.",
+          "Muchas células del organismo no están en el ciclo sino en **G0**, un estado de reposo del que algunas pueden volver a entrar cuando reciben una señal y otras no vuelven nunca. Un hepatocito puede reincorporarse al ciclo tras una lesión; una neurona madura, en general, no. Esa diferencia decide qué tejidos se regeneran y cuáles reparan con cicatriz.",
+          "El ciclo no avanza por inercia: avanza si pasa una serie de **puntos de control**. Antes de entrar en S hay un control que verifica tamaño, nutrientes, señales de crecimiento e integridad del ADN. Antes de mitosis hay otro que comprueba que la duplicación se completó y que no hay daño. Y durante la mitosis, el control del huso impide separar las cromátidas hasta que todos los cromosomas están correctamente anclados.",
+          "El motor son las **ciclinas** y las **quinasas dependientes de ciclina**: la quinasa solo trabaja unida a su ciclina, y como la concentración de ciclinas sube y baja a lo largo del ciclo, la actividad aparece y desaparece en el momento justo. Los puntos de control funcionan frenando ese motor, y ahí es donde encaja la patología: **cuando el freno se pierde, la célula avanza con daño no reparado, y eso es una de las vías centrales hacia el cáncer.**",
+        ],
+      },
+    ],
+    analogia: {
+      campo: "Logística industrial",
+      texto:
+        "La célula se parece a una fábrica con almacenes separados: el retículo rugoso es la línea de montaje, el Golgi el área de acabado y expedición que etiqueta cada paquete con su destino, los lisosomas la planta de reciclaje y las mitocondrias la central eléctrica.",
+      dondeSeRompe:
+        "La fábrica sugiere un plano fijo y una jerarquía que deciden desde arriba, y no hay nada de eso. Los compartimentos son dinámicos: se fusionan, se dividen y cambian de tamaño según la demanda, y la mitocondria no es un objeto sino una red que se remodela continuamente. Además no existe ningún gerente: la direccionalidad emerge de interacciones moleculares locales entre marcadores y receptores, no de una instrucción central.",
+    },
+    recall: [
+      {
+        pregunta: "Reconstruye el recorrido completo de una proteína destinada a ser secretada, desde su síntesis hasta el exterior de la célula.",
+        referencia:
+          "La síntesis empieza en un ribosoma libre en el citosol, pero la secuencia inicial de la proteína dirige el conjunto al retículo endoplásmico rugoso, donde la traducción continúa mientras la cadena entra en la luz del retículo. Allí se pliega y recibe modificaciones iniciales. Desde el retículo sale en vesículas hacia el aparato de Golgi, que recorre de la cara cis a la trans mientras se modifican sus cadenas de azúcares y, si procede, se cortan precursores. En la red trans del Golgi se clasifica según su destino y se empaqueta en vesículas de secreción. Esas vesículas se desplazan hasta la membrana plasmática y se fusionan con ella, vertiendo el contenido al exterior. La fusión puede ser continua o esperar una señal, y en este último caso es habitual que el disparo sea una entrada de calcio.",
+        pistas: [
+          "¿Dónde empieza la traducción y qué hace que continúe en otro sitio?",
+          "¿En qué orden atraviesa el Golgi y qué le ocurre por el camino?",
+          "¿Qué proceso final vierte el contenido de la vesícula al exterior?",
+        ],
+      },
+      {
+        pregunta: "Explica qué son los puntos de control del ciclo celular, dónde están y por qué su fallo se relaciona con el cáncer.",
+        referencia:
+          "Son mecanismos que impiden que el ciclo avance a la siguiente fase mientras no se cumplan ciertas condiciones. El control previo a la fase S verifica que la célula tenga tamaño y nutrientes suficientes, que haya recibido señales de crecimiento y que su ADN esté intacto. El control previo a la mitosis comprueba que la duplicación se completó y que no hay daño pendiente. El control del huso, ya dentro de la mitosis, impide separar las cromátidas hermanas hasta que todos los cromosomas están correctamente unidos al huso. El motor del ciclo son las ciclinas y sus quinasas dependientes, cuya actividad aparece y desaparece porque la concentración de ciclinas oscila; los puntos de control actúan frenando ese motor. Si un control falla, la célula progresa con ADN dañado o mal repartido y acumula alteraciones genéticas de división en división, que es uno de los mecanismos centrales de la transformación maligna.",
+        pistas: [
+          "Nombra los tres momentos del ciclo donde hay una verificación.",
+          "¿Qué pareja de moléculas hace avanzar el ciclo y por qué su actividad es intermitente?",
+          "¿Qué se acumula, división tras división, si un control deja de frenar?",
+        ],
+      },
+    ],
+    perturbaciones: [
+      {
+        escenario: "Falla la enzima que añade la marca de manosa-6-fosfato a las hidrolasas en el Golgi.",
+        pregunta: "¿Dónde terminan esas enzimas y qué le pasa a los lisosomas?",
+        respuesta:
+          "Sin la marca, el receptor que desvía las hidrolasas hacia la ruta lisosomal no las reconoce, así que siguen la ruta por defecto de la vía secretora y acaban vertidas al exterior de la célula. El resultado tiene dos caras simultáneas y aparentemente contradictorias: concentraciones elevadas de esas enzimas en la sangre y, al mismo tiempo, lisosomas incapaces de digerir su contenido, que se llenan de material sin degradar. Es la enfermedad de células I o mucolipidosis tipo II. El caso ilustra que en la célula el destino de una proteína no depende de lo que la proteína es, sino de la etiqueta que lleva.",
+      },
+      {
+        escenario: "Una célula sufre daño en su ADN pero su punto de control previo a la fase S no funciona.",
+        pregunta: "¿Qué ocurre en la división siguiente y en las posteriores?",
+        respuesta:
+          "La célula entra en fase S y duplica el ADN dañado en lugar de detenerse a repararlo o de activar su propia muerte. La lesión queda fijada en las dos células hijas y se transmite en cada división posterior. Como además el control que faltaba era el que habría dado tiempo a la reparación, cada ciclo añade alteraciones nuevas sobre las anteriores. Esa acumulación progresiva de daño genético en un clon que sigue dividiéndose es uno de los mecanismos centrales de la transformación maligna, y explica por qué los genes de los puntos de control son de los que aparecen mutados con más frecuencia en tumores.",
+      },
+    ],
+    errores: [
+      {
+        error: "Imaginar la célula como una bolsa con orgánulos flotando sueltos.",
+        correccion:
+          "Los compartimentos están conectados por rutas de transporte con dirección definida, y su posición está organizada por el citoesqueleto, que además funciona como vía por la que se desplazan las vesículas. La imagen de la bolsa impide entender el tráfico vesicular, que es justamente donde se explican varias enfermedades.",
+      },
+      {
+        error: "Creer que el retículo rugoso es rugoso por su forma.",
+        correccion:
+          "Lo es por los ribosomas adheridos a su cara citosólica, que le dan ese aspecto granular al microscopio electrónico. La distinción no es estética: define la función. Con ribosomas se fabrican proteínas destinadas a secreción, membrana o lisosoma; sin ellos, el retículo liso se ocupa de lípidos, esteroides, metabolismo de compuestos exógenos y almacenamiento de calcio.",
+      },
+      {
+        error: "Pensar que el lisosoma es peligroso porque «podría digerir la célula».",
+        correccion:
+          "Sus hidrolasas son ácidas y necesitan el pH próximo a 5 que se mantiene dentro del lisosoma. En el citosol, que es prácticamente neutro, quedan muy poco activas. Esa dependencia del pH es una salvaguarda incorporada al propio diseño, no un accidente: una fuga pequeña no provoca autodigestión.",
+      },
+      {
+        error: "Tratar G0 como una pausa breve dentro del ciclo.",
+        correccion:
+          "G0 no es una fase del ciclo sino una salida de él, y puede durar toda la vida de la célula. Lo decisivo es que unas células pueden reincorporarse al ciclo ante un estímulo y otras no: esa diferencia determina qué tejidos se regeneran tras una lesión y cuáles reparan formando cicatriz, que es una de las ideas más rentables de toda la patología.",
+      },
+      {
+        error: "Asumir que toda la información genética de la célula está en el núcleo.",
+        correccion:
+          "Las mitocondrias tienen su propio ADN, se heredan por vía materna y están presentes en muchas copias por célula, de modo que pueden coexistir copias normales y mutadas en la misma célula. Esa mezcla, llamada heteroplasmia, explica por qué las enfermedades mitocondriales varían tanto en gravedad y en qué órganos afectan.",
+      },
+    ],
+    tarjetas: [
+      { front: "¿Qué propiedad de los fosfolípidos hace que formen bicapas solos en medio acuoso?", back: "Que son anfipáticos: cabeza polar y colas hidrófobas." },
+      { front: "¿Qué tipo de proteínas se sintetizan en el retículo endoplásmico rugoso?", back: "Las destinadas a secreción, a membrana o a lisosoma." },
+      { front: "¿Qué compartimento almacena el calcio que dispara la contracción del músculo?", back: "El retículo sarcoplásmico, que es retículo liso especializado." },
+      { front: "¿En qué sentido recorre una proteína el aparato de Golgi?", back: "De la cara cis a la cara trans." },
+      { front: "¿Qué marca química dirige una hidrolasa hacia el lisosoma?", back: "La manosa-6-fosfato." },
+      { front: "¿Qué pH aproximado mantiene el interior del lisosoma?", back: "Alrededor de 5." },
+      { front: "¿Qué degrada el peroxisoma que la mitocondria no procesa?", back: "Los ácidos grasos de cadena muy larga." },
+      { front: "¿En qué fase del ciclo celular se duplica el ADN?", back: "En la fase S." },
+      { front: "¿Qué impide el punto de control del huso mitótico?", back: "Que se separen las cromátidas antes de que todos los cromosomas estén anclados." },
+      { front: "¿Por qué la actividad de una quinasa dependiente de ciclina es intermitente?", back: "Porque solo trabaja unida a su ciclina, y la concentración de ciclinas oscila durante el ciclo." },
+    ],
+    faq: [
+      {
+        q: "¿Cuál es la diferencia entre el retículo endoplásmico rugoso y el liso?",
+        a: "El rugoso tiene ribosomas adheridos a su cara citosólica y sintetiza las proteínas destinadas a ser secretadas, insertadas en membranas o enviadas a lisosomas. El liso carece de ribosomas y se ocupa de sintetizar lípidos y esteroides, de metabolizar compuestos exógenos —función muy desarrollada en el hepatocito— y de almacenar calcio. En el músculo esta última función está tan especializada que ese compartimento recibe el nombre de retículo sarcoplásmico.",
+      },
+      {
+        q: "¿Qué hace el aparato de Golgi?",
+        a: "Recibe las proteínas que salen del retículo endoplásmico y las procesa de forma direccional, de su cara cis a su cara trans: modifica sus cadenas de azúcares, corta precursores cuando hace falta y las clasifica según su destino. Desde su red trans las despacha en vesículas hacia la membrana plasmática, hacia el exterior de la célula o hacia los lisosomas. Es a la vez el taller de acabado y el centro de clasificación de la vía secretora.",
+      },
+      {
+        q: "¿Qué es el ciclo celular y cuáles son sus fases?",
+        a: "Es la secuencia ordenada de acontecimientos por la que una célula duplica su contenido y se divide en dos. Se compone de la interfase, que incluye G1 —crecimiento y decisión de dividirse—, S —duplicación del ADN— y G2 —preparación y verificación—, y de la mitosis, en la que se reparte el material y la célula se divide. Muchas células del organismo están fuera del ciclo, en un estado de reposo llamado G0, del que algunas pueden reincorporarse y otras no.",
+      },
+      {
+        q: "¿Por qué las mitocondrias tienen su propio ADN?",
+        a: "La explicación aceptada es la teoría endosimbiótica: las mitocondrias descienden de bacterias que fueron incorporadas por una célula ancestral y conservaron parte de su genoma, lo que también encaja con su doble membrana. En la práctica clínica lo relevante son las consecuencias: ese ADN se hereda por vía materna, hay muchas copias por célula y pueden coexistir copias normales y mutadas —heteroplasmia—, lo que explica la enorme variabilidad de las enfermedades mitocondriales.",
+      },
+    ],
+    fuentes: [
+      "Alberts, Essential Cell Biology, capítulos de membranas, compartimentos intracelulares, tráfico vesicular y ciclo celular",
+      "Robbins y Cotran, Patología estructural y funcional, capítulo de lesión y adaptación celular",
+      "Lodish, Biología celular y molecular, secciones de tráfico de proteínas y control del ciclo celular",
+    ],
+    relacionados: ["ph-pka-ionizacion", "hipertrofia-vs-hiperplasia", "terminologia-medica"],
+    deudaPractica:
+      "Reconocer estas estructuras en una preparación real es una habilidad distinta de entenderlas. Identificar un citoplasma basófilo por retículo rugoso abundante, o distinguir una figura mitótica de un artefacto, requiere horas de microscopio con alguien que corrija lo que uno cree estar viendo.",
+  },
+
+  {
+    slug: "reacciones-del-metabolismo",
+    titulo: "Las reacciones del metabolismo: cinco patrones y los nombres que los delatan",
+    tituloSEO: "Tipos de reacciones metabólicas: óxido-reducción, hidrólisis, fosforilación e isomerización, y cómo leer el nombre de una enzima",
+    bloque: "andamiaje",
+    unidad: "B0.2 · Química orgánica funcional",
+    nivel: "fundamento",
+    minutos: 22,
+    resumen:
+      "Una vía metabólica parece una lista de veinte pasos irrepetibles y en realidad es la misma media docena de reacciones aplicadas una y otra vez. Aprender los patrones —y aprender que el nombre de cada enzima describe la reacción que cataliza— convierte memorizar una vía en leerla.",
+    porQueImporta:
+      "Es el entregable del Bloque 0: poder mirar un paso de una vía metabólica y decir qué está cambiando y quién lo hace, sin haberlo visto antes. Quien no tiene esto memoriza glucólisis como una secuencia de nombres arbitrarios y la olvida; quien lo tiene la lee como una historia con muy pocos verbos. La diferencia entre las dos experiencias es la razón principal de que bioquímica se sienta imposible.",
+    secciones: [
+      {
+        titulo: "Óxido-reducción: el patrón que mueve la energía",
+        cuerpo: [
+          "Oxidarse es perder electrones y reducirse es ganarlos, siempre a la vez y en la misma reacción: si algo se oxida, otra cosa se reduce. En bioquímica los electrones suelen viajar acompañados de protones, así que en la práctica **perder hidrógenos equivale a oxidarse y ganarlos a reducirse**, y ganar oxígeno también es oxidarse.",
+          "Los electrones no van sueltos: los transportan coenzimas. El **NAD⁺** los recoge y se convierte en NADH, y esa es la moneda de las oxidaciones que van a terminar produciendo ATP. El **FAD** hace lo propio y queda como FADH₂. El **NADPH** es distinto en su función aunque se parezca en su química: es el que aporta poder reductor a las rutas de síntesis, y por eso una célula que fabrica lípidos u hormonas esteroideas necesita mucho.",
+          "Esa separación entre NADH y NADPH es una de las ideas más rentables del metabolismo. La célula mantiene dos monedas de electrones distintas para no mezclar dos economías: la de obtener energía y la de construir moléculas. Confundirlas al estudiar hace que las vías anabólicas y catabólicas parezcan intercambiables cuando no lo son.",
+          "El nombre de la enzima lo delata: una **deshidrogenasa** quita hidrógenos, es decir, oxida. Una **oxidasa** usa oxígeno como aceptor final de electrones. Una **reductasa** hace el camino inverso. Una **oxigenasa** incorpora oxígeno a la molécula, que no es lo mismo que usarlo como aceptor.",
+        ],
+      },
+      {
+        titulo: "Hidrólisis y condensación: romper y unir con agua de por medio",
+        cuerpo: [
+          "Una **hidrólisis** rompe un enlace usando una molécula de agua, que se reparte entre los dos fragmentos. Es lo que ocurre en la digestión: las proteasas hidrolizan enlaces peptídicos, las lipasas hidrolizan enlaces éster de los triglicéridos, las glucosidasas hidrolizan enlaces entre azúcares.",
+          "La **condensación** es la operación inversa: dos moléculas se unen y se libera agua. Por eso también se llama síntesis por deshidratación. Todos los polímeros del organismo se construyen así —péptidos, glucógeno, ácidos nucleicos— y todos se degradan por hidrólisis.",
+          "La asimetría entre las dos direcciones es la que conviene retener. La hidrólisis suele ser espontánea en términos energéticos, mientras que la condensación no lo es y necesita que la célula la pague. Ese es el motivo de que construir cueste energía y degradar la libere, y de que las rutas de síntesis y las de degradación de una misma molécula casi nunca sean el mismo camino recorrido al revés: si lo fueran, funcionarían en una sola dirección y no se podrían regular por separado.",
+        ],
+      },
+      {
+        titulo: "Fosforilación: la operación más frecuente de la célula",
+        cuerpo: [
+          "Añadir un grupo fosfato hace tres cosas a la vez, y por eso aparece en todas partes. Primero, **carga la molécula negativamente**, con lo que deja de atravesar membranas y queda atrapada dentro de la célula. Segundo, **eleva su contenido energético** y la vuelve más reactiva para el paso siguiente. Tercero, **cambia la forma de una proteína** y con ello la enciende o la apaga: eso es una señal.",
+          "Las enzimas que transfieren un fosfato desde el ATP se llaman **quinasas**; las que lo retiran, **fosfatasas**. Ese par forma un interruptor reversible, y la mayor parte de la regulación rápida del metabolismo y de la señalización celular funciona con él. Conviene no confundirlas con las **mutasas**, que no añaden ni quitan nada: mueven un grupo de una posición a otra dentro de la misma molécula.",
+          "El primer paso de la glucólisis es el ejemplo canónico y merece verse con este lente. La glucosa entra en la célula y una quinasa la fosforila. La consecuencia inmediata no es energética sino topológica: la glucosa fosforilada ya no puede salir por el transportador por el que entró, y queda comprometida con la célula. Fosforilar es, antes que nada, una forma de retener.",
+        ],
+      },
+      {
+        titulo: "Isomerización y transferencia de grupos: reordenar y mover",
+        cuerpo: [
+          "Una **isomerización** no añade ni quita átomos: reordena los que ya están. Parece un paso menor y rara vez lo es, porque suele servir para preparar la molécula para la reacción siguiente, colocando un grupo funcional donde hace falta. Las enzimas se llaman **isomerasas**, y las **mutasas** son un caso particular en el que lo que se traslada es un grupo dentro de la propia molécula.",
+          "La **transferencia de grupos** mueve un fragmento de una molécula a otra, y las enzimas se llaman **transferasas**. Dentro de esta familia hay dos que aparecen constantemente: las **carboxilasas**, que añaden CO₂ y suelen necesitar biotina como cofactor, y las **descarboxilasas**, que lo eliminan y con frecuencia dependen de un derivado de la vitamina B6.",
+          "Esa dependencia de cofactores no es un dato suelto que memorizar: es el puente entre el metabolismo y la nutrición clínica. Cuando falta una vitamina, lo que falla es un tipo concreto de reacción, y los síntomas siguen a las rutas donde ese tipo de reacción es imprescindible.",
+        ],
+      },
+      {
+        titulo: "El nombre de la enzima es la respuesta",
+        cuerpo: [
+          "La nomenclatura enzimática es descriptiva, y una vez que se ve deja de haber nombres que memorizar. La raíz dice sobre qué actúa y el final dice qué le hace. **Lactato deshidrogenasa** significa exactamente lo que dice: quita hidrógenos al lactato. **Glucógeno fosforilasa** rompe glucógeno introduciendo un fosfato. **Piruvato carboxilasa** añade CO₂ al piruvato.",
+          "La clasificación formal ordena las enzimas por el tipo de reacción: oxidorreductasas, transferasas, hidrolasas, liasas, isomerasas y ligasas, a las que desde 2018 se añadió una séptima clase para las translocasas, que mueven sustancias a través de membranas. Vale la pena reconocer los seis primeros nombres porque son justamente los patrones de este tema con otra etiqueta.",
+          "Hay una distinción que conviene manejar con cuidado. Se enseña que una **sintetasa** consume un nucleósido trifosfato como el ATP mientras que una **sintasa** no, y como regla mnemotécnica funciona. Pero la nomenclatura oficial ha ido dejando de sostener esa separación de forma estricta, y hay enzimas cuyo nombre consagrado no la respeta. Úsala para orientarte y no como una ley: aquí el nombre orienta, no demuestra.",
+        ],
+      },
+    ],
+    analogia: {
+      campo: "Lenguaje",
+      texto:
+        "Una vía metabólica se lee como una frase: el sustrato es el sujeto, la enzima es el verbo y el nombre de la enzima dice qué verbo es. Aprender los patrones de reacción es aprender la media docena de verbos con los que está escrito todo el metabolismo.",
+      dondeSeRompe:
+        "En una frase el verbo determina el resultado por sí solo, y una reacción bioquímica no está determinada por su enzima: depende de las concentraciones a ambos lados, del estado energético de la célula y de la regulación que actúe sobre esa enzima en ese momento. Muchas reacciones son reversibles y su dirección real la fija el contexto, no el nombre. Y hay excepciones de nomenclatura, como la distinción entre sintasa y sintetasa, que la analogía haría parecer más fiables de lo que son.",
+    },
+    recall: [
+      {
+        pregunta: "Enumera los patrones de reacción del metabolismo y di cómo reconocer cada uno por el nombre de su enzima.",
+        referencia:
+          "Óxido-reducción: transferencia de electrones, que en bioquímica suele significar pérdida o ganancia de hidrógenos; las enzimas se llaman deshidrogenasas si quitan hidrógenos, oxidasas si usan oxígeno como aceptor final, oxigenasas si lo incorporan a la molécula y reductasas si añaden electrones. Hidrólisis y condensación: romper un enlace con agua o unir dos moléculas liberándola; hidrolasas, y dentro de ellas proteasas, lipasas y glucosidasas según el sustrato. Fosforilación: las quinasas transfieren un fosfato desde el ATP y las fosfatasas lo retiran. Isomerización: reordenar los átomos que ya están, con isomerasas, y mutasas cuando el grupo se traslada dentro de la misma molécula. Transferencia de grupos: transferasas, con las carboxilasas y descarboxilasas como casos frecuentes. La regla general es que la raíz del nombre indica el sustrato y la terminación indica la operación.",
+        pistas: [
+          "Son cinco patrones y el primero es el que mueve la energía.",
+          "Dos de ellos son operaciones inversas la una de la otra.",
+          "¿Qué añade una quinasa y de dónde lo saca?",
+        ],
+      },
+      {
+        pregunta: "Explica las tres cosas que consigue la célula al fosforilar una molécula, y por qué el primer paso de la glucólisis es el ejemplo típico.",
+        referencia:
+          "Primero, el fosfato aporta carga negativa, y una molécula cargada no atraviesa la bicapa lipídica: queda atrapada dentro de la célula. Segundo, eleva el contenido energético de la molécula y la hace más reactiva para el paso siguiente de la vía. Tercero, si lo que se fosforila es una proteína, el cambio de carga modifica su conformación y con ello su actividad, lo que convierte la fosforilación en un mecanismo de señalización reversible, ya que una fosfatasa puede revertirla. En la glucólisis, la glucosa que entra en la célula es fosforilada de inmediato por una quinasa; la consecuencia inmediata es que ya no puede salir por el transportador por el que entró. El paso retiene la glucosa y la compromete con la ruta, además de prepararla químicamente para los pasos siguientes.",
+        pistas: [
+          "Una de las tres consecuencias es puramente topológica: tiene que ver con dónde puede estar la molécula.",
+          "¿Qué le ocurre a una molécula cargada frente a una bicapa lipídica?",
+          "¿Qué enzima revierte una fosforilación y por qué eso convierte el par en un interruptor?",
+        ],
+      },
+    ],
+    perturbaciones: [
+      {
+        escenario: "Una célula no consigue regenerar NADPH pero mantiene intacta su producción de NADH.",
+        pregunta: "¿Qué tipo de procesos se verán afectados y cuáles seguirán funcionando?",
+        respuesta:
+          "Seguirán funcionando las rutas de obtención de energía, porque son las que usan NAD⁺ y NADH para transportar los electrones que acaban alimentando la fosforilación oxidativa. Se verán afectadas las rutas que necesitan poder reductor para construir: síntesis de ácidos grasos, síntesis de colesterol y de hormonas esteroideas, y también los sistemas que mantienen las defensas frente al daño oxidativo, que dependen de NADPH para regenerarse. El caso ilustra por qué la célula mantiene dos monedas de electrones separadas en lugar de una sola: son dos economías distintas, la de gastar y la de construir, y tenerlas separadas permite regularlas de forma independiente.",
+      },
+      {
+        escenario: "Se bloquea la fosfatasa que revierte la fosforilación de una enzima reguladora, sin tocar la quinasa correspondiente.",
+        pregunta: "¿En qué estado queda esa enzima y qué se pierde?",
+        respuesta:
+          "La enzima queda fosforilada de forma permanente, porque la quinasa sigue añadiendo fosfato y ya nada lo retira. Si la fosforilación la activaba, quedará encendida sin posibilidad de apagarse; si la inhibía, quedará apagada. Lo que se pierde no es solo un estado concreto sino la reversibilidad, que es lo que hacía útil el mecanismo: un interruptor que no se puede devolver a su posición deja de ser un interruptor y pasa a ser un ajuste fijo. La señal deja de poder responder al cambio de condiciones, que es justamente para lo que existía.",
+      },
+    ],
+    errores: [
+      {
+        error: "Creer que oxidarse significa reaccionar con oxígeno.",
+        correccion:
+          "Oxidarse es perder electrones, y eso ocurre en muchísimas reacciones donde no interviene oxígeno alguno. El nombre es un accidente histórico procedente de las primeras reacciones estudiadas. En bioquímica el criterio práctico es la pérdida de hidrógenos, que es lo que hace una deshidrogenasa, y de ahí que muchas oxidaciones ocurran sin que el oxígeno aparezca en la ecuación.",
+      },
+      {
+        error: "Usar NADH y NADPH como si fueran la misma coenzima con distinto nombre.",
+        correccion:
+          "Su química es casi idéntica pero su papel no lo es. El NADH transporta electrones hacia la producción de energía, mientras que el NADPH aporta poder reductor a las rutas de síntesis y a la defensa frente al daño oxidativo. La célula las mantiene separadas precisamente para poder regular por vías independientes lo que gasta y lo que construye.",
+      },
+      {
+        error: "Pensar que una vía de síntesis es la vía de degradación recorrida al revés.",
+        correccion:
+          "Suelen compartir varios pasos, pero difieren siempre en los irreversibles, y esa diferencia es el punto entero. Si ambas usaran exactamente las mismas enzimas, cualquier señal que activara una activaría también la otra y la célula no podría decidir qué hacer. Al tener pasos propios, cada dirección se regula por separado y se evita un ciclo fútil que solo consumiría energía.",
+      },
+      {
+        error: "Suponer que el sufijo -asa siempre indica lo mismo en cualquier enzima.",
+        correccion:
+          "El sufijo señala que es una enzima, pero lo informativo es la palabra completa. Una quinasa añade fosfato desde el ATP, una fosforilasa introduce un fosfato inorgánico al romper un enlace y una fosfatasa retira un fosfato: tres operaciones distintas con nombres parecidos. Y la distinción entre sintasa y sintetasa, útil como orientación, no la respeta rigurosamente la nomenclatura oficial.",
+      },
+      {
+        error: "Tratar los cofactores vitamínicos como un dato de examen sin relación con la clínica.",
+        correccion:
+          "Cada cofactor habilita un tipo concreto de reacción: la biotina en las carboxilaciones, los derivados de la vitamina B6 en muchas descarboxilaciones y transaminaciones. Cuando falta el cofactor, lo que se detiene es ese tipo de reacción en todas las rutas donde aparece, y ahí es donde se origina el cuadro clínico. El cofactor es el nexo entre el metabolismo y la nutrición.",
+      },
+    ],
+    tarjetas: [
+      { front: "En bioquímica, ¿qué le ocurre a una molécula que pierde hidrógenos?", back: "Se oxida." },
+      { front: "¿Qué operación cataliza una deshidrogenasa?", back: "Una oxidación: retira hidrógenos del sustrato." },
+      { front: "¿Qué coenzima aporta poder reductor a las rutas de síntesis?", back: "El NADPH." },
+      { front: "¿Qué coenzima recoge electrones destinados a producir energía?", back: "El NAD⁺, que queda como NADH." },
+      { front: "¿Qué diferencia hay entre una quinasa y una fosfatasa?", back: "La quinasa añade un fosfato desde el ATP; la fosfatasa lo retira." },
+      { front: "¿Qué hace una mutasa?", back: "Traslada un grupo de una posición a otra dentro de la misma molécula." },
+      { front: "¿Qué reacción rompe un enlace consumiendo una molécula de agua?", back: "La hidrólisis." },
+      { front: "¿Qué se libera cuando dos moléculas se unen por condensación?", back: "Una molécula de agua." },
+      { front: "¿Qué cofactor necesitan habitualmente las carboxilasas?", back: "La biotina." },
+      { front: "¿Por qué la glucosa fosforilada no puede salir de la célula?", back: "Porque el fosfato le da carga y no atraviesa la bicapa lipídica." },
+    ],
+    faq: [
+      {
+        q: "¿Cuáles son los tipos principales de reacciones del metabolismo?",
+        a: "Cinco patrones cubren casi todo: óxido-reducción, que transfiere electrones y en bioquímica suele verse como pérdida o ganancia de hidrógenos; hidrólisis y condensación, que rompen o forman enlaces con agua de por medio; fosforilación, que añade o retira grupos fosfato; isomerización, que reordena los átomos sin añadir ni quitar ninguno; y transferencia de grupos, que mueve un fragmento de una molécula a otra. Una vía metabólica larga es en general estos mismos patrones repetidos sobre sustratos distintos.",
+      },
+      {
+        q: "¿Qué diferencia hay entre NADH y NADPH?",
+        a: "Químicamente son casi iguales y ambos transportan electrones, pero cumplen papeles distintos. El NADH lleva electrones hacia las rutas que producen energía y terminan en la fosforilación oxidativa. El NADPH aporta poder reductor a las rutas de síntesis, como la de ácidos grasos y la de esteroides, y a los sistemas que protegen frente al daño oxidativo. La célula mantiene las dos monedas separadas para poder regular de forma independiente lo que gasta y lo que construye.",
+      },
+      {
+        q: "¿Qué hace una quinasa?",
+        a: "Transfiere un grupo fosfato desde el ATP a otra molécula. Eso consigue tres cosas: aporta carga negativa, lo que impide que la molécula atraviese membranas y la retiene dentro de la célula; eleva su contenido energético y la hace más reactiva; y, cuando lo que se fosforila es una proteína, cambia su conformación y con ello su actividad. Como una fosfatasa puede retirar ese fosfato, el par forma un interruptor reversible que es la base de gran parte de la señalización celular.",
+      },
+      {
+        q: "¿Cómo se leen los nombres de las enzimas?",
+        a: "La raíz indica el sustrato sobre el que actúan y la terminación indica la operación que realizan. Lactato deshidrogenasa retira hidrógenos al lactato; piruvato carboxilasa añade CO₂ al piruvato; glucógeno fosforilasa rompe el glucógeno introduciendo un fosfato. Reconocer las terminaciones más frecuentes —quinasa, fosfatasa, deshidrogenasa, isomerasa, mutasa, transferasa, hidrolasa— permite deducir qué ocurre en un paso de una vía sin haberlo estudiado antes.",
+      },
+    ],
+    fuentes: [
+      "Lehninger, Principios de bioquímica (Nelson y Cox), capítulos de bioenergética y de introducción al metabolismo",
+      "Lippincott Illustrated Reviews: Bioquímica, capítulos de enzimas y bioenergética",
+      "Nomenclatura de enzimas del Comité de Nomenclatura de la IUBMB, incluida la clase 7 de translocasas añadida en 2018",
+    ],
+    relacionados: ["grupos-funcionales", "ph-pka-ionizacion", "biologia-celular"],
+  },
 ];
 
 export const getTema = (slug: string) => TEMAS.find((t) => t.slug === slug);

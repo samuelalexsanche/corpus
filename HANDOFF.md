@@ -6,15 +6,15 @@ Documento para retomar el desarrollo. Estado al 2026-08-11.
 
 ## 1. Estado actual
 
-**Funciona.** `npm run build` genera 38 páginas estáticas, TypeScript estricto en verde,
-cero errores, cero warnings. ~4,900 líneas en 44 archivos fuente. 396 KB sin `node_modules`.
+**Funciona y está en línea.** `npm run build:export` genera 39 páginas estáticas, TypeScript
+estricto en verde, 176 tests en verde. ~6,200 líneas en 52 archivos fuente.
 
 | Área | Estado |
 |---|---|
 | Arquitectura y stack | ✅ Completo |
 | Sistema de diseño | ✅ Completo (claro/oscuro, tokens, accesible) |
 | Currículum | ✅ 11 bloques, 74 unidades |
-| Temas desarrollados | 🟡 6 de ~74 unidades — **el cuello de botella** |
+| Temas desarrollados | 🟡 10 de ~74 unidades — **sigue siendo el cuello de botella** |
 | Modos de estudio | ✅ 5 modos funcionando |
 | SRS | ✅ SM-2 con persistencia local exportable |
 | Diagramas | 🟡 lazos de control ✅, vías y curvas pendientes |
@@ -67,20 +67,26 @@ de `/corpus`, y eso vive en dos variables que deben moverse juntas — `BASE_PAT
 Falta también pasar el JSON-LD por Rich Results Test (los cuatro tipos parsean, pero no se han
 validado contra el schema de Google).
 
-### P1 — Contenido del Bloque 0
+### P1 — Contenido del Bloque 0 ✅
 
-Los cuatro temas que faltan para cerrar el andamiaje. Cada uno sigue el estándar de
-`CONTENIDO.md` y se añade a `content/temas.ts`:
+Los cuatro escritos y publicados: `ph-pka-ionizacion`, `biologia-celular`, `quiralidad` y
+`reacciones-del-metabolismo`. Con ellos el andamiaje queda cerrado y el Bloque 0 tiene su
+entregable cubierto: leer un paso de una vía metabólica y decir qué grupo funcional se
+transforma y quién lo hace.
 
-- `ph-pka-ionizacion` — por qué al pH de la sangre un carboxilo pierde su protón y un amino
-  lo gana; buffers; introducción al equilibrio ácido-base
-- `biologia-celular` — organelos, membranas, ciclo celular, tráfico vesicular
-- `quiralidad` — por qué una enzima acepta una forma y rechaza su espejo
-- `reacciones-del-metabolismo` — óxido-reducción, hidrólisis/condensación, fosforilación,
-  isomerización; y cómo los nombres de las enzimas describen la reacción
+Cada uno pasa `tests/contenido.test.ts`, así que cumple el contrato sin que nadie lo revise a
+ojo. Tres cosas que se decidieron al escribirlos y conviene no deshacer:
 
-**Aceptación:** cada tema con al menos 2 recall, 1 perturbación, 3 errores comunes, 4 tarjetas,
-3 FAQ y fuentes citadas. `npm run build` pasa.
+- **La talidomida se cuenta completa.** La versión popular —«bastaba con separar los
+  enantiómeros»— es falsa: se interconvierten en condiciones fisiológicas. Contar la versión
+  corta habría sido más limpio y habría enseñado algo incorrecto.
+- **La distinción sintasa/sintetasa se presenta como orientación, no como ley**, porque la
+  nomenclatura oficial ya no la sostiene de forma estricta.
+- **`ph-pka-ionizacion` lleva diagrama de lazo** (tapa el efector), porque el control
+  respiratorio del pH es un lazo de control y conecta el Bloque 0 con fisiología.
+
+**Sigue pendiente lo grande:** 64 de las ~74 unidades no tienen tema. El cuello de botella no
+se movió, solo se cerró el bloque de entrada.
 
 ### P2 — Diagramas 🟡
 

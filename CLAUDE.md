@@ -43,7 +43,8 @@ comprueba que cada tema tenga recall con referencia calificable, errores con cor
 precisa, tarjetas, FAQ, fuentes y —si hay analogía— su `dondeSeRompe`. Un tema incompleto
 no pasa CI.
 
-`npm run build` es la verificación mínima. Genera 38+ páginas estáticas y corre TypeScript.
+`npm run build` es la verificación mínima. Genera 39+ páginas estáticas y corre TypeScript.
+`npm test` es la otra: sin ella un tema incompleto llega a producción.
 
 ## Mapa
 
