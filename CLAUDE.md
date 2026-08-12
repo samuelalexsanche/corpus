@@ -97,6 +97,26 @@ Al añadir un tema, `generateStaticParams` lo recoge solo y entra al sitemap aut
 ## Convenciones
 
 - Español. Término técnico en inglés cuando sea el estándar de la literatura.
+- **Vocabulario de medicina, no de ingeniería.** Quien lee esto es estudiante de medicina o
+  alguien con curiosidad, no un ingeniero. La fisiología ya tiene palabras para lo que la
+  teoría de control llama de otra forma, y son esas las que se usan:
+
+  | No escribir | Escribir |
+  |---|---|
+  | lazo (de control) | circuito de regulación |
+  | controlador | centro integrador |
+  | comparador | (disolverlo: «se le resta lo medido al punto de ajuste») |
+  | perturbación | estímulo, o simplemente qué cambia |
+  | ganancia | fuerza de la respuesta |
+  | constante de tiempo | rapidez o retraso de la respuesta |
+  | variable regulada | variable controlada |
+  | diagrama de bloques | esquema del circuito |
+  | nodo del sistema | punto concreto del mecanismo |
+
+  `set point` sí se conserva junto a «punto de ajuste», porque el estudiante lo va a encontrar
+  así en los libros. Lo mismo con `SM-2`: se nombra en `/metodo`, donde se explica, y no como
+  reclamo en cada página. Y una analogía debe tomarse de algo cotidiano (un termostato), no de
+  otra disciplina técnica: explicar lo desconocido con algo aún más desconocido no explica.
 - Sin emojis, sin entusiasmo decorativo, sin «¡excelente!».
 - Tokens de color por variables CSS en `globals.css`. **No hardcodear colores** en componentes.
 - Accesibilidad no es opcional: jerarquía de encabezados, `aria-label` en controles de icono,

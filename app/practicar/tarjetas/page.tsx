@@ -6,7 +6,7 @@ import { metaPagina } from "@/lib/seo";
 
 export const metadata = metaPagina({
   titulo: "Tarjetas con repetición espaciada",
-  descripcion: "Practica medicina con flashcards de recuperación activa y algoritmo SM-2. Terminología, fisiología y patología. Gratis, sin cuenta, guardado en tu navegador.",
+  descripcion: "Practica medicina con flashcards de recuperación activa y repetición espaciada. Terminología, fisiología y patología. Gratis, sin cuenta, guardado en tu navegador.",
   ruta: "/practicar/tarjetas",
   keywords: ["flashcards medicina", "anki medicina español", "repetición espaciada", "tarjetas terminología médica"],
 });

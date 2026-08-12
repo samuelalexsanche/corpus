@@ -10,7 +10,7 @@ export const dynamic = "force-static";
 export default function sitemap(): MetadataRoute.Sitemap {
   const ahora = new Date();
   const fijas = ["/", "/curriculum", "/practicar", "/practicar/tarjetas", "/practicar/recall",
-    "/practicar/casos", "/practicar/terminologia", "/practicar/perturbaciones",
+    "/practicar/casos", "/practicar/terminologia", "/practicar/predicciones",
     "/metodo", "/recursos", "/progreso", "/sobre"];
 
   return [

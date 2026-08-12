@@ -3,26 +3,26 @@ import { useState } from "react";
 import { Check, Eye, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { aciertaLazo, type LazoDatos, type PiezaLazo } from "@/lib/lazo";
+import { aciertaPieza, type CircuitoDatos, type PiezaCircuito } from "@/lib/circuito";
 
 /**
- * Diagrama de un lazo de control, con una pieza tapada.
+ * Diagrama de un circuito de regulación, con una pieza tapada.
  *
  * La regla de diseño que lo gobierna: **un diagrama del mecanismo completo es
- * la respuesta disfrazada.** Si el lector ve el lazo entero, lo lee y siente
+ * la respuesta disfrazada.** Si el lector ve el circuito entero, lo lee y siente
  * que lo entiende, que es justo el modo de falla que esta plataforma existe
  * para combatir. Así que el diagrama muestra la relación —quién alimenta a
  * quién— y tapa una pieza para que el lector la produzca.
  *
- * Sirve para cualquier lazo: termorregulación, glucemia, presión arterial.
+ * Sirve para cualquier circuito: temperatura, glucemia, presión arterial.
  * Solo cambian los datos.
  */
 
-const ETIQUETA: Record<PiezaLazo, string> = {
+const ETIQUETA: Record<PiezaCircuito, string> = {
   sensor: "el sensor",
-  controlador: "el controlador",
+  centroIntegrador: "el centro integrador",
   efector: "el efector",
-  setPoint: "el set point",
+  setPoint: "el punto de ajuste",
 };
 
 /**
@@ -97,21 +97,21 @@ function Flecha({ d, etiqueta, ex, ey }: { d: string; etiqueta?: string; ex?: nu
   );
 }
 
-export function DiagramaLazo({ datos, titulo }: { datos: LazoDatos; titulo?: string }) {
+export function DiagramaCircuito({ datos, titulo }: { datos: CircuitoDatos; titulo?: string }) {
   const [respuesta, setRespuesta] = useState("");
   const [veredicto, setVeredicto] = useState<"pendiente" | "acierto" | "fallo" | "revelado">("pendiente");
   const resuelta = veredicto === "acierto" || veredicto === "revelado";
 
   const comprobar = () => {
     if (!respuesta.trim()) return;
-    setVeredicto(aciertaLazo(respuesta, datos.aceptadas) ? "acierto" : "fallo");
+    setVeredicto(aciertaPieza(respuesta, datos.aceptadas) ? "acierto" : "fallo");
   };
 
   const reiniciar = () => { setRespuesta(""); setVeredicto("pendiente"); };
 
-  const esc = (p: PiezaLazo) => datos.incognita === p;
-  const valor: Record<PiezaLazo, string> = {
-    sensor: datos.sensor, controlador: datos.controlador,
+  const esc = (p: PiezaCircuito) => datos.incognita === p;
+  const valor: Record<PiezaCircuito, string> = {
+    sensor: datos.sensor, centroIntegrador: datos.centroIntegrador,
     efector: datos.efector, setPoint: datos.setPoint,
   };
 
@@ -127,15 +127,15 @@ export function DiagramaLazo({ datos, titulo }: { datos: LazoDatos; titulo?: str
           viewBox="0 0 880 360" className="h-auto w-full min-w-[680px]"
           role="img"
           aria-label={
-            `Diagrama de bloques del lazo que regula ${datos.variable}. ` +
-            `El set point (${esc("setPoint") ? "una pieza sin nombrar" : datos.setPoint}) entra a un ` +
-            `comparador, que le resta la medición y produce el error. ` +
-            `El error va a ${esc("controlador") ? "una pieza sin nombrar" : datos.controlador}, ` +
+            `Esquema del circuito que regula ${datos.variable}. ` +
+            `Al punto de ajuste (${esc("setPoint") ? "una pieza sin nombrar" : datos.setPoint}) se le resta ` +
+            `lo que el sensor midió, y esa diferencia es el error. ` +
+            `El error llega a ${esc("centroIntegrador") ? "una pieza sin nombrar" : datos.centroIntegrador}, ` +
             `que ordena a ${esc("efector") ? "una pieza sin nombrar" : datos.efector}; ` +
             `este ${datos.correccion} sobre ${datos.variable}. ` +
-            `${datos.perturbacion ? `Una perturbación (${datos.perturbacion}) empuja la variable desde fuera. ` : ""}` +
+            `${datos.estimulo ? `Un estímulo externo (${datos.estimulo}) cambia la variable. ` : ""}` +
             `${esc("sensor") ? "Una pieza sin nombrar" : datos.sensor} mide la variable y devuelve la ` +
-            `medición al comparador, cerrando el lazo.`
+            `medición, y con eso el circuito se cierra.`
           }
         >
           <defs>
@@ -146,36 +146,36 @@ export function DiagramaLazo({ datos, titulo }: { datos: LazoDatos; titulo?: str
           </defs>
 
           {/*
-            Diagrama de bloques clásico, de izquierda a derecha:
-            set point → comparador → controlador → efector → variable, y el
-            sensor devolviendo la medición al comparador.
+            Esquema del circuito, de izquierda a derecha: el punto de ajuste se
+            compara con lo que el sensor midió, y de esa diferencia sale la
+            orden que llega al efector y cambia la variable.
 
-            El set point entra por el comparador y no es una etapa de la
-            cadena: es la referencia contra la que se resta la medición. Ponerlo
-            en serie entre controlador y efector sería dibujar mal el mecanismo,
-            y el error de dibujo se aprende igual que el texto.
+            El punto de ajuste no es una etapa de la cadena: es la referencia
+            contra la que se resta lo medido. Dibujarlo en serie entre el centro
+            integrador y el efector sería dibujar mal el mecanismo, y un dibujo
+            equivocado se aprende igual de bien que un texto equivocado.
           */}
-          <Caja x={10} y={116} titulo="Set point" texto={datos.setPoint}
+          <Caja x={10} y={116} titulo="Punto de ajuste" texto={datos.setPoint}
             oculta={esc("setPoint")} resuelta={resuelta} />
 
-          {/* Comparador: aquí nace el error, que es lo único que el lazo ve. */}
+          {/* Aquí nace el error, que es lo único a lo que el circuito responde. */}
           <circle cx={222} cy={152} r={19} fill="hsl(var(--card))" stroke="hsl(var(--border))" />
           <text x={222} y={158} fontSize={18} textAnchor="middle" fill="hsl(var(--foreground))">−</text>
           <Flecha d="M 174 152 H 197" />
 
-          <Caja x={272} y={116} titulo="Controlador" texto={datos.controlador}
-            oculta={esc("controlador")} resuelta={resuelta} />
+          <Caja x={272} y={116} titulo="Centro integrador" texto={datos.centroIntegrador}
+            oculta={esc("centroIntegrador")} resuelta={resuelta} />
           <Flecha d="M 241 152 H 266" etiqueta="error" ex={253} ey={138} />
 
           <Caja x={496} y={116} titulo="Efector" texto={datos.efector}
             oculta={esc("efector")} resuelta={resuelta} />
           <Flecha d="M 436 152 H 490" etiqueta="ordena" ex={463} ey={138} />
 
-          {/* Variable regulada: la salida del lazo, resaltada. */}
+          {/* Variable controlada: la salida del circuito, resaltada. */}
           <rect x={706} y={116} width={160} height={ALTO_CAJA} rx={10}
             fill="hsl(var(--primary) / 0.08)" stroke="hsl(var(--primary))" strokeWidth={1.5} />
           <text x={719} y={137} fontSize={9.5} fontWeight={600} letterSpacing={0.7} fill="hsl(var(--primary))">
-            VARIABLE REGULADA
+            VARIABLE CONTROLADA
           </text>
           <text x={719} y={157} fontSize={12.5} fill="hsl(var(--foreground))">
             {enLineas(datos.variable, 134, 12.5).map((l, i) => (
@@ -184,13 +184,13 @@ export function DiagramaLazo({ datos, titulo }: { datos: LazoDatos; titulo?: str
           </text>
           <Flecha d="M 660 152 H 700" etiqueta={datos.correccion} ex={680} ey={104} />
 
-          {datos.perturbacion && (
+          {datos.estimulo && (
             <>
               <text x={719} y={38} fontSize={9.5} fontWeight={600} letterSpacing={0.7} fill="hsl(var(--destructive))">
-                PERTURBACIÓN
+                ESTÍMULO
               </text>
               <text x={719} y={56} fontSize={12} fill="hsl(var(--muted-foreground))">
-                {enLineas(datos.perturbacion, 145, 12).map((l, i) => (
+                {enLineas(datos.estimulo, 145, 12).map((l, i) => (
                   <tspan key={i} x={719} dy={i === 0 ? 0 : 14}>{l}</tspan>
                 ))}
               </text>
@@ -199,7 +199,7 @@ export function DiagramaLazo({ datos, titulo }: { datos: LazoDatos; titulo?: str
             </>
           )}
 
-          {/* Rama de vuelta: la variable se mide y la medición se resta en el comparador. */}
+          {/* Rama de vuelta: la variable se mide y lo medido se resta al punto de ajuste. */}
           <Caja x={430} y={252} titulo="Sensor" texto={datos.sensor}
             oculta={esc("sensor")} resuelta={resuelta} />
           <Flecha d="M 786 188 V 288 H 600" etiqueta="mide" ex={690} ey={278} />
@@ -209,12 +209,12 @@ export function DiagramaLazo({ datos, titulo }: { datos: LazoDatos; titulo?: str
       </div>
 
       <div className="mt-5 border-t border-border pt-5">
-        <label htmlFor="lazo-respuesta" className="text-sm font-medium">
+        <label htmlFor="circuito-respuesta" className="text-sm font-medium">
           ¿Qué va en el hueco? Nombra {ETIQUETA[datos.incognita]}.
         </label>
         <div className="mt-2.5 flex flex-wrap gap-2">
           <input
-            id="lazo-respuesta"
+            id="circuito-respuesta"
             value={respuesta}
             onChange={(e) => { setRespuesta(e.target.value); setVeredicto("pendiente"); }}
             onKeyDown={(e) => { if (e.key === "Enter") comprobar(); }}

@@ -4,21 +4,21 @@
  * componente cliente al módulo de contenido.
  */
 
-export type PiezaLazo = "sensor" | "controlador" | "efector" | "setPoint";
+export type PiezaCircuito = "sensor" | "centroIntegrador" | "efector" | "setPoint";
 
-export interface LazoDatos {
+export interface CircuitoDatos {
   /** Qué se está regulando. Es el nodo del que sale y al que vuelve el lazo. */
   variable: string;
   setPoint: string;
   sensor: string;
-  controlador: string;
+  centroIntegrador: string;
   efector: string;
   /** Etiqueta de la flecha de vuelta: qué le hace el efector a la variable. */
   correccion: string;
   /** Lo que empuja al sistema fuera de su set point. */
-  perturbacion?: string;
+  estimulo?: string;
   /** La pieza que se tapa y hay que nombrar. */
-  incognita: PiezaLazo;
+  incognita: PiezaCircuito;
   /**
    * Respuestas que cuentan como acierto. Se comparan sin acentos ni
    * mayúsculas. Conviene incluir sinónimos reales: quien escribe «centro
@@ -38,7 +38,7 @@ const normalizar = (s: string) =>
  * sabe lo mismo que quien escribe «hipotálamo», y castigar el artículo
  * convertiría un ejercicio de mecanismo en uno de ortografía.
  */
-export function aciertaLazo(respuesta: string, aceptadas: string[]): boolean {
+export function aciertaPieza(respuesta: string, aceptadas: string[]): boolean {
   const dada = normalizar(respuesta);
   if (!dada) return false;
   return aceptadas.some((a) => {

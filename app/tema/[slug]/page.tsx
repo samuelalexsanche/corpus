@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { TEMAS, getTema } from "@/content/temas";
 import { getBloque } from "@/content/curriculum";
 import { RecallCard } from "@/components/recall-card";
-import { DiagramaLazo } from "@/components/diagrama-lazo";
+import { DiagramaCircuito } from "@/components/diagrama-circuito";
 import { JsonLd } from "@/components/jsonld";
 import { ldArticulo, ldFAQ, ldMigas, metaPagina } from "@/lib/seo";
 
@@ -93,7 +93,7 @@ export default async function TemaPage({ params }: { params: Promise<{ slug: str
 
             {t.diagrama && (
               <section className="mt-12">
-                <DiagramaLazo datos={t.diagrama} titulo="El lazo, con una pieza tapada" />
+                <DiagramaCircuito datos={t.diagrama} titulo="El circuito, con una pieza tapada" />
               </section>
             )}
 
@@ -123,16 +123,16 @@ export default async function TemaPage({ params }: { params: Promise<{ slug: str
               </div>
             </section>
 
-            {t.perturbaciones && t.perturbaciones.length > 0 && (
+            {t.predicciones && t.predicciones.length > 0 && (
               <section className="mt-14">
                 <h2 className="flex items-center gap-2 text-2xl font-semibold tracking-tight">
-                  <Zap className="h-5 w-5 text-accent" /> Predice la perturbación
+                  <Zap className="h-5 w-5 text-accent" /> Predice qué pasa
                 </h2>
                 <p className="mt-2 max-w-2xl text-muted-foreground">
-                  Entender un mecanismo significa poder predecir qué pasa si lo empujas en un punto concreto.
+                  Entender un mecanismo significa poder predecir qué ocurre si cambias una de sus piezas.
                 </p>
                 <div className="mt-6 space-y-4">
-                  {t.perturbaciones.map((p, i) => (
+                  {t.predicciones.map((p, i) => (
                     <details key={i} className="group rounded-xl border border-border bg-card p-5">
                       <summary className="cursor-pointer list-none">
                         <span className="block text-sm text-muted-foreground">{p.escenario}</span>

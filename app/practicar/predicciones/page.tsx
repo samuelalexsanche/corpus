@@ -4,18 +4,18 @@ import { TEMAS } from "@/content/temas";
 import { metaPagina } from "@/lib/seo";
 
 export const metadata = metaPagina({
-  titulo: "Predice la perturbación",
-  descripcion: "Ejercicios de predicción: qué le ocurre a un sistema fisiológico si lo perturbas en un punto concreto. El formato que distingue entender de memorizar.",
-  ruta: "/practicar/perturbaciones",
+  titulo: "Predice qué pasa",
+  descripcion: "Ejercicios de predicción: qué le ocurre al cuerpo si cambias una pieza del mecanismo. El formato que distingue entender de memorizar.",
+  ruta: "/practicar/predicciones",
   keywords: ["fisiología ejercicios", "razonamiento fisiológico", "predecir mecanismo", "estudiar fisiología"],
 });
 
-export default function PerturbacionesPage() {
-  const items = TEMAS.flatMap((t) => (t.perturbaciones ?? []).map((p) => ({ ...p, tema: t })));
+export default function PrediccionesPage() {
+  const items = TEMAS.flatMap((t) => (t.predicciones ?? []).map((p) => ({ ...p, tema: t })));
   return (
     <div className="container max-w-3xl py-14">
       <h1 className="flex items-center gap-2 text-3xl font-semibold tracking-tight">
-        <Zap className="h-7 w-7 text-accent" /> Predice la perturbación
+        <Zap className="h-7 w-7 text-accent" /> Predice qué pasa
       </h1>
       <p className="mt-4 leading-relaxed text-muted-foreground">
         Entender un mecanismo no es poder recitarlo: es poder decir qué le pasa al sistema cuando lo empujas en un

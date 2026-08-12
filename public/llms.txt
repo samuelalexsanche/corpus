@@ -23,13 +23,13 @@ mediante recall en frío, y declara explícitamente lo que no puede enseñarse e
 
 - [Currículum](/curriculum): 11 bloques, 74 unidades, prerrequisitos y entregables.
 - [Método](/metodo): recuperación activa, repetición espaciada, escala de dominio 0–4.
-- [Practicar](/practicar): tarjetas SM-2, recall en frío, casos por etapas, decodificador de términos, predicción de perturbaciones.
+- [Practicar](/practicar): tarjetas con repetición espaciada, recuperación en frío, casos por etapas, decodificador de términos y predicción de consecuencias.
 - [Terminología](/practicar/terminologia): 249 morfemas griegos y latinos con significado y ejemplo.
 - [Recursos](/recursos): libros columna, atlas y bancos por bloque, con alternativas gratuitas señaladas.
 
 ## Temas con contenido desarrollado
 
-- [Retroalimentación negativa](/tema/retroalimentacion-negativa): sensor, controlador, set point, efector; el error como señal; ganancia y retraso.
+- [Retroalimentación negativa](/tema/retroalimentacion-negativa): receptor, centro integrador, punto de ajuste, efector; el error como señal; fuerza y retraso de la respuesta.
 - [Fiebre e hipertermia](/tema/fiebre-vs-hipertermia): set point elevado frente a efector saturado; por qué el antipirético no actúa en golpe de calor.
 - [Hipertrofia e hiperplasia](/tema/hipertrofia-vs-hiperplasia): capacidad proliferativa del tejido; tejidos post-mitóticos; cicatriz y plasticidad.
 - [Terminología médica](/tema/terminologia-medica): composición de términos, orden de lectura, dobletes griego-latín.

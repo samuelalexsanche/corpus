@@ -9,18 +9,18 @@ import { CASOS } from "@/content/casos";
 
 export const metadata = metaPagina({
   titulo: "Modos de práctica",
-  descripcion: "Cinco formas de estudiar medicina con recuperación activa: repetición espaciada, recall en frío, casos clínicos por etapas, decodificación de términos y predicción de perturbaciones.",
+  descripcion: "Cinco formas de estudiar medicina con recuperación activa: repetición espaciada, recall en frío, casos clínicos por etapas, decodificación de términos y predicción de consecuencias.",
   ruta: "/practicar",
   keywords: ["practicar medicina", "flashcards medicina", "casos clínicos para estudiar", "recall activo medicina"],
 });
 
 const nTarjetas = TEMAS.reduce((n, t) => n + t.tarjetas.length, 0) + MORFEMAS.length;
 const nRecall = TEMAS.reduce((n, t) => n + t.recall.length, 0);
-const nPerturb = TEMAS.reduce((n, t) => n + (t.perturbaciones?.length ?? 0), 0);
+const nPredic = TEMAS.reduce((n, t) => n + (t.predicciones?.length ?? 0), 0);
 
 const MODOS = [
   { icon: RefreshCw, titulo: "Repetición espaciada", href: "/practicar/tarjetas", cuenta: `${nTarjetas} tarjetas`,
-    texto: "Algoritmo SM-2. Cada tarjeta reaparece justo cuando estás a punto de olvidarla, ni antes ni después. Los repasos vencidos siempre van primero.",
+    texto: "Cada tarjeta reaparece justo cuando estás a punto de olvidarla, ni antes ni después. Los repasos vencidos siempre van primero.",
     regla: "Nunca de reconocimiento: siempre tienes que producir." },
   { icon: Brain, titulo: "Recall en frío", href: "/practicar/recall", cuenta: `${nRecall} preguntas`,
     texto: "Campo en blanco, sin apuntes ni pistas salvo que las pidas. Escribes el mecanismo completo, después comparas con la referencia y te calificas del 0 al 4.",
@@ -31,8 +31,8 @@ const MODOS = [
   { icon: ScanSearch, titulo: "Decodificador de términos", href: "/practicar/terminologia", cuenta: `${MORFEMAS.length} morfemas`,
     texto: "Escribe cualquier término médico y descomponlo en sus piezas. También puedes practicar los morfemas por familia.",
     regla: "400 piezas abren 10,000 palabras." },
-  { icon: GitBranch, titulo: "Predice la perturbación", href: "/practicar/perturbaciones", cuenta: `${nPerturb} escenarios`,
-    texto: "«¿Qué le pasa al sistema si lo empujo aquí?». El formato que distingue haber entendido un mecanismo de haberlo memorizado.",
+  { icon: GitBranch, titulo: "Predice qué pasa", href: "/practicar/predicciones", cuenta: `${nPredic} escenarios`,
+    texto: "«¿Qué le pasa al cuerpo si cambio esto?». El formato que distingue haber entendido un mecanismo de haberlo memorizado.",
     regla: "Si no puedes predecir, no entendiste." },
 ];
 

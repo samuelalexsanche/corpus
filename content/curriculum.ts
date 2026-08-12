@@ -36,7 +36,7 @@ export const BLOQUES: Bloque[] = [
       { clave: "B0.2", nombre: "Química orgánica funcional: grupos funcionales, polaridad, quiralidad", creditos: 0, nota: "El 60 % del valor del bloque vive aquí" },
       { clave: "B0.3", nombre: "Biología celular: organelos, membranas, ciclo celular, tráfico vesicular", creditos: 0, nota: "Prerrequisito real de histología y patología" },
       { clave: "B0.4", nombre: "Terminología médica: raíces griegas y latinas", creditos: 0, nota: "Convierte ~10,000 términos en ~400 morfemas componibles" },
-      { clave: "B0.5", nombre: "Teoría de control aplicada: lazos, set point, ganancia, retraso", creditos: 0, nota: "El andamio de toda la fisiología" },
+      { clave: "B0.5", nombre: "Cómo el cuerpo se corrige a sí mismo: retroalimentación, punto de ajuste y retraso", creditos: 0, nota: "El andamio de toda la fisiología" },
     ],
     prerequisitos: [],
     temasClave: ["grupos funcionales", "pH y pKa", "retroalimentación negativa", "morfemas médicos", "ciclo celular"],
@@ -93,12 +93,12 @@ export const BLOQUES: Bloque[] = [
   },
   {
     id: "b3", slug: "funcion", numero: "3", titulo: "Función",
-    subtitulo: "Fisiología como teoría de control",
+    subtitulo: "El cuerpo funcionando y corrigiéndose",
     horas: "27 créditos", color: "sky",
     porQue:
-      "Lazos de retroalimentación negativa, set points, ganancia, constantes de tiempo, sistemas acoplados. Fisiología es literalmente teoría de control con nombres biológicos. Quien trae ese andamio no memoriza: deduce.",
+      "Circuitos de retroalimentación negativa, puntos de ajuste, respuestas más o menos enérgicas, retrasos y circuitos enlazados entre sí. Casi toda la fisiología repite el mismo patrón con nombres distintos. Quien reconoce el patrón no memoriza: deduce.",
     entregable:
-      "Dibujar el eje renina-angiotensina-aldosterona y predecir qué pasa al perturbarlo en cinco puntos distintos. Explicar por qué un IECA produce tos.",
+      "Dibujar el eje renina-angiotensina-aldosterona y predecir qué pasa al alterarlo en cinco puntos distintos. Explicar por qué un IECA produce tos.",
     unidades: [
       { clave: "I8568", nombre: "Fisiología médica", creditos: 20 },
       { clave: "I8571", nombre: "Inmunología médica", creditos: 7, nota: "Detección de anomalías con self/non-self" },
@@ -129,7 +129,7 @@ export const BLOQUES: Bloque[] = [
     subtitulo: "Perturbar el sistema en un nodo específico",
     horas: "20 créditos", color: "teal",
     porQue:
-      "Farmacología después de fisiopatología, siempre. Un fármaco es una perturbación dirigida a un nodo del sistema; los efectos adversos son efectos fuera del nodo objetivo. Sin conocer el sistema ni la falla, un fármaco es solo una lista de nombres.",
+      "Farmacología después de fisiopatología, siempre. Un fármaco actúa sobre un punto concreto de un mecanismo, y los efectos adversos son lo que ese mismo fármaco hace fuera de ese punto. Sin conocer el mecanismo ni la falla, un fármaco es solo una lista de nombres.",
     entregable:
       "Para las 100 familias más usadas: mecanismo, indicación, efecto adverso principal, contraindicación absoluta e interacción crítica.",
     unidades: [

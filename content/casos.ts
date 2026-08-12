@@ -49,7 +49,7 @@ export const CASOS: Caso[] = [
           "Piel caliente y seca. No refiere escalofríos; sus compañeros dicen que «sudaba muchísimo y de pronto dejó de sudar».",
           "Desorientado en tiempo y lugar. Taquicárdico e hipotenso.",
         ],
-        pregunta: "¿Qué pieza del lazo termorregulador está comprometida y en qué estado exacto? Justifica por qué un antipirético no va a modificar el cuadro.",
+        pregunta: "¿Qué pieza del circuito termorregulador está comprometida y en qué estado exacto? Justifica por qué un antipirético no va a modificar el cuadro.",
         respuestaEsperada:
           "El efector, en estado de saturación y agotamiento: la sudoración funcionó al máximo hasta que la depleción de volumen la hizo insostenible, y la piel seca marca precisamente ese punto. El set point permanece normal, de modo que un antipirético —cuyo mecanismo es bajar un set point elevado— no tiene sustrato sobre el que actuar. El tratamiento es enfriamiento físico externo, y es tiempo-dependiente.",
         puntosClave: ["Saturado no es lo mismo que roto", "Piel seca en este contexto es signo de gravedad, no de mejoría", "La alteración del sensorio marca gravedad"],
@@ -104,7 +104,7 @@ export const CASOS: Caso[] = [
         pregunta: "¿Cómo puede haber isquemia con arterias coronarias limpias?",
         respuestaEsperada:
           "Por un problema de escalamiento. La masa muscular aumentó pero la red capilar no creció proporcionalmente: baja la densidad capilar por gramo de miocardio y aumenta la distancia de difusión hasta el interior de cada miocito engrosado. Hay más tejido consumiendo oxígeno con peor irrigación por unidad de masa, y el subendocardio es la región más vulnerable. Es isquemia relativa: la oferta es normal en términos absolutos pero insuficiente para la demanda creada.",
-        puntosClave: ["Un lazo puede corregir su objetivo y degradar otra variable", "Isquemia relativa: la demanda creció más que la oferta"],
+        puntosClave: ["Un circuito puede corregir su objetivo y empeorar otra variable", "Isquemia relativa: la demanda creció más que la oferta"],
       },
     ],
     cierre:

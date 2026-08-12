@@ -25,11 +25,11 @@ const FAQ = [
 ];
 
 const MODOS = [
-  { icon: RefreshCw, titulo: "Repetición espaciada", texto: "Tarjetas programadas con SM-2 para el momento exacto en que estás por olvidar. Nunca de reconocimiento: siempre tienes que producir la respuesta.", href: "/practicar/tarjetas" },
+  { icon: RefreshCw, titulo: "Repetición espaciada", texto: "Tarjetas que reaparecen justo cuando estás por olvidarlas, ni antes ni después. Nunca de reconocimiento: siempre tienes que producir la respuesta.", href: "/practicar/tarjetas" },
   { icon: Brain, titulo: "Recall en frío", texto: "Papel en blanco, sin apuntes. Reconstruyes el mecanismo y después comparas contra la referencia y te calificas honesto del 0 al 4.", href: "/practicar/recall" },
   { icon: Stethoscope, titulo: "Casos clínicos por etapas", texto: "El caso se revela por partes. Comprometes un diferencial antes de recibir más datos, como en la consulta real.", href: "/practicar/casos" },
   { icon: ScanSearch, titulo: "Decodificador de términos", texto: "Descompón cualquier término médico en sus morfemas. 249 piezas que abren miles de palabras.", href: "/practicar/terminologia" },
-  { icon: GitBranch, titulo: "Predicción de perturbaciones", texto: "«¿Qué pasa si perturbo el sistema aquí?». El formato que separa entender un mecanismo de haberlo memorizado.", href: "/practicar/perturbaciones" },
+  { icon: GitBranch, titulo: "Predice qué pasa", texto: "«¿Qué le pasa al cuerpo si cambio esto?». El formato que separa entender un mecanismo de haberlo memorizado.", href: "/practicar/predicciones" },
   { icon: Layers, titulo: "Mapa de dependencias", texto: "Ves qué prerrequisitos te faltan antes de entrar a un bloque, para que nada se estudie fuera de orden.", href: "/curriculum" },
 ];
 
