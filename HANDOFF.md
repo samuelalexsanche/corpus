@@ -18,10 +18,11 @@ estricto en verde, 176 tests en verde. ~6,200 líneas en 52 archivos fuente.
 | Modos de estudio | ✅ 8 modos funcionando |
 | Ruta personalizada | ✅ planificador en /curriculum |
 | SRS | ✅ SM-2 con persistencia local exportable |
-| Diagramas | 🟡 lazos de control ✅, vías y curvas pendientes |
+| Diagramas | 🟡 circuitos ✅, figuras anotadas ✅ (2), vías metabólicas pendientes |
 | Casos clínicos | 🟡 6 |
 | Exportar a Anki | ✅ global y por tema |
-| Buscador | ✅ sobre temas, unidades, casos y morfemas |
+| Buscador | ✅ sobre catálogo, temas, unidades, casos y morfemas |
+| Catálogo de temas | 🟡 111 entradas con dónde estudiarlas |
 | Cobertura del currículum | ✅ las 81 unidades tienen página |
 | SEO técnico | ✅ Completo |
 | GEO | ✅ llms.txt, JSON-LD, robots generativo |

@@ -72,6 +72,7 @@ export const FUNCION: TemaCatalogo[] = [
       { libro: "ross", donde: "cap. 11, Tejido muscular" },
     ],
     vecinos: ["sarcomero", "sinapsis", "tejido-muscular"],
+    figura: "sarcomero",
   },
   {
     slug: "ciclo-cardiaco",

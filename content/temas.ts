@@ -24,6 +24,8 @@ export interface Tema {
    * mecanismo completo sería la respuesta disfrazada.
    */
   diagrama?: CircuitoDatos;
+  /** Slug de una figura anotada de `figuras.ts`. */
+  figura?: string;
   recall: RecallPrompt[];
   predicciones?: Prediccion[];
   errores: ErrorComun[];

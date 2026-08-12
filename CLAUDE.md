@@ -57,6 +57,7 @@ content/          TODO el contenido, tipado
   temas.ts        Temas desarrollados: mecanismo, recall, predicciones, errores, tarjetas, FAQ
   catalogo.ts     Temas de la carrera por su nombre real («glucólisis»), con dónde estudiarlos
   catalogo-2.ts   Segunda mitad del catálogo. Se separa solo por tamaño
+  figuras.ts      Esquemas anotados. Dibujo propio, nunca copiado de un libro
   morfemas.ts     249 morfemas + 19 distinciones + 35 descomposiciones (generado desde CSV)
   casos.ts        Casos clínicos por etapas
   recursos.ts     Bibliografía por bloque
@@ -120,6 +121,24 @@ Resumen del estándar:
   de la incógnita y sus sinónimos reales; hay un test que lo comprueba.
 
 Al añadir un tema, `generateStaticParams` lo recoge solo y entra al sitemap automáticamente.
+
+## Figuras
+
+`content/figuras.ts` + `components/figura-anotada.tsx`. Un esquema con las partes numeradas,
+explicadas y **ocultables**: el modo repaso tapa los nombres y hay que producirlos. Una figura
+entera rotulada es la respuesta disfrazada, igual que un diagrama de mecanismo completo.
+
+Dos reglas que no se negocian:
+
+- **El dibujo es propio.** Las ilustraciones de Netter, Ross, Guyton o Robbins están protegidas
+  por derechos de autor y Corpus se publica con licencia abierta. De esos libros se cita el
+  capítulo donde comprobar el contenido, nunca su figura.
+- **Cada figura declara qué no muestra.** Un esquema da posición y vecindad, no forma real. El
+  campo `advertencia` lo dice y no se quita: quien tenga que reconocer una estructura en una
+  preparación o en un cadáver necesita un atlas y el laboratorio.
+
+Hay tests que comprueban que los rótulos caen dentro del lienzo y que los números no se
+solapan entre sí. El segundo ya atrapó dos números encimados en el sarcómero.
 
 ## Convenciones
 

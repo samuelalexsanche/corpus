@@ -8,6 +8,8 @@ import { TemaDeCatalogo } from "@/components/tema-de-catalogo";
 import { getBloque } from "@/content/curriculum";
 import { RecallCard } from "@/components/recall-card";
 import { DiagramaCircuito } from "@/components/diagrama-circuito";
+import { FiguraAnotada } from "@/components/figura-anotada";
+import { getFigura } from "@/content/figuras";
 import { ExportarAnki } from "@/components/exportar-anki";
 import { JsonLd } from "@/components/jsonld";
 import { ldArticulo, ldFAQ, ldMigas, metaPagina } from "@/lib/seo";
@@ -111,6 +113,12 @@ export default async function TemaPage({ params }: { params: Promise<{ slug: str
                 </div>
               </section>
             ))}
+
+            {t.figura && getFigura(t.figura) && (
+              <section className="mt-12">
+                <FiguraAnotada figura={getFigura(t.figura)!} />
+              </section>
+            )}
 
             {t.diagrama && (
               <section className="mt-12">

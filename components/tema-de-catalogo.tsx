@@ -5,6 +5,8 @@ import { LIBROS, getCatalogo, type TemaCatalogo } from "@/content/catalogo";
 import { getTema } from "@/content/temas";
 import { getBloque } from "@/content/curriculum";
 import { claveASlug, unidadesDelCurriculum } from "@/lib/indice";
+import { getFigura } from "@/content/figuras";
+import { FiguraAnotada } from "@/components/figura-anotada";
 
 /**
  * Un tema que existe en el catálogo pero que nadie ha escrito todavía.
@@ -19,6 +21,7 @@ import { claveASlug, unidadesDelCurriculum } from "@/lib/indice";
  * daño que la ausencia de contenido.
  */
 export function TemaDeCatalogo({ t }: { t: TemaCatalogo }) {
+  const figura = t.figura ? getFigura(t.figura) : undefined;
   const entrada = unidadesDelCurriculum().find(({ unidad }) => unidad.clave === t.unidad);
   const bloque = entrada ? getBloque(entrada.bloqueSlug) : undefined;
 
@@ -82,6 +85,19 @@ export function TemaDeCatalogo({ t }: { t: TemaCatalogo }) {
               </a>
             </div>
           </section>
+
+          {figura && (
+            <section className="mt-14">
+              <h2 className="text-2xl font-semibold tracking-tight">Esquema para orientarte</h2>
+              <p className="mt-2 max-w-2xl text-muted-foreground">
+                No sustituye al tema ni al atlas, pero sirve para situar las piezas y para
+                comprobar si puedes nombrarlas sin verlas.
+              </p>
+              <div className="mt-6">
+                <FiguraAnotada figura={figura} />
+              </div>
+            </section>
+          )}
 
           <section className="mt-14">
             <h2 className="text-2xl font-semibold tracking-tight">Dónde estudiarlo</h2>

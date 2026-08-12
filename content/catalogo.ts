@@ -58,6 +58,8 @@ export interface TemaCatalogo {
   referencias: Referencia[];
   /** Otros temas del catálogo con los que se estudia junto. */
   vecinos?: string[];
+  /** Slug de una figura de `figuras.ts`. Una entrada sin tema sí puede tener esquema. */
+  figura?: string;
 }
 
 export const LIBROS: Record<Libro, { titulo: string; nota: string }> = {
@@ -431,6 +433,7 @@ const ESTRUCTURA: TemaCatalogo[] = [
       { libro: "guyton", donde: "cap. 6, Contracción del músculo esquelético" },
     ],
     vecinos: ["tejido-muscular", "contraccion-muscular"],
+    figura: "sarcomero",
   },
   {
     slug: "tejido-nervioso",
@@ -593,6 +596,7 @@ const ESTRUCTURA: TemaCatalogo[] = [
       { libro: "moore", donde: "capítulo de cabeza" },
     ],
     vecinos: ["arcos-faringeos", "pares-craneales", "columna-vertebral"],
+    figura: "craneo-lateral",
   },
   {
     slug: "columna-vertebral",
