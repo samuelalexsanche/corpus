@@ -21,7 +21,7 @@ cero errores, cero warnings. ~4,900 líneas en 44 archivos fuente. 396 KB sin `n
 | SEO técnico | ✅ Completo |
 | GEO | ✅ llms.txt, JSON-LD, robots generativo |
 | Documentación | ✅ 6 documentos |
-| Tests | ❌ No hay. Ver tarea 6 |
+| Tests | ✅ 105 en Vitest, corriendo en CI |
 | Despliegue | ✅ https://samuelalexsanche.github.io/corpus |
 
 ## 2. Arranque en 2 minutos
@@ -112,17 +112,22 @@ horas semanales → duración por bloque, restando carga de repaso acumulada.
 
 **Advertencia:** los planes optimistas producen abandono. Ser conservador y dejar holgura.
 
-### P6 — Tests
+### P6 — Tests ✅
 
-No hay ninguno. Los que importan, en orden:
+105 tests en Vitest, corriendo en CI antes del despliegue:
 
-- `lib/srs.ts` — intervalos y factor de facilidad. Es la pieza con lógica real
-- `components/term-decoder.tsx` — el algoritmo de cobertura sin solapamiento
-- Un smoke test de que todos los temas cumplen su contrato (recall no vacío, fuentes no
-  vacías, tarjetas con front y back)
+- `tests/srs.test.ts` — escalera de intervalos, umbral de acierto en calidad 3, piso de 1.3
+  en el factor de facilidad, vencimiento y que la proyección de los botones no mute el estado
+- `tests/decodificar.test.ts` — la lógica del decodificador, extraída del componente a
+  `lib/decodificar.ts` para poder probarla
+- `tests/contenido.test.ts` — el estándar editorial hecho ejecutable, que era el más valioso
+  de los tres
 
-Sugerencia: Vitest. El tercero es el más valioso — convierte el estándar editorial en algo
-verificable por CI.
+Escribirlos destapó **un defecto real en el decodificador**, ya corregido: 106 de los 249
+morfemas usan la notación `cardi(o)-` para la vocal de unión opcional, y el código borraba el
+paréntesis dejando solo la forma larga. «pericarditis» no reconocía su raíz. Ahora cada grupo
+opcional se expande en sus dos formas, y dos piezas pueden compartir la vocal donde se sueldan
+—una sola letra, y solo en el borde— porque esa vocal pertenece de verdad a las dos.
 
 ## 5. Deuda técnica conocida
 

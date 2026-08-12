@@ -2,49 +2,14 @@
 import { useMemo, useState } from "react";
 import { Search, Sparkles } from "lucide-react";
 import { MORFEMAS, DESCOMPOSICIONES } from "@/content/morfemas";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-
-/** Normaliza un morfema del dataset a sus variantes buscables. */
-function variantes(m: string): string[] {
-  return m
-    .split("/")
-    .map((p) => p.trim().replace(/-/g, "").replace(/\(([^)]*)\)/g, "$1"))
-    .flatMap((p) => {
-      const sinParen = m.split("/").map((x) => x.trim());
-      return [p, ...sinParen.map((x) => x.replace(/[-()]/g, ""))];
-    })
-    .map((p) => p.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, ""))
-    .filter((p) => p.length >= 2);
-}
-
-const INDICE = MORFEMAS.map((m) => ({ ...m, claves: Array.from(new Set(variantes(m.m))) }));
+import { descomponer, normalizar, MIN_TERMINO } from "@/lib/decodificar";
 
 export function TermDecoder() {
   const [q, setQ] = useState("");
 
-  const limpio = q.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z]/g, "");
-
-  const piezas = useMemo(() => {
-    if (limpio.length < 3) return [];
-    const hits = INDICE
-      .map((m) => {
-        const clave = m.claves.find((c) => limpio.includes(c));
-        return clave ? { ...m, clave, pos: limpio.indexOf(clave), len: clave.length } : null;
-      })
-      .filter(Boolean) as (typeof INDICE[number] & { clave: string; pos: number; len: number })[];
-
-    // Cobertura sin solapamiento, priorizando coincidencias largas.
-    const ordenadas = hits.sort((a, b) => b.len - a.len);
-    const usado = new Array(limpio.length).fill(false);
-    const elegidas: typeof ordenadas = [];
-    for (const h of ordenadas) {
-      let libre = true;
-      for (let i = h.pos; i < h.pos + h.len; i++) if (usado[i]) { libre = false; break; }
-      if (libre) { for (let i = h.pos; i < h.pos + h.len; i++) usado[i] = true; elegidas.push(h); }
-    }
-    return elegidas.sort((a, b) => a.pos - b.pos);
-  }, [limpio]);
+  const limpio = normalizar(q);
+  const piezas = useMemo(() => descomponer(limpio), [limpio]);
 
   const ejemplos = DESCOMPOSICIONES.slice(0, 8);
 
@@ -61,7 +26,7 @@ export function TermDecoder() {
         />
       </div>
 
-      {limpio.length >= 3 && (
+      {limpio.length >= MIN_TERMINO && (
         <div className="mt-6 rounded-xl border border-border bg-card p-6">
           {piezas.length > 0 ? (
             <>
@@ -89,7 +54,7 @@ export function TermDecoder() {
         </div>
       )}
 
-      {limpio.length < 3 && (
+      {limpio.length < MIN_TERMINO && (
         <div className="mt-8">
           <p className="flex items-center gap-2 text-sm font-medium"><Sparkles className="h-4 w-4 text-accent" /> Prueba con uno de estos</p>
           <div className="mt-3 flex flex-wrap gap-2">

@@ -35,7 +35,13 @@ npm run build         # debe pasar antes de cualquier commit
 npm run build:export  # sitio estático en out/ (lo que se publica)
 npm run og            # regenera las imágenes Open Graph
 npm run typecheck
+npm test              # vitest
 ```
+
+`npm test` incluye un smoke test que hace ejecutable el estándar de `CONTENIDO.md`:
+comprueba que cada tema tenga recall con referencia calificable, errores con corrección
+precisa, tarjetas, FAQ, fuentes y —si hay analogía— su `dondeSeRompe`. Un tema incompleto
+no pasa CI.
 
 `npm run build` es la verificación mínima. Genera 38+ páginas estáticas y corre TypeScript.
 
@@ -53,6 +59,7 @@ content/          TODO el contenido, tipado
   recursos.ts     Bibliografía por bloque
 lib/
   srs.ts          SM-2. Mantener legible: un estudiante debe poder auditarlo
+  decodificar.ts  Descomposición de términos en morfemas. Lógica del decodificador
   storage.ts      localStorage, exportable a JSON. No añadir backend
   seo.ts          Metadata + generadores JSON-LD
 public/llms.txt   Capa GEO
