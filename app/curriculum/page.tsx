@@ -5,6 +5,7 @@ import { BLOQUES, TOTAL_UNIDADES, TOTAL_CREDITOS, DEUDAS_PRACTICAS } from "@/con
 import { temasPorBloque } from "@/content/temas";
 import { JsonLd } from "@/components/jsonld";
 import { ldCurso, ldMigas, metaPagina } from "@/lib/seo";
+import { PlanificadorRuta } from "@/components/planificador-ruta";
 
 export const metadata = metaPagina({
   titulo: "Currículum de medicina ordenado por dependencia conceptual",
@@ -100,6 +101,10 @@ export default function CurriculumPage() {
           })}
         </ol>
       </section>
+
+      <div className="container pb-16">
+        <PlanificadorRuta bloques={BLOQUES} />
+      </div>
 
       <section className="border-t border-border bg-destructive/[0.04]">
         <div className="container py-16">

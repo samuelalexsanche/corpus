@@ -65,6 +65,7 @@ lib/
   seo.ts          Metadata + generadores JSON-LD
   anki.ts         Exportación de tarjetas al formato de importación de Anki
   lazo.ts         Datos y calificación del diagrama de lazo de control
+  ruta.ts         Planificador: horas semanales → fechas por bloque
 public/llms.txt   Capa GEO
 ```
 

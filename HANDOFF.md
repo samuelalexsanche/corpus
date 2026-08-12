@@ -16,9 +16,10 @@ estricto en verde, 176 tests en verde. ~6,200 líneas en 52 archivos fuente.
 | Currículum | ✅ 11 bloques, 74 unidades |
 | Temas desarrollados | 🟡 10 de ~74 unidades — **sigue siendo el cuello de botella** |
 | Modos de estudio | ✅ 5 modos funcionando |
+| Ruta personalizada | ✅ planificador en /curriculum |
 | SRS | ✅ SM-2 con persistencia local exportable |
 | Diagramas | 🟡 lazos de control ✅, vías y curvas pendientes |
-| Casos clínicos | 🟡 2 |
+| Casos clínicos | 🟡 6 |
 | Exportar a Anki | ✅ texto separado por tabuladores |
 | SEO técnico | ✅ Completo |
 | GEO | ✅ llms.txt, JSON-LD, robots generativo |
@@ -115,18 +116,39 @@ constantemente y cada una sería una columna falsa. La lógica está en `lib/ank
 Queda `.apkg` si alguna vez importa exportar también el progreso. Hoy no: Anki reprograma las
 tarjetas como nuevas, y eso está dicho en la propia interfaz.
 
-### P4 — Casos clínicos
+### P4 — Casos clínicos 🟡
 
-De 2 a ~15. El formato ya funciona; es trabajo de contenido. Escalar dificultad y cubrir
-sistemas distintos. Un caso bien construido rinde más que diez páginas de texto.
+De 2 a 6. Los cuatro nuevos cubren sistemas distintos y escalan en dificultad:
 
-### P5 — Ruta personalizada
+- `joven-respiracion-profunda-y-rapida` — leer un trastorno ácido-base desde el par
+  CO₂/bicarbonato, distinguir compensación de segundo trastorno, y llegar al hueco aniónico
+  desde la electroneutralidad del plasma
+- `lactante-enzimas-en-el-sitio-equivocado` — un resultado que parece imposible y se explica
+  entero con el etiquetado de manosa-6-fosfato
+- `corazon-de-atleta-o-enfermedad` — el mismo hallazgo con dos estímulos opuestos detrás; el
+  único de dificultad avanzada, y termina explicitando dónde deja de valer el modelo mecánico
+- `informe-lleno-de-palabras-desconocidas` — el decodificador aplicado, incluido el caso del
+  epónimo, que es donde el método correctamente falla
 
-El usuario declara horas semanales disponibles y recibe un plan conservador con fechas
-realistas. La lógica de cálculo ya existe conceptualmente en `../progreso/plan-bloque0.md`:
-horas semanales → duración por bloque, restando carga de repaso acumulada.
+**Faltan unos nueve** para llegar al objetivo. Los sistemas sin cubrir son los que aún no
+tienen tema que los sostenga, y ese es el orden correcto: un caso sobre algo que la plataforma
+no explica es un examen, no un ejercicio.
 
-**Advertencia:** los planes optimistas producen abandono. Ser conservador y dejar holgura.
+### P5 — Ruta personalizada ✅
+
+El planificador vive en `/curriculum`. Se declaran horas semanales, semanas activas al año y
+horas por crédito, y sale una tabla con duración y fecha estimada por bloque. La lógica está
+en `lib/ruta.ts`, aparte del componente, con tests.
+
+Es conservador por construcción y de tres maneras: estima por el extremo alto, descuenta una
+fracción creciente de cada semana para el repaso acumulado, y no supone que se estudie las 52
+semanas del año. Los tres supuestos son controles visibles en la interfaz, no constantes
+escondidas: un plan cuyos supuestos no se ven es indistinguible de una promesa.
+
+**Consecuencia incómoda y deliberada:** a 10 h/semana el currículum completo sale por encima
+de los 25 años, y la interfaz lo dice sin suavizarlo. La aritmética está calibrada —a 40 h
+semanales da unos 6 años, que es lo que dura la carrera— así que la cifra no es un error del
+modelo. Es la información más útil que puede dar la herramienta antes de que alguien empiece.
 
 ### P6 — Tests ✅
 
