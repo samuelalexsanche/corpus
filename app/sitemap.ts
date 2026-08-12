@@ -3,13 +3,14 @@ import { BLOQUES } from "@/content/curriculum";
 import { TEMAS } from "@/content/temas";
 import { CASOS } from "@/content/casos";
 import { urlAbs } from "@/lib/seo";
+import { claveASlug, temasDeUnidad, unidadesDelCurriculum } from "@/lib/indice";
 
 // `output: export` exige que las rutas de metadatos sean estáticas explícitamente.
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const ahora = new Date();
-  const fijas = ["/", "/curriculum", "/practicar", "/practicar/tarjetas", "/practicar/recall",
+  const fijas = ["/", "/buscar", "/curriculum", "/practicar", "/practicar/tarjetas", "/practicar/recall",
     "/practicar/casos", "/practicar/terminologia", "/practicar/predicciones",
     "/metodo", "/recursos", "/progreso", "/sobre"];
 
@@ -26,6 +27,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: urlAbs(`/tema/${t.slug}`), lastModified: ahora,
       changeFrequency: "monthly" as const, priority: 0.9,
     })),
+    // Solo las unidades con tema escrito. Las demás existen para navegar y
+    // buscar, pero no se anuncian en buscadores (ver app/unidad/[slug]).
+    ...unidadesDelCurriculum()
+      .filter(({ unidad }) => temasDeUnidad(unidad.clave).length > 0)
+      .map(({ unidad }) => ({
+        url: urlAbs(`/unidad/${claveASlug(unidad.clave)}`), lastModified: ahora,
+        changeFrequency: "monthly" as const, priority: 0.6,
+      })),
     ...CASOS.map((c) => ({
       url: urlAbs(`/practicar/casos/${c.slug}`), lastModified: ahora,
       changeFrequency: "monthly" as const, priority: 0.7,

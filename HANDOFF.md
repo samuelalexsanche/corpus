@@ -13,8 +13,8 @@ estricto en verde, 176 tests en verde. ~6,200 líneas en 52 archivos fuente.
 |---|---|
 | Arquitectura y stack | ✅ Completo |
 | Sistema de diseño | ✅ Completo (claro/oscuro, tokens, accesible) |
-| Currículum | ✅ 11 bloques, 74 unidades |
-| Temas desarrollados | 🟡 10 de ~74 unidades — **sigue siendo el cuello de botella** |
+| Currículum | ✅ 13 bloques, 81 unidades |
+| Temas desarrollados | 🟡 10 de 81 unidades — **sigue siendo el cuello de botella** |
 | Modos de estudio | ✅ 5 modos funcionando |
 | Ruta personalizada | ✅ planificador en /curriculum |
 | SRS | ✅ SM-2 con persistencia local exportable |
@@ -86,7 +86,7 @@ ojo. Tres cosas que se decidieron al escribirlos y conviene no deshacer:
 - **`ph-pka-ionizacion` lleva diagrama de lazo** (tapa el efector), porque el control
   respiratorio del pH es un lazo de control y conecta el Bloque 0 con fisiología.
 
-**Sigue pendiente lo grande:** 64 de las ~74 unidades no tienen tema. El cuello de botella no
+**Sigue pendiente lo grande:** 71 de las 81 unidades no tienen tema. El cuello de botella no
 se movió, solo se cerró el bloque de entrada.
 
 ### P2 — Diagramas 🟡
@@ -207,7 +207,7 @@ Esta plataforma vive dentro de un proyecto de estudio personal. El directorio su
 contiene el sistema del que salió el contenido:
 
 - `../CLAUDE.md` — el rol del tutor y la filosofía pedagógica completa
-- `../contexto/curriculum.md` — la fuente del reordenamiento en 11 bloques
+- `../contexto/curriculum.md` — la fuente del reordenamiento en bloques
 - `../contexto/metodo.md` — de donde salen `/metodo` y las reglas de tarjetas
 - `../progreso/` — estado del estudio y bitácora de sesiones
 - `../anki/` — los CSV que originaron `content/morfemas.ts`

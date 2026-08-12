@@ -30,8 +30,18 @@ export function urlAbs(ruta: string): string {
 }
 
 export function metaPagina({
-  titulo, descripcion, ruta, tipo = "website", keywords = [],
-}: { titulo: string; descripcion: string; ruta: string; tipo?: "website" | "article"; keywords?: string[] }): Metadata {
+  titulo, descripcion, ruta, tipo = "website", keywords = [], indexable = true,
+}: {
+  titulo: string; descripcion: string; ruta: string;
+  tipo?: "website" | "article"; keywords?: string[];
+  /**
+   * Poner en false cuando la página existe para navegar pero todavía no tiene
+   * contenido propio que merezca aparecer en un buscador. Es el caso de las
+   * unidades sin tema escrito: sirven al usuario que llega desde dentro y no
+   * deben competir en Google con las que sí tienen contenido.
+   */
+  indexable?: boolean;
+}): Metadata {
   const url = urlAbs(ruta);
   const tituloCompleto = ruta === "/" ? `${SITIO.nombre} — ${SITIO.tagline}` : `${titulo} · ${SITIO.nombre}`;
   return {
@@ -47,7 +57,9 @@ export function metaPagina({
       images: [{ url: `${SITIO.url}${archivoOg(ruta)}`, width: 1200, height: 630, alt: titulo }],
     },
     twitter: { card: "summary_large_image", title: tituloCompleto, description: descripcion },
-    robots: { index: true, follow: true, "max-snippet": -1, "max-image-preview": "large" },
+    robots: indexable
+      ? { index: true, follow: true, "max-snippet": -1, "max-image-preview": "large" }
+      : { index: false, follow: true },
   };
 }
 

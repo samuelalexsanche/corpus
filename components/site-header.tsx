@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./theme-toggle";
 
 const NAV = [
+  { href: "/buscar", label: "Buscar" },
   { href: "/curriculum", label: "Currículum" },
   { href: "/practicar", label: "Practicar" },
   { href: "/metodo", label: "Método" },

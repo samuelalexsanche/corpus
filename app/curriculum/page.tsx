@@ -10,7 +10,7 @@ import { PlanificadorRuta } from "@/components/planificador-ruta";
 export const metadata = metaPagina({
   titulo: "Currículum de medicina ordenado por dependencia conceptual",
   descripcion:
-    "Las 74 unidades de la carrera de medicina reorganizadas en 11 bloques según lo que cada tema necesita del anterior. Con prerrequisitos explícitos, entregables por bloque y deudas prácticas declaradas.",
+    "Todas las unidades de la carrera de medicina reorganizadas por lo que cada tema necesita del anterior. Con prerrequisitos explícitos, entregables por bloque y deudas prácticas declaradas.",
   ruta: "/curriculum",
   keywords: ["plan de estudios medicina", "currículum medicina", "orden para estudiar medicina", "prerrequisitos medicina"],
 });
@@ -30,7 +30,7 @@ export default function CurriculumPage() {
             El currículum, ordenado por lo que cada tema necesita del anterior
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            {TOTAL_UNIDADES} unidades y {TOTAL_CREDITOS} créditos reorganizados en 11 bloques. La regla de oro es
+            {TOTAL_UNIDADES} unidades y {TOTAL_CREDITOS} créditos reorganizados en {BLOQUES.length} bloques. La regla de oro es
             una sola: <strong className="text-foreground">nunca estudies un tema cuyo «por qué» vive en un tema
             que aún no viste.</strong>
           </p>

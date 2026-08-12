@@ -53,12 +53,17 @@ app/              Rutas App Router. Todas SSG salvo /og
 components/       UI e interactivos
   ui/             Primitivos: button, card, badge, progress (patrones shadcn, código propio)
 content/          TODO el contenido, tipado
-  curriculum.ts   11 bloques, 74 unidades, deudas prácticas
+  curriculum.ts   13 bloques, 81 unidades, deudas prácticas
   temas.ts        Temas: mecanismo, recall, perturbaciones, errores, tarjetas, FAQ
   morfemas.ts     249 morfemas + 19 distinciones + 35 descomposiciones (generado desde CSV)
   casos.ts        Casos clínicos por etapas
   recursos.ts     Bibliografía por bloque
+  Toda unidad del currículum tiene página en `/unidad/[slug]`, tenga tema o no. Las que no
+  tienen tema van con `indexable: false`: existen para navegar y buscar, pero no se anuncian
+  en Google hasta que enseñen algo.
+
 lib/
+  indice.ts       Índice de búsqueda sobre temas, unidades, casos, bloques y morfemas
   srs.ts          SM-2. Mantener legible: un estudiante debe poder auditarlo
   decodificar.ts  Descomposición de términos en morfemas. Lógica del decodificador
   storage.ts      localStorage, exportable a JSON. No añadir backend

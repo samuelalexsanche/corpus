@@ -19,8 +19,8 @@ todas terminan en algo que tienes que producir tú.
 
 ## Qué lo diferencia
 
-**El currículum está ordenado por dependencia conceptual, no por semestre.** Las 74 unidades
-de la carrera reorganizadas en 11 bloques bajo una sola regla: nunca estudies un tema cuyo
+**El currículum está ordenado por dependencia conceptual, no por semestre.** Las 81 unidades
+de la carrera reorganizadas en 13 bloques bajo una sola regla: nunca estudies un tema cuyo
 «por qué» vive en un tema que aún no viste. Histología antes que embriología, embriología
 antes que anatomía, fisiología antes que fisiopatología, farmacología después de ambas.
 
@@ -74,7 +74,7 @@ app/           Rutas (App Router)
 components/    UI y componentes interactivos
   ui/          Primitivos: button, card, badge, progress
 content/       Todo el contenido, tipado
-  curriculum.ts   11 bloques, 74 unidades
+  curriculum.ts   13 bloques, 81 unidades
   temas.ts        Temas con mecanismo, recall, perturbaciones, FAQ
   morfemas.ts     249 morfemas + distinciones + descomposiciones
   casos.ts        Casos clínicos por etapas
