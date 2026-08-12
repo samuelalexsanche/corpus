@@ -1,21 +1,38 @@
 import type { Metadata } from "next";
+import { archivoOg } from "./og";
 
 export const SITIO = {
   nombre: "Corpus",
   tagline: "Aprende medicina por mecanismo, no por memoria",
   descripcion:
     "Plataforma abierta y gratuita para estudiar medicina con recuperación activa, repetición espaciada y razonamiento clínico. Currículum completo, tarjetas, casos y calibración honesta.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://corpus.study",
+  // Dominio de despliegue. Mientras el proyecto esté en desarrollo vive en un
+  // Pages de proyecto, de ahí el subdirectorio. Al mover a dominio propio basta
+  // cambiar NEXT_PUBLIC_SITE_URL y BASE_PATH (ver next.config.mjs).
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://samuelalexsanche.github.io/corpus",
   locale: "es_MX",
   idioma: "es",
   autor: "Proyecto Corpus",
-  repo: "https://github.com/corpus-med/corpus",
+  repo: "https://github.com/samuelalexsanche/corpus",
 };
+
+/**
+ * URL absoluta canónica de una ruta interna.
+ *
+ * Siempre con barra final: el build estático emite `ruta/index.html`, así que
+ * `/tema/x/` es la dirección que realmente existe en el hosting. La canónica
+ * tiene que apuntar ahí y no a `/tema/x`, o se anuncian dos URLs por página.
+ */
+export function urlAbs(ruta: string): string {
+  const base = SITIO.url.replace(/\/+$/, "");
+  if (ruta === "/" || ruta === "") return `${base}/`;
+  return `${base}/${ruta.replace(/^\/+|\/+$/g, "")}/`;
+}
 
 export function metaPagina({
   titulo, descripcion, ruta, tipo = "website", keywords = [],
 }: { titulo: string; descripcion: string; ruta: string; tipo?: "website" | "article"; keywords?: string[] }): Metadata {
-  const url = `${SITIO.url}${ruta}`;
+  const url = urlAbs(ruta);
   const tituloCompleto = ruta === "/" ? `${SITIO.nombre} — ${SITIO.tagline}` : `${titulo} · ${SITIO.nombre}`;
   return {
     title: tituloCompleto,
@@ -25,7 +42,7 @@ export function metaPagina({
     openGraph: {
       title: tituloCompleto, description: descripcion, url, siteName: SITIO.nombre,
       locale: SITIO.locale, type: tipo,
-      images: [{ url: `${SITIO.url}/og?titulo=${encodeURIComponent(titulo)}`, width: 1200, height: 630, alt: titulo }],
+      images: [{ url: `${SITIO.url}${archivoOg(ruta)}`, width: 1200, height: 630, alt: titulo }],
     },
     twitter: { card: "summary_large_image", title: tituloCompleto, description: descripcion },
     robots: { index: true, follow: true, "max-snippet": -1, "max-image-preview": "large" },
@@ -36,15 +53,15 @@ export function metaPagina({
 
 export const ldOrganizacion = () => ({
   "@context": "https://schema.org", "@type": "EducationalOrganization",
-  name: SITIO.nombre, url: SITIO.url, description: SITIO.descripcion,
+  name: SITIO.nombre, url: urlAbs("/"), description: SITIO.descripcion,
   inLanguage: SITIO.idioma, sameAs: [SITIO.repo],
 });
 
 export const ldCurso = (b: { titulo: string; subtitulo: string; slug: string; porQue: string }) => ({
   "@context": "https://schema.org", "@type": "Course",
-  name: b.titulo, description: b.porQue, url: `${SITIO.url}/bloque/${b.slug}`,
+  name: b.titulo, description: b.porQue, url: urlAbs(`/bloque/${b.slug}`),
   inLanguage: SITIO.idioma, isAccessibleForFree: true,
-  provider: { "@type": "EducationalOrganization", name: SITIO.nombre, url: SITIO.url },
+  provider: { "@type": "EducationalOrganization", name: SITIO.nombre, url: urlAbs("/") },
   hasCourseInstance: {
     "@type": "CourseInstance", courseMode: "online",
     courseWorkload: "PT10H", inLanguage: SITIO.idioma,
@@ -53,11 +70,11 @@ export const ldCurso = (b: { titulo: string; subtitulo: string; slug: string; po
 
 export const ldArticulo = (t: { titulo: string; resumen: string; slug: string; minutos: number }) => ({
   "@context": "https://schema.org", "@type": "ScholarlyArticle",
-  headline: t.titulo, description: t.resumen, url: `${SITIO.url}/tema/${t.slug}`,
+  headline: t.titulo, description: t.resumen, url: urlAbs(`/tema/${t.slug}`),
   inLanguage: SITIO.idioma, isAccessibleForFree: true,
   timeRequired: `PT${t.minutos}M`,
   author: { "@type": "Organization", name: SITIO.autor },
-  publisher: { "@type": "Organization", name: SITIO.nombre, url: SITIO.url },
+  publisher: { "@type": "Organization", name: SITIO.nombre, url: urlAbs("/") },
   about: { "@type": "MedicalEntity", name: t.titulo },
 });
 
@@ -72,6 +89,6 @@ export const ldFAQ = (faq: { q: string; a: string }[]) => ({
 export const ldMigas = (items: { nombre: string; ruta: string }[]) => ({
   "@context": "https://schema.org", "@type": "BreadcrumbList",
   itemListElement: items.map((it, i) => ({
-    "@type": "ListItem", position: i + 1, name: it.nombre, item: `${SITIO.url}${it.ruta}`,
+    "@type": "ListItem", position: i + 1, name: it.nombre, item: urlAbs(it.ruta),
   })),
 });

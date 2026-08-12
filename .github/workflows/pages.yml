@@ -1,0 +1,50 @@
+name: Desplegar en GitHub Pages
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+# Permisos mínimos para publicar en Pages con el despliegue nativo (sin rama gh-pages).
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Un despliegue a la vez; no cancelar el que ya está corriendo.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  # Pages de proyecto: el sitio vive bajo /corpus. Con dominio propio, poner
+  # BASE_PATH vacío y NEXT_PUBLIC_SITE_URL al dominio.
+  BASE_PATH: /corpus
+  NEXT_PUBLIC_SITE_URL: https://samuelalexsanche.github.io/corpus
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run build:export
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

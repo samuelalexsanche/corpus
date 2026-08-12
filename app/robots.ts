@@ -1,5 +1,8 @@
 import type { MetadataRoute } from "next";
-import { SITIO } from "@/lib/seo";
+import { SITIO, urlAbs } from "@/lib/seo";
+
+// `output: export` exige que las rutas de metadatos sean estáticas explícitamente.
+export const dynamic = "force-static";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -9,7 +12,7 @@ export default function robots(): MetadataRoute.Robots {
       // El contenido está escrito para ser citable y verificable.
       { userAgent: ["GPTBot", "ClaudeBot", "PerplexityBot", "Google-Extended", "CCBot", "Applebot-Extended"], allow: "/" },
     ],
-    sitemap: `${SITIO.url}/sitemap.xml`,
-    host: SITIO.url,
+    sitemap: `${urlAbs("/")}sitemap.xml`,
+    host: new URL(SITIO.url).host,
   };
 }
