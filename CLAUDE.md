@@ -54,7 +54,9 @@ components/       UI e interactivos
   ui/             Primitivos: button, card, badge, progress (patrones shadcn, código propio)
 content/          TODO el contenido, tipado
   curriculum.ts   13 bloques, 81 unidades, deudas prácticas
-  temas.ts        Temas: mecanismo, recall, perturbaciones, errores, tarjetas, FAQ
+  temas.ts        Temas desarrollados: mecanismo, recall, predicciones, errores, tarjetas, FAQ
+  catalogo.ts     Temas de la carrera por su nombre real («glucólisis»), con dónde estudiarlos
+  catalogo-2.ts   Segunda mitad del catálogo. Se separa solo por tamaño
   morfemas.ts     249 morfemas + 19 distinciones + 35 descomposiciones (generado desde CSV)
   casos.ts        Casos clínicos por etapas
   recursos.ts     Bibliografía por bloque
@@ -76,6 +78,23 @@ lib/
   ruta.ts         Planificador: horas semanales → fechas por bloque
 public/llms.txt   Capa GEO
 ```
+
+## Las dos formas de que un tema exista
+
+`/tema/<slug>` sirve dos cosas distintas con la misma URL:
+
+1. **Tema desarrollado** (`content/temas.ts`) — la explicación completa, con recall, errores,
+   tarjetas y fuentes.
+2. **Entrada de catálogo** (`content/catalogo.ts`) — qué es el tema en dos frases y en qué
+   capítulo de qué libro estudiarlo. Nada más.
+
+Cuando alguien desarrolla un tema del catálogo, **borra su entrada del catálogo y añade el tema
+a `temas.ts` con el mismo slug**. La URL no cambia y no se rompe ningún enlace. Hay un test que
+impide que el mismo slug esté en los dos sitios.
+
+La página de una entrada de catálogo dice explícitamente que el tema no está escrito. Eso no es
+una disculpa: es la alternativa a rellenarla con un texto que suene a explicación sin serlo, que
+en medicina hace más daño que la ausencia de texto.
 
 ## Cómo añadir un tema
 

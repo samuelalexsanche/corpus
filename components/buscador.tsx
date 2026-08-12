@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 
 const ETIQUETA: Record<TipoEntrada, string> = {
   tema: "Tema",
+  catalogo: "Tema",
   unidad: "Unidad",
   caso: "Caso",
   bloque: "Bloque",
@@ -15,13 +16,14 @@ const ETIQUETA: Record<TipoEntrada, string> = {
 
 const FILTROS: { valor: TipoEntrada | "todo"; texto: string }[] = [
   { valor: "todo", texto: "Todo" },
-  { valor: "tema", texto: "Temas" },
+  { valor: "tema", texto: "Desarrollados" },
+  { valor: "catalogo", texto: "Por desarrollar" },
   { valor: "unidad", texto: "Unidades" },
   { valor: "caso", texto: "Casos" },
   { valor: "morfema", texto: "Morfemas" },
 ];
 
-const SUGERENCIAS = ["fiebre", "ácido base", "hipertrofia", "membrana", "enzima", "riñón", "itis"];
+const SUGERENCIAS = ["glucólisis", "ciclo de Krebs", "potencial de acción", "inflamación", "cráneo", "nefrona", "ECG", "itis"];
 
 export function Buscador({ indice }: { indice: Entrada[] }) {
   const [q, setQ] = useState("");

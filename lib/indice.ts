@@ -14,8 +14,9 @@ import { BLOQUES, type Unidad } from "@/content/curriculum";
 import { TEMAS } from "@/content/temas";
 import { CASOS } from "@/content/casos";
 import { MORFEMAS } from "@/content/morfemas";
+import { CATALOGO, LIBROS } from "@/content/catalogo";
 
-export type TipoEntrada = "tema" | "unidad" | "caso" | "bloque" | "morfema";
+export type TipoEntrada = "tema" | "catalogo" | "unidad" | "caso" | "bloque" | "morfema";
 
 export interface Entrada {
   tipo: TipoEntrada;
@@ -91,6 +92,19 @@ export function construirIndice(): Entrada[] {
     });
   }
 
+  // El catálogo es lo que hace que buscar «glucólisis» devuelva algo. Va con
+  // peso alto porque es el nombre por el que la gente busca de verdad.
+  for (const c of CATALOGO) {
+    entradas.push({
+      tipo: "catalogo",
+      titulo: c.nombre,
+      contexto: c.referencias.map((r) => LIBROS[r.libro].titulo.split(",")[0]).join(" · "),
+      descripcion: c.que,
+      href: `/tema/${c.slug}`,
+      busqueda: normalizar([c.nombre, (c.sinonimos ?? []).join(" "), c.que, c.unidad].join(" ")),
+    });
+  }
+
   for (const c of CASOS) {
     entradas.push({
       tipo: "caso",
@@ -118,7 +132,7 @@ export function construirIndice(): Entrada[] {
 
 /** Los tipos se ordenan así en los resultados cuando empatan en puntuación. */
 const PESO_TIPO: Record<TipoEntrada, number> = {
-  tema: 0, unidad: 1, caso: 2, bloque: 3, morfema: 4,
+  tema: 0, catalogo: 1, unidad: 2, caso: 3, bloque: 4, morfema: 5,
 };
 
 /**

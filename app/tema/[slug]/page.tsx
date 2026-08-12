@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, AlertTriangle, Zap, XCircle, BookOpen, Hand } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { TEMAS, getTema } from "@/content/temas";
+import { CATALOGO, getCatalogo } from "@/content/catalogo";
+import { TemaDeCatalogo } from "@/components/tema-de-catalogo";
 import { getBloque } from "@/content/curriculum";
 import { RecallCard } from "@/components/recall-card";
 import { DiagramaCircuito } from "@/components/diagrama-circuito";
@@ -11,12 +13,26 @@ import { JsonLd } from "@/components/jsonld";
 import { ldArticulo, ldFAQ, ldMigas, metaPagina } from "@/lib/seo";
 
 export const dynamicParams = false;
-export function generateStaticParams() { return TEMAS.map((t) => ({ slug: t.slug })); }
+// Los temas escritos y los del catálogo comparten espacio de URL a propósito:
+// el día que alguien desarrolle un tema del catálogo, la dirección no cambia.
+export function generateStaticParams() {
+  return [...TEMAS.map((t) => t.slug), ...CATALOGO.map((c) => c.slug)].map((slug) => ({ slug }));
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const t = getTema(slug);
-  if (!t) return {};
+  if (!t) {
+    const c = getCatalogo(slug);
+    if (!c) return {};
+    return metaPagina({
+      titulo: c.nombre,
+      descripcion: `${c.que} Corpus todavía no tiene este tema desarrollado; aquí encontrarás en qué capítulo de qué libro estudiarlo.`,
+      ruta: `/tema/${c.slug}`,
+      // Sin contenido propio no compite en buscadores. Ver app/unidad/[slug].
+      indexable: false,
+    });
+  }
   return metaPagina({
     titulo: t.tituloSEO,
     descripcion: t.resumen,
@@ -42,7 +58,11 @@ function Parrafo({ texto }: { texto: string }) {
 export default async function TemaPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const t = getTema(slug);
-  if (!t) notFound();
+  if (!t) {
+    const c = getCatalogo(slug);
+    if (!c) notFound();
+    return <TemaDeCatalogo t={c} />;
+  }
   const bloque = getBloque(t.bloque);
 
   return (
