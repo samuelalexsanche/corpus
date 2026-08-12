@@ -62,6 +62,7 @@ lib/
   decodificar.ts  Descomposición de términos en morfemas. Lógica del decodificador
   storage.ts      localStorage, exportable a JSON. No añadir backend
   seo.ts          Metadata + generadores JSON-LD
+  anki.ts         Exportación de tarjetas al formato de importación de Anki
 public/llms.txt   Capa GEO
 ```
 

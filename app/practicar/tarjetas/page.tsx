@@ -1,4 +1,5 @@
 import { FlashcardSession, CartaBase } from "@/components/flashcard-session";
+import { ExportarAnki } from "@/components/exportar-anki";
 import { TEMAS } from "@/content/temas";
 import { MORFEMAS, DISTINCIONES, DESCOMPOSICIONES } from "@/content/morfemas";
 import { metaPagina } from "@/lib/seo";
@@ -27,6 +28,9 @@ export default function TarjetasPage() {
       </p>
       <div className="mt-10">
         <FlashcardSession cartas={cartas} />
+      </div>
+      <div className="mt-14">
+        <ExportarAnki cartas={cartas} />
       </div>
     </div>
   );

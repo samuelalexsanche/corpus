@@ -18,6 +18,7 @@ cero errores, cero warnings. ~4,900 líneas en 44 archivos fuente. 396 KB sin `n
 | Modos de estudio | ✅ 5 modos funcionando |
 | SRS | ✅ SM-2 con persistencia local exportable |
 | Casos clínicos | 🟡 2 |
+| Exportar a Anki | ✅ texto separado por tabuladores |
 | SEO técnico | ✅ Completo |
 | GEO | ✅ llms.txt, JSON-LD, robots generativo |
 | Documentación | ✅ 6 documentos |
@@ -92,12 +93,17 @@ usuario que la nombre. Reutilizable para termorregulación, glucemia, presión a
 **Regla de diseño:** un diagrama del mecanismo completo es la respuesta disfrazada. Debe
 mostrar una relación y dejar que la pregunta pida lo que falta.
 
-### P3 — Exportación a Anki
+### P3 — Exportación a Anki ✅
 
-Alto valor y bajo esfuerzo. Botón que exporte cualquier selección de tarjetas a `.apkg` o al
-CSV que Anki importa. Conecta la plataforma con la herramienta que la gente ya usa.
+Hecho el camino de texto, en `/practicar/tarjetas`. Se eligen los mazos y se descarga un
+archivo que Anki importa sin configurar nada: trae cabeceras `#separator:tab`, `#html:true`,
+`#deck column:3` y `#tags column:4`, y todo cuelga de un mazo raíz «Corpus».
 
-Empezar por CSV (trivial) y evaluar `.apkg` después.
+Va separado por tabuladores y no por comas a propósito: los anversos llevan comas
+constantemente y cada una sería una columna falsa. La lógica está en `lib/anki.ts`, con tests.
+
+Queda `.apkg` si alguna vez importa exportar también el progreso. Hoy no: Anki reprograma las
+tarjetas como nuevas, y eso está dicho en la propia interfaz.
 
 ### P4 — Casos clínicos
 
