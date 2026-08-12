@@ -63,6 +63,7 @@ lib/
   storage.ts      localStorage, exportable a JSON. No añadir backend
   seo.ts          Metadata + generadores JSON-LD
   anki.ts         Exportación de tarjetas al formato de importación de Anki
+  lazo.ts         Datos y calificación del diagrama de lazo de control
 public/llms.txt   Capa GEO
 ```
 
@@ -85,6 +86,9 @@ Resumen del estándar:
 - `faq`: preguntas tal como se escriben en un buscador, respuestas autocontenidas. Sirven a
   SEO y a citación por modelos generativos.
 - `deudaPractica` si el tema toca algo que requiere manos o pacientes.
+- `diagrama` si el tema es un lazo de control. **Se dibuja con una pieza tapada**: un diagrama
+  del mecanismo completo es la respuesta disfrazada. `aceptadas` debe incluir el propio valor
+  de la incógnita y sus sinónimos reales; hay un test que lo comprueba.
 
 Al añadir un tema, `generateStaticParams` lo recoge solo y entra al sitemap automáticamente.
 

@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { TEMAS, getTema } from "@/content/temas";
 import { getBloque } from "@/content/curriculum";
 import { RecallCard } from "@/components/recall-card";
+import { DiagramaLazo } from "@/components/diagrama-lazo";
 import { JsonLd } from "@/components/jsonld";
 import { ldArticulo, ldFAQ, ldMigas, metaPagina } from "@/lib/seo";
 
@@ -89,6 +90,12 @@ export default async function TemaPage({ params }: { params: Promise<{ slug: str
                 </div>
               </section>
             ))}
+
+            {t.diagrama && (
+              <section className="mt-12">
+                <DiagramaLazo datos={t.diagrama} titulo="El lazo, con una pieza tapada" />
+              </section>
+            )}
 
             {t.analogia && (
               <section className="mt-12 rounded-xl border border-border bg-card p-6">

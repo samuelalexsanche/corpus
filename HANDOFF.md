@@ -17,12 +17,13 @@ cero errores, cero warnings. ~4,900 líneas en 44 archivos fuente. 396 KB sin `n
 | Temas desarrollados | 🟡 6 de ~74 unidades — **el cuello de botella** |
 | Modos de estudio | ✅ 5 modos funcionando |
 | SRS | ✅ SM-2 con persistencia local exportable |
+| Diagramas | 🟡 lazos de control ✅, vías y curvas pendientes |
 | Casos clínicos | 🟡 2 |
 | Exportar a Anki | ✅ texto separado por tabuladores |
 | SEO técnico | ✅ Completo |
 | GEO | ✅ llms.txt, JSON-LD, robots generativo |
 | Documentación | ✅ 6 documentos |
-| Tests | ✅ 105 en Vitest, corriendo en CI |
+| Tests | ✅ 127 en Vitest, corriendo en CI |
 | Despliegue | ✅ https://samuelalexsanche.github.io/corpus |
 
 ## 2. Arranque en 2 minutos
@@ -81,17 +82,20 @@ Los cuatro temas que faltan para cerrar el andamiaje. Cada uno sigue el estánda
 **Aceptación:** cada tema con al menos 2 recall, 1 perturbación, 3 errores comunes, 4 tarjetas,
 3 FAQ y fuentes citadas. `npm run build` pasa.
 
-### P2 — Diagramas
+### P2 — Diagramas 🟡
 
-El punto más débil de la interfaz. Los conceptos con forma —lazos de control, vías
-metabólicas, curvas presión-volumen— están explicados solo en prosa.
+`components/diagrama-lazo.tsx` está hecho: dibuja el diagrama de bloques de un lazo desde
+datos —set point, comparador, controlador, efector, variable y la rama del sensor— y **tapa
+una pieza** para que el lector la nombre. Acepta sinónimos, no exige acentos, y no dice
+«incorrecto» sino que invita a reintentar antes de revelar. Se usa en `retroalimentacion-negativa`
+(tapa el controlador) y en `fiebre-vs-hipertermia` (tapa el set point, que es justo la pieza
+que distingue fiebre de hipertermia).
 
-Construir `components/diagrama-lazo.tsx`: SVG que renderice un lazo de control desde datos
-(sensor, controlador, set point, efector) con la opción de ocultar una pieza y pedir al
-usuario que la nombre. Reutilizable para termorregulación, glucemia, presión arterial.
+El set point entra por el comparador y no en serie con el controlador. Parece un detalle de
+dibujo y no lo es: un diagrama mal trazado se aprende igual de bien que el texto.
 
-**Regla de diseño:** un diagrama del mecanismo completo es la respuesta disfrazada. Debe
-mostrar una relación y dejar que la pregunta pida lo que falta.
+Queda lo que no es un lazo: **vías metabólicas y curvas presión-volumen** siguen solo en prosa.
+La regla vale igual para ellas — mostrar una relación y dejar que la pregunta pida lo que falta.
 
 ### P3 — Exportación a Anki ✅
 
@@ -120,7 +124,7 @@ horas semanales → duración por bloque, restando carga de repaso acumulada.
 
 ### P6 — Tests ✅
 
-105 tests en Vitest, corriendo en CI antes del despliegue:
+127 tests en Vitest, corriendo en CI antes del despliegue:
 
 - `tests/srs.test.ts` — escalera de intervalos, umbral de acierto en calidad 3, piso de 1.3
   en el factor de facilidad, vencimiento y que la proyección de los botones no mute el estado

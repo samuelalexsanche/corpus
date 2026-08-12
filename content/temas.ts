@@ -5,6 +5,8 @@ export interface Tarjeta { front: string; back: string }
 export interface FAQ { q: string; a: string }
 export interface Seccion { titulo: string; cuerpo: string[] }
 
+import type { LazoDatos } from "@/lib/lazo";
+
 export interface Tema {
   slug: string;
   titulo: string;
@@ -17,6 +19,11 @@ export interface Tema {
   porQueImporta: string;
   secciones: Seccion[];
   analogia?: { campo: string; texto: string; dondeSeRompe: string };
+  /**
+   * Lazo de control del tema. Se dibuja con una pieza tapada: un diagrama del
+   * mecanismo completo sería la respuesta disfrazada.
+   */
+  diagrama?: LazoDatos;
   recall: RecallPrompt[];
   perturbaciones?: Perturbacion[];
   errores: ErrorComun[];
@@ -74,6 +81,17 @@ export const TEMAS: Tema[] = [
         "Un lazo fisiológico es un controlador en lazo cerrado: mide una variable, compara contra una referencia, y actúa sobre la planta para anular el error. Ganancia, constante de tiempo y retraso significan lo mismo que en control clásico.",
       dondeSeRompe:
         "La evolución no diseña sistemas limpios. Un mismo efector sirve a varios lazos con objetivos en conflicto (la vasoconstricción cutánea sirve a la termorregulación y a la presión arterial a la vez), los set points se mueven con el contexto, y muchos lazos están acoplados de formas que ningún ingeniero aceptaría. La analogía te da la estructura, no la garantía de que el sistema esté bien diseñado.",
+    },
+    diagrama: {
+      variable: "Temperatura central",
+      setPoint: "37 °C",
+      sensor: "Termorreceptores",
+      controlador: "Hipotálamo",
+      efector: "Músculo, piel, vasos",
+      correccion: "genera o disipa calor",
+      perturbacion: "Ambiente frío",
+      incognita: "controlador",
+      aceptadas: ["hipotálamo", "area preoptica del hipotalamo", "centro termorregulador", "nucleo hipotalamico"],
     },
     recall: [
       {
@@ -170,6 +188,17 @@ export const TEMAS: Tema[] = [
       texto: "Fiebre = cambio de referencia con el lazo intacto. Hipertermia = saturación del actuador frente a una perturbación externa que excede su capacidad.",
       dondeSeRompe:
         "La analogía sugiere que basta con distinguir dos casos limpios, y la clínica es más sucia: la hipertermia maligna por anestésicos y el síndrome neuroléptico maligno son cuadros de producción descontrolada de calor a nivel muscular, no encajan del todo en ninguna de las dos casillas y tienen tratamiento propio.",
+    },
+    diagrama: {
+      variable: "Temperatura central",
+      setPoint: "Elevado a 39 °C",
+      sensor: "Termorreceptores",
+      controlador: "Hipotálamo",
+      efector: "Tiritona y vasoconstricción",
+      correccion: "genera y retiene calor",
+      perturbacion: "Pirógenos",
+      incognita: "setPoint",
+      aceptadas: ["elevado", "subido", "mas alto", "39"],
     },
     recall: [
       {
