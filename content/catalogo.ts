@@ -85,45 +85,6 @@ export const LIBROS: Record<Libro, { titulo: string; nota: string }> = {
 
 const MOLECULAR: TemaCatalogo[] = [
   {
-    slug: "glucolisis",
-    nombre: "Glucólisis",
-    sinonimos: ["glicolisis", "vía de Embden-Meyerhof", "glycolysis", "ruta glucolítica"],
-    unidad: "I8577",
-    que: "Vía que degrada una molécula de glucosa hasta dos de piruvato en el citosol, con ganancia neta de dos ATP y dos NADH. Es la única ruta que produce ATP sin oxígeno, y por eso la usa cualquier célula cuando la oxigenación falla y siempre el eritrocito, que carece de mitocondrias.",
-    referencias: [
-      { libro: "guyton", donde: "cap. 68, Metabolismo de los hidratos de carbono y formación del ATP" },
-      { libro: "lippincott", donde: "capítulo de glucólisis" },
-      { libro: "lehninger", donde: "capítulo de glucólisis y catabolismo de hexosas" },
-    ],
-    vecinos: ["ciclo-de-krebs", "gluconeogenesis", "fermentacion-lactica", "via-pentosas-fosfato"],
-  },
-  {
-    slug: "ciclo-de-krebs",
-    nombre: "Ciclo de Krebs",
-    sinonimos: ["ciclo del ácido cítrico", "ciclo de los ácidos tricarboxílicos", "TCA", "ciclo de Krebs-Szent-Györgyi"],
-    unidad: "I8577",
-    que: "Ciclo de la matriz mitocondrial que oxida el acetil-CoA hasta CO₂ y recoge los electrones en NADH y FADH₂. No es solo catabolismo: sus intermediarios son punto de partida de varias rutas de síntesis, y de ahí que se le llame anfibólico.",
-    referencias: [
-      { libro: "guyton", donde: "cap. 68, Metabolismo de los hidratos de carbono y formación del ATP" },
-      { libro: "lippincott", donde: "capítulo del ciclo de los ácidos tricarboxílicos" },
-      { libro: "lehninger", donde: "capítulo del ciclo del ácido cítrico" },
-    ],
-    vecinos: ["glucolisis", "fosforilacion-oxidativa", "beta-oxidacion"],
-  },
-  {
-    slug: "fosforilacion-oxidativa",
-    nombre: "Fosforilación oxidativa y cadena de transporte de electrones",
-    sinonimos: ["cadena respiratoria", "cadena de transporte de electrones", "CTE", "quimiosmosis", "ATP sintasa"],
-    unidad: "I8577",
-    que: "Los electrones del NADH y el FADH₂ recorren cuatro complejos de la membrana mitocondrial interna hasta reducir el oxígeno a agua, y ese recorrido bombea protones al espacio intermembrana. El gradiente resultante mueve la ATP sintasa: es el paso donde se produce la mayor parte del ATP del organismo.",
-    referencias: [
-      { libro: "guyton", donde: "cap. 68, formación de ATP; y cap. 73, Energética y metabolismo" },
-      { libro: "lehninger", donde: "capítulo de fosforilación oxidativa" },
-      { libro: "lippincott", donde: "capítulo de cadena de transporte de electrones" },
-    ],
-    vecinos: ["ciclo-de-krebs", "mitocondria"],
-  },
-  {
     slug: "gluconeogenesis",
     nombre: "Gluconeogénesis",
     sinonimos: ["neoglucogenesis", "síntesis de glucosa"],
@@ -421,19 +382,6 @@ const ESTRUCTURA: TemaCatalogo[] = [
       { libro: "guyton", donde: "cap. 6 a 8, sobre músculo esquelético, liso y su excitación" },
     ],
     vecinos: ["sarcomero", "contraccion-muscular", "tejido-nervioso"],
-  },
-  {
-    slug: "sarcomero",
-    nombre: "Sarcómero y aparato contráctil",
-    sinonimos: ["banda A", "banda I", "disco Z", "actina", "miosina", "titina"],
-    unidad: "I8555",
-    que: "Unidad repetida del músculo estriado, delimitada por dos discos Z, cuya organización de filamentos de actina y miosina produce el patrón de bandas visible al microscopio. Entender qué bandas se acortan durante la contracción y cuáles no es lo que distingue haber comprendido el deslizamiento de filamentos de haberlo memorizado.",
-    referencias: [
-      { libro: "ross", donde: "cap. 11, Tejido muscular" },
-      { libro: "guyton", donde: "cap. 6, Contracción del músculo esquelético" },
-    ],
-    vecinos: ["tejido-muscular", "contraccion-muscular"],
-    figura: "sarcomero",
   },
   {
     slug: "tejido-nervioso",

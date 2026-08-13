@@ -26,18 +26,6 @@ export const FUNCION: TemaCatalogo[] = [
     vecinos: ["potencial-de-accion", "transporte-de-membrana"],
   },
   {
-    slug: "potencial-de-accion",
-    nombre: "Potencial de acción",
-    sinonimos: ["despolarizacion", "repolarizacion", "periodo refractario", "canales de sodio", "conduccion saltatoria"],
-    unidad: "I8568",
-    que: "Cambio rápido y todo o nada del potencial de membrana, producido por la apertura secuencial de canales de sodio y potasio dependientes de voltaje. Los períodos refractarios impiden que la señal vuelva hacia atrás y limitan la frecuencia máxima de disparo.",
-    referencias: [
-      { libro: "guyton", donde: "cap. 5, Potenciales de membrana y potenciales de acción" },
-      { libro: "ganong", donde: "sección de neurofisiología" },
-    ],
-    vecinos: ["potencial-de-membrana", "sinapsis", "tejido-nervioso"],
-  },
-  {
     slug: "transporte-de-membrana",
     nombre: "Transporte a través de la membrana",
     sinonimos: ["difusion facilitada", "transporte activo", "osmosis", "canales", "transportadores", "GLUT"],

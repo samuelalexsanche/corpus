@@ -103,6 +103,18 @@ export function FiguraAnotada({ figura }: { figura: Figura }) {
               strokeWidth={t.grosor ?? 1} strokeDasharray={t.discontinuo ? "4 4" : undefined} />
           ))}
 
+          {figura.textos?.map((t, i) => (
+            <text
+              key={`t${i}`} x={t.x} y={t.y} fontSize={t.tam ?? 12}
+              textAnchor={t.anclaje ?? "middle"}
+              fontWeight={t.negrita ? 600 : 400}
+              fill={color(t.color, "muted-foreground")}
+              className="pointer-events-none select-none"
+            >
+              {t.texto}
+            </text>
+          ))}
+
           {figura.partes.map((p) => {
             const activo = activa === p.id;
             const atenuado = activa !== null && !activo;

@@ -1217,6 +1217,791 @@ export const TEMAS: Tema[] = [
     ],
     relacionados: ["grupos-funcionales", "ph-pka-ionizacion", "biologia-celular"],
   },
+  {
+    slug: "glucolisis",
+    titulo: "Glucólisis: la vía que funciona sin oxígeno",
+    tituloSEO: "Glucólisis: pasos, enzimas reguladoras, balance de ATP y por qué funciona sin oxígeno",
+    bloque: "molecular",
+    unidad: "I8577 · Bioquímica médica",
+    nivel: "mecanismo",
+    minutos: 22,
+    resumen:
+      "Diez pasos que parten una glucosa en dos piruvatos, con ganancia neta de dos ATP y dos NADH. Lo que la hace especial no es cuánto rinde —rinde poco— sino que no necesita oxígeno ni mitocondrias, y por eso es lo único que le queda a un tejido isquémico y lo único que tiene un eritrocito.",
+    porQueImporta:
+      "Es la primera vía metabólica que se estudia y la que decide si bioquímica se vuelve legible o no. Además explica cosas que se ven en la clínica todos los días: por qué un tejido mal perfundido produce lactato, por qué el eritrocito depende de una sola ruta para vivir, y por qué el hígado y el resto del cuerpo responden distinto a la misma glucemia. Y la regulación de un solo paso, el de la fosfofructocinasa-1, es el modelo de cómo se controla cualquier vía.",
+    secciones: [
+      {
+        titulo: "Dos fases, y la primera cuesta dinero",
+        cuerpo: [
+          "La glucólisis se divide en dos mitades con lógicas opuestas. En la **fase de inversión**, la célula gasta dos ATP para preparar la molécula; en la **fase de beneficio**, recupera cuatro. La ganancia neta son dos, y esa aritmética confunde a mucha gente porque el número que se recuerda —cuatro— no es el que cuenta.",
+          "Gastar ATP para poder obtener ATP parece absurdo hasta que se ve para qué sirve. La glucosa es una molécula estable y neutra; fosforilarla la vuelve reactiva y, sobre todo, **le da carga**. Una molécula cargada no atraviesa la bicapa lipídica, así que la glucosa fosforilada queda atrapada dentro de la célula. El primer ATP no compra energía: compra retención.",
+          "El punto de bisagra es la escisión: una molécula de seis carbonos se parte en dos de tres. A partir de ahí **todo ocurre por duplicado**, y ese detalle es la causa del error de balance más común. Cada paso posterior rinde el doble de lo que aparenta cuando se lee la vía una sola vez.",
+        ],
+      },
+      {
+        titulo: "Tres pasos por los que no se puede volver",
+        cuerpo: [
+          "De las diez reacciones, siete son reversibles y tres no. Las tres irreversibles son las catalizadas por la **hexocinasa**, la **fosfofructocinasa-1** y la **piruvato cinasa**, y son exactamente los tres puntos donde la vía se regula.",
+          "No es casualidad. Una reacción reversible va en la dirección que marquen las concentraciones a cada lado, así que regularla no sirve de mucho. Una irreversible siempre va en el mismo sentido, y ahí sí tiene sentido poner un interruptor. **Donde una vía es irreversible, busca la regulación**; es una regla que se repite en todo el metabolismo.",
+          "La consecuencia es que la gluconeogénesis, que fabrica glucosa, no puede ser la glucólisis recorrida al revés: tiene que rodear esos tres pasos con enzimas propias. Y esa diferencia es lo que permite que la célula active una vía y apague la otra en vez de tenerlas corriendo a la vez y gastando energía sin producir nada.",
+        ],
+      },
+      {
+        titulo: "La fosfofructocinasa-1 es la que manda",
+        cuerpo: [
+          "De los tres puntos de control, el que fija la velocidad de la vía es la **fosfofructocinasa-1**. La inhiben el ATP y el citrato, y la activa el AMP. Leído en voz alta suena a lista; leído como mecanismo dice algo simple: la enzima mide si a la célula le sobra o le falta energía y ajusta el flujo en consecuencia.",
+          "El citrato merece atención aparte. Es un intermediario del ciclo de Krebs, y que su acumulación frene la glucólisis significa que **una vía posterior avisa hacia atrás de que está saturada**. Si el ciclo no da abasto, no tiene sentido seguir mandando piruvato.",
+          "La hexocinasa tiene su propio matiz, y es clínico. En casi todos los tejidos la enzima es la hexocinasa, con mucha afinidad por la glucosa: trabaja al máximo incluso con glucemias bajas, porque esos tejidos necesitan glucosa siempre. En el hígado la isoenzima es la **glucocinasa**, con menos afinidad, de modo que solo se pone a trabajar de verdad cuando la glucosa abunda. El hígado no compite por la glucosa cuando escasea: la retira cuando sobra.",
+        ],
+      },
+      {
+        titulo: "El problema del NAD⁺, que es el que obliga a todo lo demás",
+        cuerpo: [
+          "Solo hay un paso de oxidación en toda la glucólisis, el de la gliceraldehído-3-fosfato deshidrogenasa, y ahí se produce el NADH. Ese paso necesita NAD⁺ para funcionar, y la célula tiene una cantidad limitada de NAD⁺ que va convirtiendo en NADH.",
+          "De ahí sale la restricción que gobierna todo lo demás: **si el NADH no se vuelve a oxidar a NAD⁺, la glucólisis se detiene**, no por falta de glucosa sino por falta de transportador libre. Con oxígeno, el NADH cede sus electrones en la mitocondria y el NAD⁺ vuelve. Sin oxígeno, hace falta otra salida.",
+          "Esa salida es reducir el piruvato a **lactato**. Conviene decirlo con precisión: el objetivo de la fermentación láctica no es fabricar lactato, es regenerar NAD⁺. El lactato es el residuo de haber resuelto un problema de contabilidad de electrones, no el producto que se buscaba.",
+          "El eritrocito vive de forma permanente en esta situación porque no tiene mitocondrias, así que la glucólisis es literalmente su única fuente de ATP y produce lactato todo el tiempo en condiciones normales. No es un signo de que algo vaya mal en él.",
+        ],
+      },
+    ],
+    analogia: {
+      campo: "Una caja registradora",
+      texto:
+        "La fase de inversión es el cambio que hay que poner en la caja antes de abrir, y la de beneficio es lo que entra durante el día. Al cerrar, lo que cuenta no es la recaudación bruta sino lo que queda después de descontar el fondo inicial.",
+      dondeSeRompe:
+        "La caja sugiere que el único objetivo es el saldo, y la glucólisis produce dos cosas más que a menudo importan más que el ATP: piruvato, que es materia prima para el ciclo de Krebs o para fabricar otras moléculas, y NADH, que lleva electrones. Además el fondo de caja se recupera intacto y aquí no: los dos ATP gastados se invirtieron en modificar la molécula, no se guardaron.",
+    },
+    figura: "glucolisis",
+    recall: [
+      {
+        pregunta: "Explica de memoria el balance neto de la glucólisis y por qué el número que se recuerda suele estar mal.",
+        referencia:
+          "Por cada glucosa se gastan dos ATP en la fase de inversión, en los pasos de la hexocinasa y de la fosfofructocinasa-1, y se producen cuatro en la fase de beneficio. La ganancia neta es por tanto de dos ATP, más dos NADH y dos piruvatos. El error habitual viene de dos sitios: recordar el cuatro bruto en lugar del dos neto, y olvidar que a partir de la escisión en dos triosas todos los pasos ocurren por duplicado, de modo que las reacciones que rinden ATP lo hacen dos veces cada una. El rendimiento es bajo comparado con la oxidación completa, y esa es justamente la razón de que la vía sea un recurso de emergencia y no la fuente principal de energía cuando hay oxígeno.",
+        pistas: [
+          "¿Cuántos ATP se gastan antes de que la molécula se parta?",
+          "¿Cuántas moléculas de tres carbonos hay a partir de la escisión?",
+          "Bruto y neto no son lo mismo: ¿cuál te están preguntando?",
+        ],
+      },
+      {
+        pregunta: "¿Por qué una célula sin oxígeno produce lactato? Responde sin usar la palabra «energía».",
+        referencia:
+          "Porque necesita regenerar NAD⁺. El único paso de oxidación de la glucólisis, el de la gliceraldehído-3-fosfato deshidrogenasa, consume NAD⁺ y lo convierte en NADH. La cantidad de NAD⁺ de la célula es limitada, así que si el NADH no vuelve a oxidarse la vía se detiene por falta de transportador disponible, no por falta de sustrato. Con oxígeno, el NADH entrega sus electrones en la mitocondria y el NAD⁺ se recupera. Sin oxígeno esa salida no existe, y la célula usa el piruvato como aceptor de electrones: al reducirlo a lactato regenera el NAD⁺ y la glucólisis puede continuar. El lactato es la consecuencia de resolver ese problema, no el objetivo.",
+        pistas: [
+          "¿Cuántos pasos de oxidación tiene la glucólisis y qué consume ese paso?",
+          "¿Qué pasa cuando se acaba la forma oxidada de un transportador?",
+          "¿Qué molécula acepta los electrones cuando el oxígeno no está disponible?",
+        ],
+      },
+    ],
+    predicciones: [
+      {
+        escenario: "Una célula tiene mucho ATP acumulado y también citrato elevado.",
+        pregunta: "¿Qué le ocurre al flujo de la glucólisis y por dónde se ejerce el freno?",
+        respuesta:
+          "El flujo baja, y el freno se aplica sobre la fosfofructocinasa-1, que es la enzima que fija la velocidad de la vía. El ATP la inhibe porque señala que la célula ya tiene energía suficiente, y el citrato hace lo mismo por una razón distinta y más interesante: es un intermediario del ciclo de Krebs, así que su acumulación indica que la vía siguiente está saturada. Es un aviso hacia atrás. Seguir degradando glucosa cuando el ciclo no da abasto solo produciría acumulación de piruvato sin ninguna ganancia. Conviene notar que el freno no actúa sobre la hexocinasa: ese paso ya comprometió la glucosa con la célula, y la glucosa-6-fosfato puede desviarse hacia glucógeno o hacia la vía de las pentosas.",
+      },
+      {
+        escenario: "Un fármaco bloquea de forma selectiva la enzima que convierte piruvato en lactato.",
+        pregunta: "¿Qué tejido sufriría antes, y qué le ocurriría exactamente?",
+        respuesta:
+          "El eritrocito, y con diferencia. No tiene mitocondrias, así que no puede regenerar NAD⁺ por la vía respiratoria y depende por completo de reducir el piruvato a lactato para hacerlo. Bloqueado ese paso, el NADH se acumula, se agota el NAD⁺ libre, la gliceraldehído-3-fosfato deshidrogenasa se detiene y con ella toda la glucólisis. Como esa es su única fuente de ATP, el eritrocito se queda sin energía para mantener sus bombas de membrana y su forma. Cualquier tejido bien oxigenado apenas lo notaría, porque tiene la salida mitocondrial disponible; el músculo en ejercicio intenso sí lo notaría, porque en ese momento depende de la misma solución que el eritrocito.",
+      },
+    ],
+    errores: [
+      {
+        error: "Decir que la glucólisis produce cuatro ATP.",
+        correccion:
+          "Produce cuatro en la fase de beneficio pero gasta dos en la de inversión, así que la ganancia neta es de dos. Dar el número bruto no es un descuido de cálculo: indica que se ha memorizado la vía como una lista de productos en lugar de entenderla como una inversión que hay que recuperar antes de empezar a ganar.",
+      },
+      {
+        error: "Creer que la glucólisis solo ocurre cuando falta oxígeno.",
+        correccion:
+          "Ocurre siempre, haya oxígeno o no. Es la vía obligatoria de entrada del metabolismo de la glucosa, y lo que cambia con el oxígeno es el destino del piruvato y del NADH, no si la vía funciona. Con oxígeno el piruvato entra a la mitocondria; sin él se reduce a lactato. Llamarla «vía anaerobia» sin matizar es lo que produce esta confusión.",
+      },
+      {
+        error: "Pensar que el lactato es un producto de desecho inútil o tóxico en sí mismo.",
+        correccion:
+          "El lactato es un combustible que otros tejidos aprovechan: el hígado lo reconvierte en glucosa mediante el ciclo de Cori, y el corazón y el músculo en reposo lo oxidan directamente. En los cuadros de hipoperfusión, lo que produce la acidez no es el lactato como tal sino la situación metabólica que lo genera; usar «lactato» y «acidosis» como sinónimos oculta el mecanismo.",
+      },
+      {
+        error: "Suponer que la gluconeogénesis es la glucólisis en sentido inverso.",
+        correccion:
+          "Comparte las siete reacciones reversibles pero tiene que rodear las tres irreversibles con enzimas propias. Esa diferencia no es un detalle técnico: es lo que permite regular las dos direcciones por separado. Si fueran la misma vía, cualquier señal que activara una activaría también la otra y la célula solo conseguiría gastar ATP dando vueltas.",
+      },
+      {
+        error: "Tratar la hexocinasa y la glucocinasa como la misma enzima con dos nombres.",
+        correccion:
+          "Difieren en afinidad, y eso les da papeles opuestos. La hexocinasa, presente en casi todos los tejidos, tiene alta afinidad y trabaja incluso con glucemias bajas, porque esos tejidos necesitan glucosa siempre. La glucocinasa del hígado tiene baja afinidad y solo se activa cuando la glucosa abunda, de modo que el hígado retira el exceso en vez de competir por lo poco que haya.",
+      },
+    ],
+    tarjetas: [
+      { front: "¿Cuál es la ganancia NETA de ATP por glucosa en la glucólisis?", back: "Dos ATP." },
+      { front: "¿Cuántos NADH produce la glucólisis por cada glucosa?", back: "Dos." },
+      { front: "¿Qué enzima de la glucólisis fija la velocidad de toda la vía?", back: "La fosfofructocinasa-1." },
+      { front: "¿Qué dos moléculas inhiben la fosfofructocinasa-1?", back: "El ATP y el citrato." },
+      { front: "¿Qué molécula activa la fosfofructocinasa-1?", back: "El AMP." },
+      { front: "¿Cuál es el único paso de oxidación de la glucólisis?", back: "El de la gliceraldehído-3-fosfato deshidrogenasa." },
+      { front: "¿Para qué sirve reducir el piruvato a lactato?", back: "Para regenerar NAD⁺ y que la glucólisis pueda continuar." },
+      { front: "¿Por qué el eritrocito depende por completo de la glucólisis?", back: "Porque no tiene mitocondrias." },
+      { front: "¿Qué isoenzima fosforila la glucosa en el hígado y qué la distingue?", back: "La glucocinasa: tiene menos afinidad, así que solo actúa cuando la glucosa abunda." },
+      { front: "¿En qué se convierte la glucosa al final de la glucólisis?", back: "En dos moléculas de piruvato." },
+    ],
+    faq: [
+      {
+        q: "¿Qué es la glucólisis y para qué sirve?",
+        a: "Es la vía que degrada una molécula de glucosa hasta dos de piruvato en el citosol de la célula, con una ganancia neta de dos ATP y dos NADH. Sirve para obtener energía de la glucosa y para generar piruvato, que es la materia prima del ciclo de Krebs. Su rasgo distintivo es que no necesita oxígeno ni mitocondrias, así que funciona en cualquier célula y en cualquier condición.",
+      },
+      {
+        q: "¿Cuánto ATP produce la glucólisis?",
+        a: "Produce cuatro ATP pero gasta dos en su primera mitad, de modo que la ganancia neta es de dos ATP por cada glucosa. Además genera dos NADH, que en presencia de oxígeno entregan sus electrones en la mitocondria y rinden bastante más ATP. Por eso el rendimiento total de la glucosa es mucho mayor cuando hay oxígeno que cuando no lo hay.",
+      },
+      {
+        q: "¿Por qué la glucólisis produce lactato cuando no hay oxígeno?",
+        a: "Porque necesita recuperar el NAD⁺ que consumió. La vía tiene un paso de oxidación que convierte NAD⁺ en NADH, y como la cantidad de NAD⁺ es limitada, si no se regenera la vía se detiene. Con oxígeno el NADH se oxida en la mitocondria; sin él, la célula usa el piruvato como aceptor de electrones y lo reduce a lactato. El lactato es el medio para regenerar NAD⁺, no el objetivo.",
+      },
+      {
+        q: "¿Cuáles son los pasos irreversibles de la glucólisis?",
+        a: "Los catalizados por la hexocinasa —o glucocinasa en el hígado—, por la fosfofructocinasa-1 y por la piruvato cinasa. Son irreversibles y son precisamente los tres puntos donde la vía se regula, porque solo tiene sentido poner un control donde la reacción va siempre en el mismo sentido. La gluconeogénesis tiene que rodear estos tres pasos con enzimas propias.",
+      },
+    ],
+    fuentes: [
+      "Guyton y Hall, Tratado de fisiología médica, 13.ª ed., cap. 68: «Metabolismo de los hidratos de carbono y formación del trifosfato de adenosina»",
+      "Lippincott Illustrated Reviews: Bioquímica, capítulo de glucólisis",
+      "Lehninger, Principios de bioquímica (Nelson y Cox), capítulo de glucólisis y catabolismo de hexosas",
+    ],
+    relacionados: ["reacciones-del-metabolismo", "ph-pka-ionizacion", "biologia-celular"],
+  },
+  {
+    slug: "ciclo-de-krebs",
+    titulo: "Ciclo de Krebs: no es una vía para producir energía, es una para recogerla",
+    tituloSEO: "Ciclo de Krebs: pasos, regulación, rendimiento por vuelta y por qué es anfibólico",
+    bloque: "molecular",
+    unidad: "I8577 · Bioquímica médica",
+    nivel: "mecanismo",
+    minutos: 22,
+    resumen:
+      "Ocho reacciones en la matriz mitocondrial que oxidan el acetil-CoA hasta CO₂. Produce un solo enlace de alta energía de forma directa; todo lo demás lo entrega como electrones en NADH y FADH₂, que es donde está el verdadero rendimiento. Y sus intermediarios sirven además de materia prima para fabricar otras moléculas.",
+    porQueImporta:
+      "Es el punto donde convergen los tres combustibles: hidratos de carbono, grasas y aminoácidos acaban todos en acetil-CoA. Entenderlo como un recolector de electrones y no como una fábrica de ATP es lo que hace que después la cadena respiratoria tenga sentido. Y su carácter anfibólico —que sirva a la vez para degradar y para construir— explica por qué el ciclo se frena en el ayuno y por qué eso empuja al hígado hacia los cuerpos cetónicos.",
+    secciones: [
+      {
+        titulo: "Qué entra y qué sale",
+        cuerpo: [
+          "Entra **acetil-CoA**, con dos carbonos, y se une al **oxalacetato**, de cuatro, para formar citrato, de seis. A lo largo de la vuelta salen dos moléculas de CO₂ y se regenera el oxalacetato, listo para recibir el siguiente acetil-CoA. De ahí que sea un ciclo: el aceptor no se consume.",
+          "Hay un detalle que casi nadie retiene y que conviene fijar: **los dos carbonos que salen como CO₂ no son los dos que acaban de entrar**. Los carbonos del acetil-CoA se quedan en la molécula y salen en vueltas posteriores. La contabilidad cuadra a nivel de números, no a nivel de átomos individuales.",
+          "El otro detalle de contabilidad es que **por cada glucosa el ciclo da dos vueltas**, porque la glucólisis produjo dos piruvatos y cada uno da un acetil-CoA. Todos los rendimientos que se citan por vuelta hay que duplicarlos si la pregunta parte de una glucosa.",
+        ],
+      },
+      {
+        titulo: "El rendimiento real no está donde parece",
+        cuerpo: [
+          "Por cada vuelta el ciclo produce **tres NADH, un FADH₂ y un GTP** —o ATP, según el tejido—, además de dos CO₂. A primera vista el único producto energético directo es ese GTP, y es una cifra ridícula.",
+          "Ahí está el malentendido que hay que deshacer. El ciclo de Krebs **no es una vía de producción de ATP**: es una vía de extracción de electrones. Su trabajo consiste en arrancar electrones al carbono y cargarlos en transportadores. El ATP se cobra después, en la cadena respiratoria, cuando esos transportadores entregan su carga.",
+          "Visto así, la pregunta «¿cuánto ATP produce el ciclo de Krebs?» está mal planteada. Produce poco por sí mismo y muchísimo a través de lo que entrega. Quien retiene esta distinción entiende también por qué el ciclo se para en cuanto falta oxígeno, aunque el oxígeno no participe en ninguna de sus ocho reacciones: si la cadena respiratoria no consume NADH, el NAD⁺ no vuelve y el ciclo se queda sin aceptor de electrones.",
+          "Hay además una asimetría entre los dos transportadores. El **FADH₂ rinde menos ATP que el NADH**, y no porque lleve menos electrones sino porque entra a la cadena en un punto posterior y su recorrido bombea menos protones. Es una diferencia de dónde entra, no de cuánto trae.",
+        ],
+      },
+      {
+        titulo: "Dónde se regula",
+        cuerpo: [
+          "El punto de control más importante es la **isocitrato deshidrogenasa**, la enzima de la primera descarboxilación. La frenan el NADH y el ATP, y la activa el ADP. La lógica es la misma que en la glucólisis: la vía mide el estado energético de la célula y ajusta su velocidad.",
+          "Conviene fijarse en que el freno principal es el propio NADH. El ciclo se autolimita según lo lleno que esté el sistema de transportadores cargados, que es otra forma de decir que se regula por si la cadena respiratoria está dando abasto o no.",
+          "Y hay un punto de control que no está dentro del ciclo pero decide cuánto entra en él: el complejo de la **piruvato deshidrogenasa**, que convierte piruvato en acetil-CoA. Ese paso es irreversible, y su irreversibilidad tiene una consecuencia importante: **de acetil-CoA no se puede volver a glucosa**. Por eso los ácidos grasos, que se degradan a acetil-CoA, no sirven para fabricar glucosa en el ayuno.",
+        ],
+      },
+      {
+        titulo: "Anfibólico: el ciclo también construye",
+        cuerpo: [
+          "Sus intermediarios no están ahí solo de paso. El **citrato** sale al citosol y aporta carbonos para fabricar ácidos grasos. El **α-cetoglutarato** y el **oxalacetato** se transaminan y se convierten en aminoácidos, o al revés. El **succinil-CoA** participa en la síntesis del grupo hemo.",
+          "Que una vía sirva a la vez para degradar y para construir se llama ser **anfibólica**, y tiene una consecuencia práctica: si se retiran intermediarios para fabricar otras cosas, el ciclo se queda sin material y se frena. Por eso existen reacciones que los reponen, llamadas anapleróticas; la más importante convierte piruvato en oxalacetato.",
+          "El caso clínico donde esto se ve es el **ayuno prolongado**. El hígado necesita oxalacetato para fabricar glucosa, así que lo retira del ciclo. Con menos oxalacetato disponible, el acetil-CoA que llega desde la degradación de las grasas no encuentra con quién condensarse, se acumula, y el hígado lo desvía hacia cuerpos cetónicos. La frase clásica «las grasas arden en el fuego de los hidratos de carbono» describe justamente esto.",
+        ],
+      },
+    ],
+    analogia: {
+      campo: "Una cinta de reciclaje",
+      texto:
+        "El oxalacetato es la bandeja que vuelve vacía al principio de la cinta. Cada vuelta recoge un paquete de dos carbonos, le arranca los electrones aprovechables, tira los restos como CO₂ y devuelve la bandeja para la siguiente ronda.",
+      dondeSeRompe:
+        "La cinta sugiere un circuito cerrado donde nada entra ni sale salvo el material que se procesa, y el ciclo de Krebs no es así: sus intermediarios se retiran continuamente para fabricar aminoácidos, ácidos grasos o el grupo hemo, y hay que reponerlos con reacciones aparte. Una bandeja que desaparece a mitad de la cinta no encaja en la imagen, y en el ciclo ocurre todo el tiempo.",
+    },
+    figura: "ciclo-de-krebs",
+    recall: [
+      {
+        pregunta: "Explica por qué el ciclo de Krebs se detiene sin oxígeno, si el oxígeno no interviene en ninguna de sus reacciones.",
+        referencia:
+          "Porque depende de que sus transportadores de electrones vuelvan a estar disponibles. Tres de sus reacciones reducen NAD⁺ a NADH y otra reduce FAD a FADH₂; la cantidad de esos transportadores es limitada, así que el ciclo solo puede seguir si algo los vuelve a oxidar. Quien lo hace es la cadena respiratoria, y la cadena solo funciona si hay oxígeno al final para recoger los electrones y formar agua. Sin oxígeno, la cadena se llena, el NADH no se reoxida, el NAD⁺ se agota y las deshidrogenasas del ciclo se detienen por falta de aceptor. Es una dependencia indirecta pero absoluta: el oxígeno no entra en ninguna ecuación del ciclo y aun así lo para.",
+        pistas: [
+          "¿Qué consumen las reacciones de oxidación del ciclo, y en qué se convierte?",
+          "¿Quién devuelve esos transportadores a su forma oxidada?",
+          "¿Qué necesita esa otra vía para funcionar?",
+        ],
+      },
+      {
+        pregunta: "¿Qué significa que el ciclo de Krebs sea anfibólico y qué consecuencia tiene en el ayuno prolongado?",
+        referencia:
+          "Significa que sirve a la vez para degradar y para construir: además de oxidar acetil-CoA, sus intermediarios son punto de partida de otras rutas. El citrato aporta carbonos para sintetizar ácidos grasos, el α-cetoglutarato y el oxalacetato se convierten en aminoácidos por transaminación, y el succinil-CoA participa en la síntesis del grupo hemo. La consecuencia es que retirar intermediarios frena el ciclo, y por eso existen reacciones anapleróticas que los reponen, sobre todo la que convierte piruvato en oxalacetato. En el ayuno prolongado el hígado retira oxalacetato para fabricar glucosa; con poco oxalacetato disponible, el acetil-CoA que llega de la degradación de las grasas no encuentra con quién condensarse, se acumula y se desvía a cuerpos cetónicos. Es el mecanismo detrás de la frase de que las grasas arden en el fuego de los hidratos de carbono.",
+        pistas: [
+          "Anfi- significa «ambos»: ¿ambos qué?",
+          "Nombra dos intermediarios que sirvan de materia prima para otra cosa.",
+          "En el ayuno, ¿para qué necesita el hígado el oxalacetato?",
+        ],
+      },
+    ],
+    predicciones: [
+      {
+        escenario: "Se inhibe de forma selectiva la isocitrato deshidrogenasa.",
+        pregunta: "¿Qué le pasa al ciclo y qué se acumula por delante del bloqueo?",
+        respuesta:
+          "El ciclo se detiene en ese punto y se acumulan los intermediarios anteriores, sobre todo citrato e isocitrato. Como la isocitrato deshidrogenasa es la enzima reguladora principal, bloquearla equivale a cerrar el grifo del ciclo entero. Pero el efecto no se queda ahí: el citrato acumulado sale al citosol e inhibe la fosfofructocinasa-1, así que la glucólisis también se frena. Es un buen ejemplo de que las vías no están aisladas, y de que el citrato funciona como la señal con la que el ciclo avisa hacia atrás de que no da abasto. Además, el citrato que sale al citosol es materia prima para sintetizar ácidos grasos, de modo que su exceso empuja hacia el almacenamiento.",
+      },
+      {
+        escenario: "Una célula recibe abundante acetil-CoA procedente de la degradación de grasas, pero su oxalacetato está muy disminuido.",
+        pregunta: "¿Puede el ciclo procesar ese acetil-CoA? ¿Y qué hará la célula con él?",
+        respuesta:
+          "No puede, o solo en muy pequeña medida. El acetil-CoA únicamente entra al ciclo condensándose con oxalacetato, así que sin aceptor disponible se queda fuera por muy abundante que sea. Tampoco puede convertirse en glucosa, porque el paso de piruvato a acetil-CoA es irreversible y no hay camino de vuelta. Lo que hace el hígado es desviarlo hacia la síntesis de cuerpos cetónicos, que sí puede exportar como combustible alternativo para el cerebro y el músculo. Es exactamente la situación del ayuno prolongado, y muestra que la disponibilidad del aceptor puede limitar una vía tanto o más que la del sustrato.",
+      },
+    ],
+    errores: [
+      {
+        error: "Creer que el ciclo de Krebs es donde se produce la mayor parte del ATP.",
+        correccion:
+          "Por vuelta produce un solo GTP de forma directa. Su función real es extraer electrones y cargarlos en NADH y FADH₂; el ATP se obtiene después, en la cadena respiratoria, cuando esos transportadores los entregan. Confundir las dos cosas hace incomprensible por qué el ciclo se para sin oxígeno pese a que el oxígeno no aparece en ninguna de sus reacciones.",
+      },
+      {
+        error: "Pensar que los dos CO₂ que salen son los dos carbonos que acaban de entrar con el acetil-CoA.",
+        correccion:
+          "No lo son. Los carbonos del acetil-CoA permanecen en la molécula durante esa vuelta y salen en vueltas posteriores; los que se liberan como CO₂ proceden del oxalacetato que ya estaba. El balance de números cuadra, el de átomos concretos no, y esa distinción importa cuando se interpretan experimentos con carbono marcado.",
+      },
+      {
+        error: "Suponer que el FADH₂ rinde menos ATP porque transporta menos electrones.",
+        correccion:
+          "Transporta el mismo par de electrones. Rinde menos porque entra a la cadena respiratoria en un punto posterior, saltándose el primer complejo, y por tanto su recorrido bombea menos protones. Es una diferencia de por dónde entra, no de cuánto trae, y entenderlo así evita tener que memorizar las cifras.",
+      },
+      {
+        error: "Decir que las grasas pueden convertirse en glucosa porque acaban en acetil-CoA.",
+        correccion:
+          "El paso de piruvato a acetil-CoA es irreversible, así que no hay camino de vuelta desde el acetil-CoA hasta el piruvato ni, por tanto, hasta la glucosa. Los ácidos grasos de cadena par no aportan carbonos netos a la gluconeogénesis; lo que sí puede hacerlo es el glicerol del triglicérido, que es otra parte de la molécula.",
+      },
+      {
+        error: "Estudiar el ciclo memorizando los ocho intermediarios en orden.",
+        correccion:
+          "La lista se olvida en semanas y no permite responder nada que no sea la propia lista. Lo que se retiene y sirve es la estructura: dónde entran los dos carbonos, dónde salen los dos CO₂, en qué cuatro puntos se recogen electrones, dónde está el único enlace de alta energía directo y dónde se regula. Con eso se reconstruye el orden; con el orden solo no se reconstruye nada.",
+      },
+    ],
+    tarjetas: [
+      { front: "¿Con qué molécula se condensa el acetil-CoA para entrar al ciclo de Krebs?", back: "Con el oxalacetato." },
+      { front: "¿Cuántos NADH produce el ciclo de Krebs por vuelta?", back: "Tres." },
+      { front: "¿Cuál es el único producto de alta energía que el ciclo genera de forma directa?", back: "Un GTP (o ATP, según el tejido)." },
+      { front: "¿Cuántas vueltas del ciclo corresponden a una molécula de glucosa?", back: "Dos, porque la glucólisis produce dos piruvatos." },
+      { front: "¿Qué enzima es el principal punto de regulación del ciclo de Krebs?", back: "La isocitrato deshidrogenasa." },
+      { front: "¿Qué enzima del ciclo también forma parte de la cadena respiratoria?", back: "La succinato deshidrogenasa, que es el complejo II." },
+      { front: "¿Por qué el FADH₂ rinde menos ATP que el NADH?", back: "Porque entra a la cadena en un punto posterior y su recorrido bombea menos protones." },
+      { front: "¿Qué significa que una vía sea anfibólica?", back: "Que sirve a la vez para degradar y para aportar precursores de síntesis." },
+      { front: "¿Qué reacción anaplerótica repone el oxalacetato?", back: "La conversión de piruvato en oxalacetato por la piruvato carboxilasa." },
+      { front: "¿Por qué los ácidos grasos de cadena par no sirven para fabricar glucosa?", back: "Porque el paso de piruvato a acetil-CoA es irreversible y no hay camino de vuelta." },
+    ],
+    faq: [
+      {
+        q: "¿Qué es el ciclo de Krebs y dónde ocurre?",
+        a: "Es una secuencia de ocho reacciones que ocurre en la matriz mitocondrial y que oxida el acetil-CoA hasta dióxido de carbono. En cada vuelta produce tres NADH, un FADH₂, un GTP y dos CO₂, y regenera el oxalacetato con el que empezó. También se le llama ciclo del ácido cítrico o de los ácidos tricarboxílicos.",
+      },
+      {
+        q: "¿Cuánto ATP produce el ciclo de Krebs?",
+        a: "De forma directa, un solo GTP o ATP por vuelta, lo que es muy poco. Su verdadero rendimiento es indirecto: los tres NADH y el FADH₂ que genera entregan sus electrones a la cadena respiratoria, y ahí se produce la mayor parte del ATP. Por eso conviene pensar en el ciclo como una vía que recoge electrones y no como una que fabrica energía.",
+      },
+      {
+        q: "¿Por qué el ciclo de Krebs necesita oxígeno si no lo usa en ninguna reacción?",
+        a: "Porque necesita que sus transportadores vuelvan a estar disponibles. El ciclo convierte NAD⁺ en NADH y FAD en FADH₂, y solo puede seguir si algo los reoxida. Quien lo hace es la cadena respiratoria, que requiere oxígeno como aceptor final de electrones. Sin oxígeno, la cadena se detiene, el NAD⁺ no se recupera y el ciclo se para por falta de aceptor.",
+      },
+      {
+        q: "¿Qué significa que el ciclo de Krebs sea anfibólico?",
+        a: "Que participa tanto en el catabolismo como en el anabolismo. Además de degradar acetil-CoA, sus intermediarios sirven de materia prima para otras rutas: el citrato para sintetizar ácidos grasos, el α-cetoglutarato y el oxalacetato para fabricar aminoácidos, y el succinil-CoA para el grupo hemo. Como esas salidas vacían el ciclo, existen reacciones anapleróticas que reponen los intermediarios.",
+      },
+    ],
+    fuentes: [
+      "Guyton y Hall, Tratado de fisiología médica, 13.ª ed., cap. 68: «Metabolismo de los hidratos de carbono y formación del trifosfato de adenosina»",
+      "Lippincott Illustrated Reviews: Bioquímica, capítulo del ciclo de los ácidos tricarboxílicos",
+      "Lehninger, Principios de bioquímica (Nelson y Cox), capítulo del ciclo del ácido cítrico",
+    ],
+    relacionados: ["glucolisis", "reacciones-del-metabolismo", "biologia-celular"],
+  },
+  {
+    slug: "fosforilacion-oxidativa",
+    titulo: "Fosforilación oxidativa: por qué el cuerpo fabrica un gradiente antes de fabricar ATP",
+    tituloSEO: "Fosforilación oxidativa y cadena respiratoria: complejos, gradiente de protones, ATP sintasa y desacoplamiento",
+    bloque: "molecular",
+    unidad: "I8577 · Bioquímica médica",
+    nivel: "mecanismo",
+    minutos: 24,
+    resumen:
+      "Los electrones del NADH y el FADH₂ bajan por cuatro complejos hasta reducir el oxígeno a agua, y en el camino bombean protones fuera de la matriz. Ese gradiente, y no la oxidación, es lo que mueve la ATP sintasa. Separar las dos cosas es lo que hace comprensible el envenenamiento por cianuro, la fiebre del desacoplamiento y por qué morimos sin oxígeno en minutos.",
+    porQueImporta:
+      "Aquí se produce la mayor parte del ATP del organismo, y es el punto donde convergen la glucólisis, el ciclo de Krebs y la degradación de las grasas. Pero la razón más fuerte para entenderlo bien es otra: es el mejor ejemplo de un mecanismo indirecto en toda la fisiología. La célula no acopla la oxidación a la síntesis de ATP directamente, sino que fabrica una forma intermedia de energía. Ver por qué eso es mejor que lo directo cambia cómo se leen otros muchos sistemas.",
+    secciones: [
+      {
+        titulo: "El problema que resuelve el gradiente",
+        cuerpo: [
+          "Oxidar carbono libera mucha energía de golpe. Sintetizar ATP consume una cantidad concreta y bastante menor. Acoplar las dos cosas de forma directa obligaría a que cada oxidación produjera exactamente lo que cuesta un ATP, lo cual es imposible con reacciones tan distintas.",
+          "La solución es no acoplarlas. Los complejos de la cadena usan la energía de la oxidación para **bombear protones** desde la matriz hacia el espacio intermembrana, y el resultado es un desequilibrio: más protones fuera que dentro, y más carga positiva fuera. Ese desequilibrio es energía almacenada, igual que el agua embalsada.",
+          "Después, una proteína distinta deja volver a los protones y aprovecha el paso para unir ADP y fosfato. Es la **hipótesis quimiosmótica**, y su idea central es que entre la oxidación y la síntesis de ATP no hay contacto químico: hay un gradiente de por medio. Cualquier proceso que sepa bombear protones puede alimentar el sistema, y cualquiera que sepa aprovecharlos puede cobrarlo.",
+        ],
+      },
+      {
+        titulo: "La cadena, complejo a complejo",
+        cuerpo: [
+          "El **complejo I** recoge los electrones del NADH y bombea protones. El **complejo II** es la succinato deshidrogenasa, la misma enzima del ciclo de Krebs vista desde la membrana: entrega los electrones del FADH₂ y **no bombea protones**. Ahí está la explicación de que el FADH₂ rinda menos ATP; no es que traiga menos electrones, es que su entrada se salta una estación de bombeo.",
+          "Los electrones de ambos convergen en la coenzima Q, que los lleva al **complejo III**, y de ahí al citocromo c y al **complejo IV**. Este último se los entrega al oxígeno, que junto con protones forma agua.",
+          "El oxígeno no hace nada más que eso, y sin embargo es imprescindible. Su papel es el de **aceptor final de electrones**: alguien tiene que recogerlos al salir. Si no hay quién los reciba, la cadena se llena, los complejos no pueden pasar más electrones y el bombeo se detiene. Es la razón mecanicista de que la falta de oxígeno mate en minutos.",
+          "Ese mismo razonamiento explica el **cianuro**, que bloquea el complejo IV. No impide que llegue oxígeno al tejido; impide que el tejido pueda usarlo. El resultado es una célula rodeada de oxígeno y muriéndose por no poder pasarle los electrones, que es una situación muy distinta de la isquemia aunque el desenlace celular se parezca.",
+        ],
+      },
+      {
+        titulo: "La ATP sintasa cobra el gradiente",
+        cuerpo: [
+          "La **ATP sintasa** no forma parte de la cadena de electrones. Es un canal con un motor: deja pasar protones de vuelta hacia la matriz y usa ese flujo para girar y catalizar la unión de ADP y fosfato.",
+          "Conviene insistir en la independencia de las dos piezas, porque de ella salen todas las consecuencias interesantes. La cadena crea el gradiente; la sintasa lo gasta. Están conectadas solo a través del gradiente, no por ninguna reacción compartida.",
+          "De ahí sale el **desacoplamiento**. Si algo permite que los protones vuelvan a la matriz sin pasar por la ATP sintasa, el gradiente se disipa y su energía se libera como calor. La cadena entonces acelera, porque encuentra menos resistencia, y se consume más oxígeno sin producir más ATP.",
+          "Eso no es solo un accidente tóxico: es un mecanismo fisiológico. El **tejido adiposo pardo** del recién nacido tiene una proteína desacopladora precisamente para generar calor sin temblar, y es una parte importante de cómo un neonato mantiene su temperatura. La misma física que produce fiebre por intoxicación produce calor útil cuando el cuerpo la usa a propósito.",
+        ],
+      },
+      {
+        titulo: "Cuánto ATP, y por qué la cifra ya no es un número redondo",
+        cuerpo: [
+          "Durante décadas se enseñó que un NADH rendía tres ATP y un FADH₂ dos, con un total de 38 por glucosa. Esos números salían de suponer una relación exacta entre protones bombeados y ATP producidos.",
+          "Hoy se acepta que la relación **no es un número entero** y que los valores habituales están más cerca de 2,5 ATP por NADH y 1,5 por FADH₂, lo que deja el total en torno a 30 o 32 por glucosa. Conviene saber la cifra clásica porque sigue apareciendo en exámenes, y conviene saber por qué se corrigió.",
+          "Merece la pena decir esto con precisión y sin adornos: el rendimiento **depende además de condiciones que varían**, como qué lanzadera use la célula para meter el NADH citosólico en la mitocondria y cuánto gradiente se pierda por fugas. Un número exacto y único no describe bien el sistema. Que un libro dé 38 y otro 30 no significa que uno esté equivocado: significa que la magnitud no es tan fija como sugiere una cifra cerrada.",
+        ],
+      },
+    ],
+    analogia: {
+      campo: "Una presa hidroeléctrica",
+      texto:
+        "La cadena respiratoria es la bomba que sube agua al embalse, el gradiente de protones es el agua embalsada y la ATP sintasa es la turbina. Nadie conecta la bomba directamente a la turbina: entre las dos hay un embalse, y por eso pueden funcionar a ritmos distintos.",
+      dondeSeRompe:
+        "En la presa el agua solo baja por la turbina, y en la mitocondria los protones tienen otras salidas. Esas fugas son fisiológicas y no un defecto: el tejido adiposo pardo las usa a propósito para producir calor. Además, en la membrana el gradiente no es solo de concentración sino también de carga eléctrica, y en la mayoría de las células el componente eléctrico pesa más que el químico, cosa que ninguna presa refleja.",
+    },
+    figura: "cadena-respiratoria",
+    recall: [
+      {
+        pregunta: "Explica por qué la célula fabrica un gradiente de protones en lugar de acoplar directamente la oxidación a la síntesis de ATP.",
+        referencia:
+          "Porque las dos reacciones tienen escalas de energía muy distintas y acoplarlas de forma directa exigiría que cada oxidación liberara exactamente lo que cuesta formar un ATP. El gradiente funciona como una forma intermedia y común de energía: los complejos de la cadena usan la energía de la oxidación para bombear protones fuera de la matriz, creando una diferencia de concentración y de carga a ambos lados de la membrana interna. La ATP sintasa deja después volver esos protones y aprovecha su paso para unir ADP y fosfato. Como entre las dos piezas no hay ninguna reacción compartida, cada una puede funcionar a su propio ritmo, cualquier proceso capaz de bombear protones puede alimentar el sistema y cualquiera capaz de aprovecharlos puede cobrarlo. Esa independencia es también lo que hace posible el desacoplamiento.",
+        pistas: [
+          "¿Qué problema plantea que dos reacciones liberen y consuman cantidades de energía muy distintas?",
+          "¿Qué tienen en común una presa hidroeléctrica y esta membrana?",
+          "¿Qué ganan la cadena y la sintasa por no estar químicamente conectadas?",
+        ],
+      },
+      {
+        pregunta: "Un desacoplante permite que los protones vuelvan a la matriz sin pasar por la ATP sintasa. Predice qué le ocurre al consumo de oxígeno, a la producción de ATP y a la temperatura, y explica por qué.",
+        referencia:
+          "El consumo de oxígeno aumenta, la producción de ATP baja y la temperatura sube. La razón es que el gradiente es lo que frena a la cadena: cuanto más protones acumulados fuera, más cuesta seguir bombeando contra ellos. Si los protones se escapan por otra vía, el gradiente se disipa, la cadena encuentra menos resistencia y acelera, consumiendo más oxígeno. Pero como esos protones no pasan por la ATP sintasa, su energía no se convierte en ATP sino que se libera como calor. Es exactamente lo que hace de forma fisiológica el tejido adiposo pardo del recién nacido para generar calor sin tiritar. El caso muestra que la cadena y la sintasa son piezas independientes conectadas solo por el gradiente, y que se pueden desacoplar sin romper ninguna de las dos.",
+        pistas: [
+          "¿Qué es lo que limita la velocidad de la cadena cuando el gradiente es grande?",
+          "Si los protones no pasan por la turbina, ¿en qué se convierte su energía?",
+          "¿Qué tejido hace esto a propósito y para qué?",
+        ],
+      },
+    ],
+    predicciones: [
+      {
+        escenario: "Una intoxicación bloquea el complejo IV mientras el paciente respira con normalidad.",
+        pregunta: "¿Qué diferencia hay entre esta situación y una isquemia, si en ambas la célula acaba sin ATP?",
+        respuesta:
+          "La diferencia está en dónde falla el sistema, y se nota. En la isquemia no llega oxígeno al tejido porque no llega sangre; en el bloqueo del complejo IV el oxígeno llega perfectamente pero la célula no puede usarlo, porque no tiene cómo entregarle los electrones. La consecuencia es que la sangre venosa mantiene una saturación de oxígeno anormalmente alta —el tejido no lo está extrayendo—, algo que en una isquemia no ocurre. En los dos casos la cadena se detiene, el NAD⁺ no se regenera, el ciclo de Krebs se para y la célula queda dependiendo de la glucólisis con producción de lactato. Pero el razonamiento diagnóstico es opuesto: en uno hay que restablecer el flujo y en el otro el flujo ya está.",
+      },
+      {
+        escenario: "Una célula tiene la cadena respiratoria intacta pero se queda sin ADP disponible.",
+        pregunta: "¿Sigue funcionando la cadena? ¿Qué le pasa al consumo de oxígeno?",
+        respuesta:
+          "Se frena, y el consumo de oxígeno baja. Sin ADP la ATP sintasa no tiene sustrato que fosforilar, así que deja de dejar pasar protones. Los protones se acumulan fuera, el gradiente crece y bombear contra él resulta cada vez más costoso, hasta que la cadena prácticamente se detiene. Esto se llama control respiratorio y es la razón de que el consumo de oxígeno de un tejido siga a su gasto de ATP: cuando la célula gasta ATP genera ADP, el ADP libera la sintasa, el gradiente cae y la cadena acelera. El sistema se autorregula por la demanda sin necesidad de ninguna señal externa.",
+      },
+    ],
+    errores: [
+      {
+        error: "Creer que la ATP sintasa forma parte de la cadena de transporte de electrones.",
+        correccion:
+          "Son dos sistemas independientes que solo se comunican a través del gradiente de protones. La cadena crea el gradiente y la sintasa lo gasta, sin compartir ninguna reacción. Meterlos en el mismo saco hace incomprensible el desacoplamiento, que consiste precisamente en disipar el gradiente dejando ambas piezas intactas.",
+      },
+      {
+        error: "Decir que el oxígeno «se usa para producir energía».",
+        correccion:
+          "El oxígeno no aporta energía: la recibe. Su único papel es aceptar los electrones al final del recorrido y formar agua con ellos. Es imprescindible porque sin alguien que los recoja la cadena se atasca, pero la energía venía de la oxidación del carbono, no del oxígeno.",
+      },
+      {
+        error: "Explicar que el FADH₂ rinde menos ATP porque tiene menos energía.",
+        correccion:
+          "Transporta el mismo par de electrones que el NADH. Rinde menos porque entra a la cadena por el complejo II, que no bombea protones, de modo que su recorrido atraviesa una estación de bombeo menos. Es una diferencia de punto de entrada, no de contenido energético.",
+      },
+      {
+        error: "Dar por definitiva la cifra de 38 ATP por glucosa.",
+        correccion:
+          "Esa cifra suponía una relación exacta y entera entre protones bombeados y ATP producidos, que no se sostiene. Los valores aceptados hoy rondan 2,5 ATP por NADH y 1,5 por FADH₂, con un total de unos 30 a 32, y además dependen de qué lanzadera use la célula y de cuánto gradiente se pierda. Conviene conocer el número clásico y saber por qué se corrigió.",
+      },
+      {
+        error: "Pensar que el desacoplamiento es siempre patológico.",
+        correccion:
+          "Es un mecanismo fisiológico normal. El tejido adiposo pardo del recién nacido tiene una proteína desacopladora que disipa el gradiente a propósito para generar calor sin necesidad de tiritar, y es una parte importante de la termorregulación neonatal. La misma física puede resultar tóxica o útil según quién la controle.",
+      },
+    ],
+    tarjetas: [
+      { front: "¿Qué crean los complejos de la cadena respiratoria al transportar electrones?", back: "Un gradiente de protones a través de la membrana mitocondrial interna." },
+      { front: "¿Qué complejo de la cadena respiratoria no bombea protones?", back: "El complejo II, la succinato deshidrogenasa." },
+      { front: "¿Cuál es el papel del oxígeno en la fosforilación oxidativa?", back: "Ser el aceptor final de electrones, formando agua." },
+      { front: "¿Qué mueve a la ATP sintasa?", back: "El regreso de los protones a la matriz a favor del gradiente." },
+      { front: "¿Qué le pasa al consumo de oxígeno cuando un desacoplante disipa el gradiente?", back: "Aumenta, y sin embargo se produce menos ATP." },
+      { front: "¿Qué tejido usa el desacoplamiento de forma fisiológica y para qué?", back: "El tejido adiposo pardo del recién nacido, para generar calor sin tiritar." },
+      { front: "¿Qué complejo bloquea el cianuro?", back: "El complejo IV." },
+      { front: "¿Por qué en el bloqueo del complejo IV la sangre venosa está más saturada de lo normal?", back: "Porque el oxígeno llega al tejido pero este no puede extraerlo." },
+      { front: "¿Qué es el control respiratorio?", back: "Que la velocidad de la cadena depende de la disponibilidad de ADP, y por tanto del gasto de ATP." },
+      { front: "¿Cuántos ATP por NADH se aceptan hoy, frente a la cifra clásica de 3?", back: "Alrededor de 2,5." },
+    ],
+    faq: [
+      {
+        q: "¿Qué es la fosforilación oxidativa?",
+        a: "Es el proceso por el que la mitocondria produce la mayor parte del ATP del organismo. Los electrones del NADH y el FADH₂ recorren una cadena de complejos en la membrana mitocondrial interna hasta reducir el oxígeno a agua, y ese recorrido bombea protones fuera de la matriz. El gradiente de protones resultante mueve la ATP sintasa, que une ADP y fosfato.",
+      },
+      {
+        q: "¿Por qué morimos sin oxígeno en pocos minutos?",
+        a: "Porque el oxígeno es el aceptor final de los electrones de la cadena respiratoria. Sin alguien que los recoja al final, la cadena se llena, deja de bombear protones y la producción de ATP por esta vía se detiene. Solo queda la glucólisis, cuyo rendimiento es muy inferior y no basta para sostener tejidos de alta demanda como el cerebro y el corazón.",
+      },
+      {
+        q: "¿Qué es el desacoplamiento mitocondrial?",
+        a: "Ocurre cuando los protones vuelven a la matriz sin pasar por la ATP sintasa. El gradiente se disipa, su energía se libera como calor y la cadena acelera al encontrar menos resistencia, de modo que se consume más oxígeno pero se produce menos ATP. Puede ser tóxico, pero también es fisiológico: el tejido adiposo pardo del recién nacido lo usa a propósito para generar calor.",
+      },
+      {
+        q: "¿Cuántos ATP se producen por cada molécula de glucosa?",
+        a: "La cifra clásica de 38 procede de suponer una relación exacta entre protones bombeados y ATP formados, y hoy se considera una simplificación. Con los valores aceptados actualmente, en torno a 2,5 ATP por NADH y 1,5 por FADH₂, el total queda alrededor de 30 a 32. Además depende de qué lanzadera use la célula para el NADH citosólico y de cuánto gradiente se pierda por fugas, así que no es un número fijo.",
+      },
+    ],
+    fuentes: [
+      "Guyton y Hall, Tratado de fisiología médica, 13.ª ed., cap. 68 (formación de ATP) y cap. 73: «Energética y metabolismo»",
+      "Lehninger, Principios de bioquímica (Nelson y Cox), capítulo de fosforilación oxidativa",
+      "Lippincott Illustrated Reviews: Bioquímica, capítulo de cadena de transporte de electrones y fosforilación oxidativa",
+    ],
+    relacionados: ["ciclo-de-krebs", "glucolisis", "biologia-celular"],
+  },
+  {
+    slug: "potencial-de-accion",
+    titulo: "Potencial de acción: por qué es todo o nada y por qué no puede volver hacia atrás",
+    tituloSEO: "Potencial de acción: fases, canales de sodio y potasio, umbral, período refractario y conducción saltatoria",
+    bloque: "funcion",
+    unidad: "I8568 · Fisiología médica",
+    nivel: "mecanismo",
+    minutos: 22,
+    resumen:
+      "Dos tipos de canal con velocidades distintas bastan para explicar la forma entera de la curva. El de sodio es rápido y se amplifica a sí mismo, lo que produce el todo o nada; el de potasio es lento y devuelve la membrana a su sitio. Y la inactivación del sodio —que no es lo mismo que cerrarse— es lo que impide que la señal retroceda.",
+    porQueImporta:
+      "Es el lenguaje con el que se comunican el sistema nervioso, el músculo y el corazón, así que sin él no hay neurofisiología ni electrocardiograma ni comprensión de por qué un anestésico local funciona. Además contiene el único ejemplo importante de retroalimentación positiva en fisiología aguda, y verlo ahí ayuda a reconocerlo en los demás. Casi todo lo que hay que saber se deduce de dos propiedades: qué canal es rápido y cuál es lento.",
+    secciones: [
+      {
+        titulo: "El punto de partida y el umbral",
+        cuerpo: [
+          "En reposo la membrana está alrededor de −70 mV, sobre todo porque es mucho más permeable al potasio que al sodio. Mantener ese estado no es gratuito: la bomba de sodio y potasio trabaja de forma continua para sostener los gradientes de fondo.",
+          "Un estímulo pequeño produce una desviación local que se apaga sola. Solo cuando la despolarización alcanza el **umbral**, en torno a −55 mV, ocurre algo distinto: se abren de golpe suficientes canales de sodio dependientes de voltaje como para que el proceso se dispare solo.",
+          "La diferencia entre esos dos casos es la diferencia entre una señal graduada y un potencial de acción. Una señal graduada puede ser de cualquier tamaño y se atenúa con la distancia; un potencial de acción **o es completo o no existe**, y se propaga sin perder amplitud. Un estímulo mayor no produce un potencial de acción mayor: produce más potenciales por segundo. La intensidad se codifica en frecuencia, no en tamaño.",
+        ],
+      },
+      {
+        titulo: "El sodio se amplifica a sí mismo",
+        cuerpo: [
+          "Al abrirse los canales de sodio, el sodio entra a favor de su gradiente y despolariza más la membrana. Esa despolarización abre más canales de sodio, que dejan entrar más sodio, que despolariza todavía más.",
+          "Esto es **retroalimentación positiva**, y merece detenerse porque es rara en el cuerpo. Casi toda la fisiología funciona con retroalimentación negativa, que corrige las desviaciones; aquí el sistema las amplifica a propósito. Un mecanismo así solo es viable si tiene un freno definido, y lo tiene: la propia inactivación de los canales.",
+          "Cerca de +30 mV los canales de sodio se **inactivan**. Conviene ser preciso con la palabra, porque inactivarse no es cerrarse. Un canal cerrado puede volver a abrirse si llega el estímulo adecuado; uno inactivado está bloqueado por un mecanismo distinto y **no puede reabrirse hasta que la membrana se repolarice**, por intenso que sea el estímulo.",
+        ],
+      },
+      {
+        titulo: "El potasio es lento, y esa lentitud da la forma",
+        cuerpo: [
+          "Los canales de potasio dependientes de voltaje responden al mismo cambio de voltaje que los de sodio, pero **tardan más en abrirse**. Ese retraso es lo que crea la secuencia entera.",
+          "Cuando por fin están abiertos, los de sodio ya se han inactivado. El potasio sale, la membrana se repolariza y vuelve hacia valores negativos. Y como los canales de potasio también tardan en cerrarse, la membrana se pasa de largo y queda más negativa que en reposo: es la **hiperpolarización posterior**.",
+          "Toda la forma de la curva —subida rápida, pico estrecho, bajada algo más lenta y una cola por debajo del reposo— sale de una sola cosa: **un canal rápido y otro lento respondiendo al mismo estímulo**. Si los dos fueran igual de rápidos no habría pico, habría un desplazamiento sin forma.",
+        ],
+      },
+      {
+        titulo: "Los períodos refractarios y la dirección de la señal",
+        cuerpo: [
+          "Mientras los canales de sodio están inactivados, ningún estímulo dispara otro potencial de acción. Es el **período refractario absoluto**, y tiene dos consecuencias importantes.",
+          "La primera es que fija la **frecuencia máxima** a la que una célula puede disparar. La segunda es más elegante: como la zona que la señal acaba de recorrer está refractaria, el impulso **solo puede avanzar hacia delante**. La direccionalidad del axón no la impone ninguna estructura; la impone el tiempo.",
+          "Después viene el **período refractario relativo**, durante la hiperpolarización, en el que sí se puede disparar pero hace falta un estímulo mayor de lo normal, porque la membrana parte de más lejos del umbral.",
+          "En el corazón este mecanismo hace algo adicional y vital. El potencial de acción cardíaco tiene una meseta que alarga muchísimo el período refractario, y eso **impide que el músculo cardíaco entre en tetania**. Un músculo esquelético puede sumar contracciones hasta quedarse contraído; un corazón que hiciera eso dejaría de bombear.",
+        ],
+      },
+      {
+        titulo: "Mielina: ir más rápido gastando menos",
+        cuerpo: [
+          "La mielina es un aislante que envuelve el axón dejando huecos, los nodos de Ranvier, donde se concentran los canales de sodio. La señal se regenera solo en los nodos y salta entre ellos: es la **conducción saltatoria**.",
+          "Gana en dos cosas a la vez. Va más rápido, porque no tiene que regenerar el potencial en cada punto de la membrana. Y gasta menos energía, porque entra menos sodio en total y la bomba tiene menos que devolver a su sitio.",
+          "De ahí se deduce por qué las enfermedades desmielinizantes producen los síntomas que producen. Al perder el aislamiento, la conducción se enlentece o se bloquea, y los déficits aparecen antes en las vías donde la velocidad importa más. El axón puede estar intacto y aun así no conducir bien.",
+        ],
+      },
+    ],
+    analogia: {
+      campo: "Una mecha encendida",
+      texto:
+        "Cada punto de la mecha prende al siguiente con la misma intensidad, así que la llama llega igual de viva al final que al principio, y no se puede prender «un poco». Además la parte ya quemada no puede volver a arder, y por eso el fuego solo avanza en un sentido.",
+      dondeSeRompe:
+        "La mecha se consume y el axón no: se recupera y puede volver a conducir en milisegundos. Y la analogía sugiere que la señal avanza siempre de forma continua, cuando en un axón mielinizado salta de nodo en nodo. También deja fuera lo esencial de la codificación: una mecha no puede transmitir intensidad, y una neurona sí, cambiando la frecuencia de disparo.",
+    },
+    figura: "potencial-de-accion",
+    recall: [
+      {
+        pregunta: "Explica de memoria por qué el potencial de acción es todo o nada y por qué solo avanza en una dirección.",
+        referencia:
+          "Es todo o nada porque la despolarización inicial se amplifica a sí misma: al abrirse los canales de sodio dependientes de voltaje entra sodio, lo que despolariza más la membrana, lo que abre más canales. Es retroalimentación positiva, así que una vez alcanzado el umbral el proceso se completa entero con independencia de la intensidad del estímulo, y por debajo del umbral no ocurre nada más que una desviación local que se apaga. Por eso la intensidad del estímulo no se codifica en la amplitud sino en la frecuencia de disparo. Avanza en una sola dirección porque, tras el pico, los canales de sodio quedan inactivados, y un canal inactivado no puede reabrirse hasta que la membrana se repolarice, por intenso que sea el estímulo. La zona que la señal acaba de recorrer está por tanto refractaria y no puede volver a excitarse, de modo que la única salida es hacia delante. La direccionalidad la impone el tiempo, no la estructura.",
+        pistas: [
+          "¿Qué tipo de retroalimentación hay en la fase de subida?",
+          "Si el estímulo no cambia la amplitud, ¿en qué se codifica su intensidad?",
+          "¿En qué estado quedan los canales de sodio por detrás de la señal?",
+        ],
+      },
+      {
+        pregunta: "¿Qué diferencia hay entre un canal de sodio cerrado y uno inactivado, y por qué importa?",
+        referencia:
+          "Un canal cerrado está en reposo y puede abrirse en cuanto la membrana alcance el umbral. Un canal inactivado está bloqueado por un mecanismo distinto, que se activa tras la apertura y cerca del pico del potencial de acción, y no puede volver a abrirse por mucho estímulo que reciba: primero tiene que repolarizarse la membrana para que el canal recupere el estado cerrado disponible. Importa porque esa inactivación es la que crea el período refractario absoluto, y de él salen tres consecuencias: se fija la frecuencia máxima de disparo de la célula, el impulso no puede retroceder hacia la zona que acaba de recorrer, y en el corazón, donde el período refractario es muy largo por la meseta, se impide que el músculo entre en tetania. Confundir cerrado con inactivado hace que nada de eso se pueda deducir.",
+        pistas: [
+          "Los dos estados no conducen: ¿en qué se diferencian entonces?",
+          "¿Qué hace falta para que un canal inactivado vuelva a estar disponible?",
+          "¿Qué período refractario nace de esa diferencia?",
+        ],
+      },
+    ],
+    predicciones: [
+      {
+        escenario: "Un fármaco bloquea los canales de sodio dependientes de voltaje en un nervio periférico.",
+        pregunta: "¿Qué le ocurre a la conducción y por qué esos fármacos actúan mejor sobre fibras que están disparando mucho?",
+        respuesta:
+          "La conducción se bloquea, porque sin entrada de sodio la despolarización nunca alcanza el umbral y el potencial de acción no llega a dispararse. Es el mecanismo de los anestésicos locales. Lo interesante es lo segundo: muchos de estos fármacos se unen preferentemente al canal cuando está abierto o inactivado, no cuando está en reposo. Una fibra que dispara con frecuencia pasa más tiempo en esos estados, así que acumula más bloqueo que una fibra silenciosa. De ahí que el efecto sea dependiente del uso y que las fibras más activas, como las que transmiten dolor, se bloqueen antes que otras. El razonamiento sirve igual para entender por qué ciertos antiarrítmicos actúan más sobre un miocardio que va rápido que sobre uno a frecuencia normal.",
+      },
+      {
+        escenario: "Se enlentecen de forma selectiva los canales de potasio dependientes de voltaje, sin tocar los de sodio.",
+        pregunta: "¿Cómo cambia la forma del potencial de acción?",
+        respuesta:
+          "La repolarización se retrasa, así que el potencial de acción se ensancha: el pico se mantiene más tiempo en valores positivos antes de bajar. También se alarga el período refractario, porque los canales de sodio tardan más en recuperarse de la inactivación al depender esta de que la membrana se repolarice. La consecuencia funcional es que la célula puede disparar a menos frecuencia. Este escenario no es teórico: alargar la repolarización es lo que hace que en el electrocardiograma se prolongue el intervalo QT, y ese alargamiento se asocia a un riesgo de arritmias que es la razón por la que se vigila.",
+      },
+    ],
+    errores: [
+      {
+        error: "Creer que un estímulo más fuerte produce un potencial de acción más grande.",
+        correccion:
+          "La amplitud es siempre la misma una vez superado el umbral, porque la determinan los gradientes iónicos y no el estímulo. Un estímulo más intenso produce más potenciales de acción por segundo. La intensidad se codifica en frecuencia, y perder esto de vista impide entender cómo el sistema nervioso transmite algo tan graduado como la intensidad de un dolor.",
+      },
+      {
+        error: "Usar «cerrado» e «inactivado» como sinónimos al hablar de los canales de sodio.",
+        correccion:
+          "Un canal cerrado está disponible y puede abrirse en cuanto se alcance el umbral; uno inactivado está bloqueado y no puede reabrirse hasta que la membrana se repolarice. De esa diferencia dependen el período refractario absoluto, la imposibilidad de que la señal retroceda y el que el corazón no pueda entrar en tetania.",
+      },
+      {
+        error: "Pensar que la bomba de sodio y potasio genera el potencial de acción.",
+        correccion:
+          "El potencial de acción lo generan los canales, que dejan pasar iones a favor de su gradiente sin gastar ATP en ese momento. La bomba mantiene los gradientes a largo plazo, y sin ella acabarían agotándose, pero durante el propio impulso mueve una cantidad de iones despreciable. Una célula envenenada en su bomba puede seguir disparando un rato antes de agotarse.",
+      },
+      {
+        error: "Suponer que la mielina hace que la señal viaje por dentro del axón sin tocar la membrana.",
+        correccion:
+          "El potencial de acción se regenera en cada nodo de Ranvier, donde se concentran los canales de sodio; entre nodos la corriente sí circula de forma pasiva, y por eso el impulso salta. La ganancia es doble: más velocidad y menos gasto, porque entra menos sodio total y la bomba tiene menos trabajo posterior.",
+      },
+      {
+        error: "Extrapolar la curva de la neurona a cualquier célula excitable.",
+        correccion:
+          "El potencial de acción cardíaco tiene una meseta sostenida por la entrada de calcio que la neurona no tiene, y esa meseta alarga enormemente el período refractario. Es justo lo que impide la tetania del miocardio. Aplicar la curva neuronal al corazón hace incomprensible tanto el electrocardiograma como buena parte de la farmacología antiarrítmica.",
+      },
+    ],
+    tarjetas: [
+      { front: "¿A qué voltaje aproximado está el potencial de membrana en reposo de una neurona típica?", back: "Alrededor de −70 mV." },
+      { front: "¿Qué tipo de retroalimentación explica la fase de despolarización?", back: "Positiva: la entrada de sodio abre más canales de sodio." },
+      { front: "¿Qué ocurre con los canales de sodio cerca del pico del potencial de acción?", back: "Se inactivan, que no es lo mismo que cerrarse." },
+      { front: "¿Qué hace falta para que un canal de sodio inactivado vuelva a estar disponible?", back: "Que la membrana se repolarice." },
+      { front: "¿Qué canal produce la repolarización y qué lo caracteriza?", back: "El de potasio dependiente de voltaje: es más lento que el de sodio." },
+      { front: "¿Por qué la membrana queda más negativa que en reposo tras el potencial de acción?", back: "Porque los canales de potasio tardan en cerrarse y el potasio sigue saliendo." },
+      { front: "¿Qué impide que el impulso nervioso retroceda?", back: "Que la zona recién recorrida está en período refractario absoluto." },
+      { front: "¿En qué se codifica la intensidad de un estímulo, si la amplitud no cambia?", back: "En la frecuencia de disparo." },
+      { front: "¿Cómo se llama la conducción entre nodos de Ranvier?", back: "Conducción saltatoria." },
+      { front: "¿Qué impide que el músculo cardíaco entre en tetania?", back: "Su período refractario muy prolongado por la meseta del potencial de acción." },
+    ],
+    faq: [
+      {
+        q: "¿Qué es un potencial de acción?",
+        a: "Es un cambio rápido y transitorio del voltaje de la membrana de una célula excitable, producido por la apertura secuencial de canales de sodio y de potasio dependientes de voltaje. Se dispara solo si la despolarización alcanza un umbral, y a partir de ahí se completa siempre igual, con la misma amplitud. Es la señal con la que se comunican las neuronas, el músculo y el corazón.",
+      },
+      {
+        q: "¿Por qué se dice que el potencial de acción es «todo o nada»?",
+        a: "Porque por debajo del umbral no ocurre y por encima ocurre completo, con una amplitud que no depende de la intensidad del estímulo. La razón es que la fase de subida se amplifica a sí misma: la entrada de sodio despolariza la membrana, lo que abre más canales de sodio. Un estímulo más intenso no produce un potencial mayor, sino más potenciales por segundo.",
+      },
+      {
+        q: "¿Qué es el período refractario y para qué sirve?",
+        a: "Es el intervalo tras un potencial de acción durante el cual la célula no puede disparar otro, o necesita un estímulo mayor. El absoluto se debe a la inactivación de los canales de sodio y hace tres cosas: limita la frecuencia máxima de disparo, impide que el impulso retroceda hacia la zona ya recorrida y, en el corazón, evita que el músculo entre en tetania. El relativo coincide con la hiperpolarización posterior.",
+      },
+      {
+        q: "¿Para qué sirve la mielina?",
+        a: "Aísla el axón dejando huecos, los nodos de Ranvier, donde se concentran los canales de sodio. El potencial de acción se regenera solo en esos nodos y salta entre ellos, lo que se llama conducción saltatoria. La ventaja es doble: la señal viaja mucho más rápido y consume menos energía, porque entra menos sodio y la bomba tiene menos que restituir.",
+      },
+    ],
+    fuentes: [
+      "Guyton y Hall, Tratado de fisiología médica, 13.ª ed., cap. 5: «Potenciales de membrana y potenciales de acción»",
+      "Ganong, Fisiología médica, sección de fisiología celular y neurofisiología",
+      "Guyton y Hall, cap. 10, sobre la excitación rítmica del corazón y el potencial de acción cardíaco",
+    ],
+    relacionados: ["retroalimentacion-negativa", "biologia-celular", "ph-pka-ionizacion"],
+  },
+
+  {
+    slug: "sarcomero",
+    titulo: "El sarcómero: qué se acorta de verdad cuando un músculo se contrae",
+    tituloSEO: "Sarcómero: bandas A, I y H, disco Z, deslizamiento de filamentos y ciclo de puentes cruzados",
+    bloque: "estructura",
+    unidad: "I8555 · Histología",
+    nivel: "mecanismo",
+    minutos: 20,
+    resumen:
+      "Los filamentos no se encogen: se deslizan unos sobre otros. Esa sola frase decide qué bandas del sarcómero se estrechan y cuáles no, y saber distinguirlas es la comprobación más rápida de si alguien entendió la contracción o solo la recitó.",
+    porQueImporta:
+      "Es donde la estructura explica la función de la forma más limpia de toda la histología: el patrón de bandas que se ve al microscopio es una consecuencia directa de cómo se solapan dos tipos de filamento. Además el ciclo de los puentes cruzados explica hechos clínicos concretos, desde por qué el ATP hace falta para relajarse y no solo para contraerse hasta la rigidez que aparece tras la muerte.",
+    secciones: [
+      {
+        titulo: "Las piezas y por qué se ven bandas",
+        cuerpo: [
+          "El sarcómero es el segmento comprendido **entre dos discos Z** y es la unidad que se repite a lo largo de la miofibrilla. Del disco Z parten hacia el centro los **filamentos delgados**, de actina, y en la zona central se sitúan los **filamentos gruesos**, de miosina.",
+          "El patrón de bandas es puro efecto óptico del solapamiento. Donde solo hay filamento delgado, la zona se ve clara: es la **banda I**. Donde está el filamento grueso, se ve oscura en toda su longitud, haya o no delgados por medio: es la **banda A**. Y en el centro de la banda A, donde el grueso no tiene compañía, aparece la **zona H**, algo más clara, atravesada por la **línea M**.",
+          "Los filamentos delgados llevan además **tropomiosina** y el complejo de **troponina**. En reposo la tropomiosina tapa los sitios de la actina donde la miosina se uniría. Esto merece subrayarse porque el error conceptual más común está aquí: el músculo en reposo no está inactivo por falta de energía, está **activamente bloqueado**.",
+        ],
+      },
+      {
+        titulo: "Qué se acorta y qué no",
+        cuerpo: [
+          "Al contraerse, ningún filamento cambia de longitud. Lo que ocurre es que los delgados **se deslizan hacia el centro**, aumentando su solapamiento con los gruesos.",
+          "De ahí se deduce todo lo demás sin memorizar nada. Los discos Z se acercan, así que el sarcómero se acorta. La banda I, que es la zona sin filamento grueso, se estrecha. La zona H, que es la zona sin filamento delgado, también se estrecha y puede desaparecer.",
+          "Y **la banda A no cambia**, porque mide la longitud del filamento grueso y el filamento grueso no se acorta. Esa es la pregunta que separa a quien entendió el mecanismo de quien memorizó una lista: si alguien dice que la banda A se acorta, es que sigue imaginando filamentos que se encogen.",
+        ],
+      },
+      {
+        titulo: "El ciclo de los puentes cruzados y el papel doble del ATP",
+        cuerpo: [
+          "Cuando llega el potencial de acción, el retículo sarcoplásmico libera **calcio**. El calcio se une a la troponina, la troponina desplaza a la tropomiosina y quedan libres los sitios de unión de la actina. El interruptor es el calcio y actúa sobre el filamento delgado, no sobre la miosina.",
+          "Con los sitios libres, la cabeza de miosina se une, gira y arrastra el filamento delgado hacia el centro. Ese giro es el **golpe de fuerza**.",
+          "Aquí está el punto que más se olvida: **hace falta ATP para que la miosina se suelte**. El ATP no solo alimenta el golpe de fuerza, también es lo que permite deshacer la unión. Una fibra sin ATP no se queda relajada: se queda enganchada.",
+          "Eso es exactamente el **rigor mortis**. Al morir la célula, se agota el ATP y las cabezas de miosina no pueden soltarse de la actina, de modo que el músculo queda rígido. No es una contracción, porque no hay ni señal ni calcio regulado: es una imposibilidad de separación. Entenderlo así hace innecesario memorizarlo.",
+        ],
+      },
+      {
+        titulo: "La longitud de partida importa",
+        cuerpo: [
+          "La fuerza que un sarcómero puede generar depende de cuánto se solapan los filamentos antes de empezar, porque la fuerza es proporcional al número de puentes cruzados que pueden formarse.",
+          "Si el sarcómero parte demasiado estirado, hay poco solapamiento y pocos puentes posibles. Si parte demasiado acortado, los filamentos delgados se estorban entre sí y los gruesos chocan con los discos Z. Existe por tanto una **longitud intermedia óptima**.",
+          "Esta relación entre longitud y tensión es la base estructural de la ley de Frank-Starling en el corazón: un ventrículo que se llena más parte de una longitud más favorable y expulsa más, sin necesidad de ninguna señal externa. Conviene añadir que en el músculo cardíaco intacto intervienen además otros factores, como la sensibilidad al calcio, de modo que la explicación por solapamiento es una parte del cuadro y no el cuadro entero.",
+        ],
+      },
+    ],
+    analogia: {
+      campo: "Dos peines que se entrelazan",
+      texto:
+        "Dos peines enfrentados que acercan sus mangos entrelazando más las púas: las púas no se acortan, solo se meten unas entre otras, y el conjunto ocupa menos espacio.",
+      dondeSeRompe:
+        "Los peines se deslizan pasivamente y aquí el movimiento lo genera una de las dos piezas: la miosina se agarra a la actina y tira, en ciclos repetidos que consumen ATP. La imagen tampoco recoge lo esencial de la regulación —que los sitios de unión están tapados hasta que llega el calcio— ni el hecho de que hace falta energía para soltarse, no solo para tirar.",
+    },
+    figura: "sarcomero",
+    recall: [
+      {
+        pregunta: "Durante la contracción, ¿qué bandas del sarcómero se estrechan y cuál no cambia? Justifica cada una.",
+        referencia:
+          "Se estrechan la banda I y la zona H, y la banda A no cambia. El motivo común es que ningún filamento se acorta: los delgados se deslizan hacia el centro y aumentan su solapamiento con los gruesos. La banda I es la región donde solo hay filamento delgado, así que al entrar los delgados en la zona ocupada por los gruesos esa región se reduce. La zona H es la parte central donde solo hay filamento grueso, y se estrecha porque los delgados avanzan hacia ella; en una contracción máxima puede desaparecer. La banda A corresponde a toda la longitud del filamento grueso, y como ese filamento mantiene su longitud, la banda A permanece constante. Los discos Z, que delimitan el sarcómero, se acercan entre sí, y eso es lo que define que el sarcómero se acortó.",
+        pistas: [
+          "¿Cambia de longitud algún filamento?",
+          "¿Qué hay exactamente en cada banda: solo delgados, solo gruesos, o ambos?",
+          "Si la banda A mide el filamento grueso, ¿qué le tendría que pasar a ese filamento para que cambiara?",
+        ],
+      },
+      {
+        pregunta: "Explica por qué hace falta ATP para relajar un músculo y qué ocurre cuando se agota.",
+        referencia:
+          "El ATP interviene dos veces en el ciclo de los puentes cruzados. Su hidrólisis prepara y energiza la cabeza de miosina para el golpe de fuerza, pero además la unión de una nueva molécula de ATP a la cabeza es lo que hace que esta se suelte de la actina. Sin ATP, la cabeza queda unida y no puede separarse, de modo que la fibra no se relaja sino que se queda enganchada. Eso es el rigor mortis: al morir la célula se agota el ATP y las cabezas de miosina permanecen adheridas, dejando el músculo rígido. Conviene precisar que no es una contracción, porque no hay señal nerviosa ni liberación regulada de calcio; es una imposibilidad de separación. La relajación normal, en cambio, requiere además que el calcio vuelva al retículo sarcoplásmico, y ese transporte también consume ATP.",
+        pistas: [
+          "El ATP participa en dos momentos distintos del ciclo: ¿cuáles?",
+          "¿Qué molécula tiene que unirse a la cabeza de miosina para que se suelte?",
+          "¿Qué estado del cuerpo ilustra lo que pasa cuando falta?",
+        ],
+      },
+    ],
+    predicciones: [
+      {
+        escenario: "Se impide que el calcio liberado vuelva al retículo sarcoplásmico, aunque siga habiendo ATP.",
+        pregunta: "¿Qué le ocurre al músculo?",
+        respuesta:
+          "Permanece contraído. Mientras haya calcio unido a la troponina, la tropomiosina sigue apartada y los sitios de unión de la actina siguen accesibles, de modo que el ciclo de puentes cruzados continúa. La relajación no es un estado pasivo al que la fibra vuelve sola: exige retirar el calcio activamente, y ese transporte de vuelta al retículo consume ATP. El caso deja claro que hay dos requisitos distintos para relajarse —que haya ATP para soltar las cabezas y que el calcio se retire— y que fallar cualquiera de los dos deja el músculo contraído, aunque por mecanismos diferentes.",
+      },
+      {
+        escenario: "Un sarcómero se estira mucho más allá de su longitud de reposo antes de estimularlo.",
+        pregunta: "¿Genera más o menos fuerza, y por qué?",
+        respuesta:
+          "Menos. La fuerza depende de cuántos puentes cruzados pueden formarse, y eso depende de cuánto se solapan los filamentos gruesos y delgados. Estirado en exceso, el solapamiento disminuye, hay menos cabezas de miosina con actina disponible enfrente y la fuerza cae. En el extremo opuesto la fuerza también cae, porque los filamentos delgados de los dos lados se estorban entre sí y los gruesos topan con los discos Z. Existe por tanto una longitud intermedia en la que la fuerza es máxima. Esta relación es la base estructural de la ley de Frank-Starling en el corazón, aunque en el músculo cardíaco intacto intervienen además otros factores como la sensibilidad al calcio.",
+      },
+    ],
+    errores: [
+      {
+        error: "Decir que los filamentos se acortan durante la contracción.",
+        correccion:
+          "Ni la actina ni la miosina cambian de longitud: se deslizan una sobre otra aumentando su solapamiento. De esta distinción se deduce directamente qué bandas se estrechan, así que quien la tiene clara no necesita memorizar la lista y quien no la tiene falla siempre en la banda A.",
+      },
+      {
+        error: "Afirmar que la banda A se acorta al contraerse.",
+        correccion:
+          "La banda A corresponde a la longitud del filamento grueso, que no cambia, así que se mantiene constante. Es la comprobación más rápida de si alguien entendió el deslizamiento de filamentos: si cree que la banda A se acorta, sigue imaginando filamentos que se encogen.",
+      },
+      {
+        error: "Pensar que el calcio actúa sobre la miosina.",
+        correccion:
+          "En el músculo estriado el calcio se une a la troponina, que está en el filamento delgado, y ese cambio desplaza a la tropomiosina y descubre los sitios de unión de la actina. La regulación está en el filamento delgado. En el músculo liso el mecanismo es distinto y sí pasa por la miosina, lo que explica que responda a fármacos diferentes.",
+      },
+      {
+        error: "Creer que el ATP solo hace falta para contraerse.",
+        correccion:
+          "También hace falta para soltarse: la unión de una nueva molécula de ATP es lo que separa la cabeza de miosina de la actina. Y la relajación requiere además retirar el calcio al retículo sarcoplásmico, que es un transporte activo. Sin ATP el músculo no se relaja, se queda rígido, y eso es el rigor mortis.",
+      },
+      {
+        error: "Llamar contracción al rigor mortis.",
+        correccion:
+          "No hay señal nerviosa ni liberación regulada de calcio: hay cabezas de miosina que no pueden soltarse porque no queda ATP. Es una imposibilidad de separación, no un proceso activo. La diferencia importa porque explica por qué el rigor aparece con retraso y por qué después desaparece al degradarse las proteínas.",
+      },
+    ],
+    tarjetas: [
+      { front: "¿Entre qué estructuras se define un sarcómero?", back: "Entre dos discos Z." },
+      { front: "¿Qué contiene la banda I?", back: "Solo filamento delgado." },
+      { front: "¿A qué corresponde exactamente la banda A?", back: "A toda la longitud del filamento grueso, se solape o no." },
+      { front: "¿Qué le pasa a la banda A durante la contracción?", back: "No cambia." },
+      { front: "¿Qué hay en la zona H?", back: "Solo filamento grueso, sin solapamiento con los delgados." },
+      { front: "¿A qué proteína se une el calcio en el músculo estriado?", back: "A la troponina, en el filamento delgado." },
+      { front: "¿Qué hace la tropomiosina en reposo?", back: "Tapa los sitios de unión de la actina para la miosina." },
+      { front: "¿Qué molécula debe unirse a la cabeza de miosina para que se suelte de la actina?", back: "Una nueva molécula de ATP." },
+      { front: "¿Por qué el músculo queda rígido tras la muerte?", back: "Porque sin ATP las cabezas de miosina no pueden soltarse de la actina." },
+      { front: "¿De qué depende la fuerza que puede generar un sarcómero?", back: "Del solapamiento inicial, que determina cuántos puentes cruzados pueden formarse." },
+    ],
+    faq: [
+      {
+        q: "¿Qué es un sarcómero?",
+        a: "Es la unidad funcional del músculo estriado, definida como el segmento comprendido entre dos discos Z. Contiene filamentos delgados de actina, que parten de los discos Z hacia el centro, y filamentos gruesos de miosina en la zona central. La forma en que ambos se solapan produce el patrón de bandas claras y oscuras que se ve al microscopio.",
+      },
+      {
+        q: "¿Qué bandas del sarcómero se acortan durante la contracción?",
+        a: "Se estrechan la banda I y la zona H, mientras que la banda A permanece constante. La razón es que los filamentos no cambian de longitud: se deslizan unos sobre otros. La banda I contiene solo filamento delgado y se reduce cuando este avanza hacia el centro; la zona H contiene solo filamento grueso y se estrecha por el mismo motivo; la banda A mide el filamento grueso, que no se acorta.",
+      },
+      {
+        q: "¿Por qué se produce el rigor mortis?",
+        a: "Porque se agota el ATP. La unión de una nueva molécula de ATP a la cabeza de miosina es lo que le permite soltarse de la actina, así que sin ATP las cabezas quedan adheridas y el músculo permanece rígido. No es una contracción, ya que no hay señal nerviosa ni liberación regulada de calcio, sino una imposibilidad de separación. Desaparece más tarde, al degradarse las proteínas.",
+      },
+      {
+        q: "¿Qué papel tiene el calcio en la contracción muscular?",
+        a: "En el músculo estriado, el calcio liberado por el retículo sarcoplásmico se une a la troponina del filamento delgado. Ese cambio desplaza a la tropomiosina, que en reposo tapaba los sitios donde la miosina se une a la actina, y permite que empiece el ciclo de puentes cruzados. El calcio es por tanto el interruptor, y actúa sobre el filamento delgado y no sobre la miosina.",
+      },
+    ],
+    fuentes: [
+      "Ross, Histología: texto y atlas, 8.ª ed., cap. 11: «Tejido muscular»",
+      "Guyton y Hall, Tratado de fisiología médica, 13.ª ed., cap. 6: «Contracción del músculo esquelético»",
+      "Guyton y Hall, cap. 9, sobre el músculo cardíaco y la relación longitud-tensión",
+    ],
+    relacionados: ["ley-de-laplace", "hipertrofia-vs-hiperplasia", "biologia-celular"],
+  },
 ];
 
 export const getTema = (slug: string) => TEMAS.find((t) => t.slug === slug);

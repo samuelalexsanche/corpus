@@ -140,6 +140,16 @@ Dos reglas que no se negocian:
 Hay tests que comprueban que los rótulos caen dentro del lienzo y que los números no se
 solapan entre sí. El segundo ya atrapó dos números encimados en el sarcómero.
 
+**No se generan figuras con IA.** Se probó: nano-banana produce ilustraciones preciosas y
+médicamente falsas —rótulos mal escritos («prarital»), el occipital señalando la frente, el
+nasal señalando la mandíbula—. Un modelo de imagen no sabe anatomía, sabe a qué se parece una
+lámina de anatomía. Para figuras informativas el dibujo va a mano en `figuras.ts`, donde cada
+coordenada es una decisión revisable y los tests la vigilan.
+
+**Objetivo: que todo tema tenga apoyo visual.** Faltan por ilustrar `hipertrofia-vs-hiperplasia`,
+`terminologia-medica`, `grupos-funcionales`, `ley-de-laplace`, `quiralidad`, `biologia-celular`
+y `reacciones-del-metabolismo`.
+
 ## Convenciones
 
 - Español. Término técnico en inglés cuando sea el estándar de la literatura.
