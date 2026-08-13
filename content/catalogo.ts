@@ -85,18 +85,6 @@ export const LIBROS: Record<Libro, { titulo: string; nota: string }> = {
 
 const MOLECULAR: TemaCatalogo[] = [
   {
-    slug: "gluconeogenesis",
-    nombre: "Gluconeogénesis",
-    sinonimos: ["neoglucogenesis", "síntesis de glucosa"],
-    unidad: "I8577",
-    que: "Síntesis de glucosa a partir de precursores que no son hidratos de carbono —lactato, glicerol y aminoácidos glucogénicos—, sobre todo en el hígado. No es la glucólisis al revés: rodea sus tres pasos irreversibles con enzimas propias, y esa diferencia es lo que permite regular las dos direcciones por separado.",
-    referencias: [
-      { libro: "guyton", donde: "cap. 68, formación de hidratos de carbono a partir de proteínas y grasas" },
-      { libro: "lippincott", donde: "capítulo de gluconeogénesis" },
-    ],
-    vecinos: ["glucolisis", "glucogenolisis", "ciclo-de-cori"],
-  },
-  {
     slug: "ciclo-de-cori",
     nombre: "Ciclo de Cori",
     sinonimos: ["ciclo del ácido láctico", "cori cycle"],
@@ -145,30 +133,6 @@ const MOLECULAR: TemaCatalogo[] = [
     vecinos: ["gluconeogenesis", "glucolisis"],
   },
   {
-    slug: "beta-oxidacion",
-    nombre: "Beta-oxidación de los ácidos grasos",
-    sinonimos: ["oxidacion de acidos grasos", "carnitina", "lipólisis mitocondrial"],
-    unidad: "I8577",
-    que: "Degradación de los ácidos grasos en la matriz mitocondrial, recortando dos carbonos por vuelta y liberando acetil-CoA, NADH y FADH₂. Los ácidos grasos de cadena larga necesitan el transporte por carnitina para entrar en la mitocondria, y ese paso es un punto de regulación y de enfermedad.",
-    referencias: [
-      { libro: "guyton", donde: "cap. 69, Metabolismo de los lípidos" },
-      { libro: "lippincott", donde: "capítulo de metabolismo de ácidos grasos" },
-    ],
-    vecinos: ["cetogenesis", "ciclo-de-krebs", "lipoproteinas"],
-  },
-  {
-    slug: "cetogenesis",
-    nombre: "Cuerpos cetónicos y cetogénesis",
-    sinonimos: ["cetosis", "acetoacetato", "beta-hidroxibutirato", "cuerpos cetonicos"],
-    unidad: "I8577",
-    que: "En el ayuno prolongado el hígado convierte el exceso de acetil-CoA en cuerpos cetónicos, que sirven de combustible alternativo a cerebro y músculo. Son un mecanismo fisiológico de adaptación, y conviene distinguirlo del cuadro patológico que aparece cuando su producción se descontrola.",
-    referencias: [
-      { libro: "guyton", donde: "cap. 69, Metabolismo de los lípidos; y cap. 79, sobre diabetes" },
-      { libro: "lippincott", donde: "capítulo de cuerpos cetónicos" },
-    ],
-    vecinos: ["beta-oxidacion", "ayuno-metabolico"],
-  },
-  {
     slug: "lipoproteinas",
     nombre: "Lipoproteínas y transporte de lípidos",
     sinonimos: ["LDL", "HDL", "VLDL", "quilomicrones", "colesterol"],
@@ -180,18 +144,6 @@ const MOLECULAR: TemaCatalogo[] = [
       { libro: "robbins", donde: "cap. 11, Vasos sanguíneos" },
     ],
     vecinos: ["beta-oxidacion", "ateroesclerosis"],
-  },
-  {
-    slug: "ciclo-de-la-urea",
-    nombre: "Ciclo de la urea",
-    sinonimos: ["ureagenesis", "amonio", "hiperamonemia"],
-    unidad: "I8577",
-    que: "Ruta hepática que convierte el amonio, tóxico para el sistema nervioso, en urea, que el riñón puede excretar. Su fallo —hereditario o por enfermedad hepática— produce acumulación de amonio y afectación neurológica.",
-    referencias: [
-      { libro: "guyton", donde: "cap. 70, Metabolismo de las proteínas; y cap. 71, El hígado como órgano" },
-      { libro: "lippincott", donde: "capítulo de eliminación del nitrógeno de los aminoácidos" },
-    ],
-    vecinos: ["transaminacion", "aminoacidos"],
   },
   {
     slug: "transaminacion",
@@ -229,18 +181,6 @@ const MOLECULAR: TemaCatalogo[] = [
       { libro: "alberts", donde: "capítulo de proteínas" },
     ],
     vecinos: ["aminoacidos", "enzimas-cinetica", "amiloidosis"],
-  },
-  {
-    slug: "enzimas-cinetica",
-    nombre: "Enzimas y cinética enzimática",
-    sinonimos: ["Michaelis-Menten", "Km", "Vmax", "inhibicion competitiva", "cinetica enzimatica", "Lineweaver-Burk"],
-    unidad: "I8577",
-    que: "Cómo una enzima acelera una reacción bajando la energía de activación, y cómo se describe cuantitativamente su comportamiento con la constante de Michaelis y la velocidad máxima. Los tipos de inhibición se distinguen por cuál de esos dos parámetros modifican.",
-    referencias: [
-      { libro: "lehninger", donde: "capítulo de enzimas" },
-      { libro: "lippincott", donde: "capítulo de enzimas" },
-    ],
-    vecinos: ["reacciones-del-metabolismo", "estructura-de-proteinas"],
   },
   {
     slug: "replicacion-del-adn",

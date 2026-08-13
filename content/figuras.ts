@@ -610,7 +610,390 @@ const POTENCIAL_ACCION: Figura = {
   ],
 };
 
+/* ------------------------------------------------------------------ */
+
+const GLUCONEOGENESIS: Figura = {
+  slug: "gluconeogenesis",
+  titulo: "Gluconeogénesis: los tres rodeos que la separan de la glucólisis",
+  viewBox: "0 0 660 600",
+  fondo: [
+    { d: "M 330 40 V 560", borde: "border", grosor: 1, discontinuo: true },
+    { d: "M 175 70 V 530", borde: "destructive", grosor: 2 },
+    { d: "M 485 530 V 70", borde: "success", grosor: 2 },
+  ],
+  textos: [
+    { x: 175, y: 34, texto: "GLUCÓLISIS", tam: 11, negrita: true, color: "destructive" },
+    { x: 175, y: 50, texto: "glucosa → piruvato", tam: 10, color: "muted-foreground" },
+    { x: 485, y: 34, texto: "GLUCONEOGÉNESIS", tam: 11, negrita: true, color: "success" },
+    { x: 485, y: 50, texto: "piruvato → glucosa", tam: 10, color: "muted-foreground" },
+    { x: 330, y: 90, texto: "Glucosa", negrita: true, color: "foreground" },
+    { x: 330, y: 250, texto: "Fructosa-6-P", color: "foreground" },
+    { x: 330, y: 300, texto: "Fructosa-1,6-bisP", tam: 11, color: "foreground" },
+    { x: 330, y: 470, texto: "Fosfoenolpiruvato", tam: 11, color: "foreground" },
+    { x: 330, y: 560, texto: "Piruvato", negrita: true, color: "foreground" },
+    { x: 330, y: 380, texto: "7 pasos reversibles", tam: 10, color: "muted-foreground" },
+    { x: 330, y: 396, texto: "compartidos por las dos vías", tam: 10, color: "muted-foreground" },
+  ],
+  partes: [
+    {
+      id: "rodeo-1",
+      nombre: "Rodeo 1: glucosa-6-fosfatasa",
+      explicacion:
+        "La hexocinasa fosforiló la glucosa y ese paso no se puede deshacer, así que la vuelta necesita una enzima distinta que retire el fosfato. **Solo el hígado y el riñón tienen esta enzima**, y por eso solo ellos pueden liberar glucosa a la sangre. El músculo almacena glucógeno pero no puede compartirlo: le falta este paso.",
+      trazos: [
+        { d: "M 430 120 h 110 v 44 h -110 Z", relleno: "success", borde: "success", grosor: 2 },
+      ],
+      rotulo: { x: 596, y: 108, haciaX: 540, haciaY: 130 },
+    },
+    {
+      id: "rodeo-2",
+      nombre: "Rodeo 2: fructosa-1,6-bisfosfatasa",
+      explicacion:
+        "Deshace lo que hizo la fosfofructocinasa-1, y es el punto de control principal de la gluconeogénesis igual que aquella lo era de la glucólisis. Las dos enzimas responden en sentidos opuestos a las mismas señales, de modo que cuando una se activa la otra se apaga y la célula nunca corre las dos vías a la vez.",
+      trazos: [
+        { d: "M 430 272 h 110 v 44 h -110 Z", relleno: "success", borde: "success", grosor: 2 },
+      ],
+      rotulo: { x: 596, y: 262, haciaX: 540, haciaY: 282 },
+    },
+    {
+      id: "rodeo-3",
+      nombre: "Rodeo 3: dos enzimas y un desvío por la mitocondria",
+      explicacion:
+        "Volver de piruvato a fosfoenolpiruvato cuesta dos reacciones y dos enlaces de alta energía. La piruvato carboxilasa lo convierte primero en oxalacetato **dentro de la mitocondria** y necesita biotina; después la fosfoenolpiruvato carboxicinasa lo transforma en fosfoenolpiruvato. Es el paso más caro de toda la vía.",
+      trazos: [
+        { d: "M 430 480 h 110 v 44 h -110 Z", relleno: "success", borde: "success", grosor: 2 },
+        { d: "M 430 430 h 110 v 40 h -110 Z", relleno: "primary", borde: "primary", grosor: 2 },
+      ],
+      rotulo: { x: 596, y: 502, haciaX: 540, haciaY: 502 },
+    },
+    {
+      id: "pasos-irreversibles",
+      nombre: "Los tres pasos que la glucólisis no puede desandar",
+      explicacion:
+        "Hexocinasa, fosfofructocinasa-1 y piruvato cinasa. Son irreversibles y por eso la gluconeogénesis no es la glucólisis al revés. Si lo fuera, las dos vías compartirían enzimas, cualquier señal activaría ambas y la célula solo conseguiría gastar ATP dando vueltas sin producir nada: eso se llama ciclo fútil.",
+      trazos: [
+        { d: "M 120 120 h 110 v 44 h -110 Z", relleno: "destructive", borde: "destructive", grosor: 2 },
+        { d: "M 120 272 h 110 v 44 h -110 Z", relleno: "destructive", borde: "destructive", grosor: 2 },
+        { d: "M 120 480 h 110 v 44 h -110 Z", relleno: "destructive", borde: "destructive", grosor: 2 },
+      ],
+      rotulo: { x: 64, y: 300, haciaX: 114, haciaY: 294 },
+    },
+    {
+      id: "coste",
+      nombre: "El coste: seis enlaces de alta energía",
+      explicacion:
+        "Fabricar una glucosa desde dos piruvatos consume cuatro ATP y dos GTP, mientras que la glucólisis solo había rendido dos ATP netos. Volver atrás cuesta bastante más que lo que se ganó al bajar, y esa asimetría es la razón de que el organismo solo fabrique glucosa cuando de verdad hace falta.",
+      trazos: [{ d: "M 250 570 h 160 v 26 h -160 Z", relleno: "accent", borde: "accent", grosor: 1.5 }],
+      rotulo: { x: 140, y: 583, haciaX: 244, haciaY: 583 },
+    },
+  ],
+  advertencia:
+    "Esquema de la relación entre las dos vías y de dónde están los rodeos, no de todos los intermediarios ni de la compartimentación completa. El paso por oxalacetato mitocondrial se muestra simplificado.",
+  referencias: [
+    { libro: "guyton", donde: "cap. 68, formación de hidratos de carbono a partir de proteínas y grasas" },
+    { libro: "lippincott", donde: "capítulo de gluconeogénesis" },
+  ],
+};
+
+/* ------------------------------------------------------------------ */
+
+const BETA_OXIDACION: Figura = {
+  slug: "beta-oxidacion",
+  titulo: "Beta-oxidación: una vuelta, dos carbonos menos",
+  viewBox: "0 0 660 540",
+  fondo: [
+    { d: "M 40 150 H 620", borde: "border", grosor: 2 },
+    { d: "M 40 176 H 620", borde: "border", grosor: 2 },
+    { d: "M 300 200 V 240", borde: "muted-foreground" },
+    { d: "M 300 292 V 330", borde: "muted-foreground" },
+    { d: "M 300 382 V 420", borde: "muted-foreground" },
+  ],
+  textos: [
+    { x: 330, y: 40, texto: "CITOSOL", tam: 11, negrita: true, color: "muted-foreground" },
+    { x: 330, y: 70, texto: "Ácido graso → acil-CoA", color: "foreground" },
+    { x: 330, y: 166, texto: "membrana mitocondrial interna", tam: 10, color: "muted-foreground" },
+    { x: 330, y: 216, texto: "Acil-CoA (n carbonos)", negrita: true, color: "foreground" },
+    { x: 330, y: 268, texto: "Enoil-CoA", color: "foreground" },
+    { x: 330, y: 358, texto: "3-hidroxiacil-CoA", color: "foreground" },
+    { x: 330, y: 446, texto: "3-cetoacil-CoA", color: "foreground" },
+    { x: 610, y: 500, texto: "MATRIZ", tam: 11, negrita: true, color: "primary", anclaje: "end" },
+  ],
+  partes: [
+    {
+      id: "lanzadera-carnitina",
+      nombre: "Lanzadera de carnitina",
+      explicacion:
+        "Los ácidos grasos de cadena larga no atraviesan la membrana mitocondrial interna por sí solos: necesitan unirse a carnitina para entrar. Es el paso limitante de toda la vía y su punto de control, y lo inhibe el malonil-CoA, que es la señal de que la célula está fabricando grasa en vez de quemarla. Las dos cosas no ocurren a la vez.",
+      trazos: [{ d: "M 268 140 h 64 v 46 h -64 Z", relleno: "accent", borde: "accent", grosor: 2 }],
+      rotulo: { x: 180, y: 120, haciaX: 268, haciaY: 152 },
+    },
+    {
+      id: "paso-1",
+      nombre: "1. Oxidación → FADH₂",
+      explicacion:
+        "Se forma un doble enlace entre los carbonos alfa y beta, y los electrones retirados cargan un FAD. Es la primera de las dos oxidaciones de cada vuelta, y por eso cada ciclo entrega un FADH₂.",
+      trazos: [{ d: "M 350 222 h 130 v 14 h -130 Z", relleno: "primary", borde: "primary", grosor: 1.5 }],
+      rotulo: { x: 528, y: 229, haciaX: 484, haciaY: 229 },
+    },
+    {
+      id: "paso-2",
+      nombre: "2. Hidratación",
+      explicacion:
+        "Se añade agua al doble enlace y aparece un grupo hidroxilo en el carbono beta. No produce ni consume transportadores de electrones: prepara la molécula para la oxidación siguiente.",
+      trazos: [{ d: "M 350 300 h 130 v 14 h -130 Z", relleno: "muted", borde: "muted-foreground", grosor: 1.5 }],
+      rotulo: { x: 528, y: 307, haciaX: 484, haciaY: 307 },
+    },
+    {
+      id: "paso-3",
+      nombre: "3. Oxidación → NADH",
+      explicacion:
+        "El hidroxilo del carbono beta se oxida a cetona y los electrones cargan un NAD⁺. De ahí viene el nombre de la vía: la acción ocurre sobre el carbono beta, el segundo contando desde el grupo carboxilo.",
+      trazos: [{ d: "M 350 390 h 130 v 14 h -130 Z", relleno: "primary", borde: "primary", grosor: 1.5 }],
+      rotulo: { x: 528, y: 397, haciaX: 484, haciaY: 397 },
+    },
+    {
+      id: "paso-4",
+      nombre: "4. Tiólisis → acetil-CoA",
+      explicacion:
+        "Se corta la cadena y se libera un acetil-CoA de dos carbonos, dejando un acil-CoA dos carbonos más corto que vuelve a entrar al ciclo. La vía no termina hasta que la cadena se agota, y de ahí que un ácido graso largo rinda tanto: repite la vuelta muchas veces.",
+      trazos: [{ d: "M 350 466 h 130 v 14 h -130 Z", relleno: "success", borde: "success", grosor: 2 }],
+      rotulo: { x: 528, y: 473, haciaX: 484, haciaY: 473 },
+    },
+    {
+      id: "vuelta",
+      nombre: "El acil-CoA acortado vuelve a empezar",
+      explicacion:
+        "Cada vuelta rinde un FADH₂, un NADH y un acetil-CoA, y devuelve una cadena dos carbonos más corta. Por eso el rendimiento de una grasa es tan alto comparado con el de la glucosa: no es que cada paso rinda más, es que hay muchas más vueltas.",
+      trazos: [{ d: "M 240 473 H 160 V 216 h 60", borde: "success", grosor: 2.5 }],
+      rotulo: { x: 116, y: 340, haciaX: 158, haciaY: 340 },
+    },
+  ],
+  advertencia:
+    "Esquema del orden de los cuatro pasos y de su rendimiento por vuelta. No representa las estructuras químicas, ni el manejo de los ácidos grasos insaturados y de cadena impar, que requieren enzimas adicionales.",
+  referencias: [
+    { libro: "guyton", donde: "cap. 69, Metabolismo de los lípidos" },
+    { libro: "lippincott", donde: "capítulo de metabolismo de los ácidos grasos" },
+  ],
+};
+
+/* ------------------------------------------------------------------ */
+
+const CETOGENESIS: Figura = {
+  slug: "cetogenesis",
+  titulo: "Por qué el ayuno produce cuerpos cetónicos",
+  viewBox: "0 0 700 480",
+  fondo: [
+    { d: "M 30 60 h 330 v 380 h -330 Z", borde: "border", grosor: 1.5 },
+    { d: "M 420 190 h 250 v 110 h -250 Z", borde: "border", grosor: 1.5 },
+  ],
+  textos: [
+    { x: 195, y: 44, texto: "HÍGADO", tam: 12, negrita: true, color: "primary" },
+    { x: 545, y: 174, texto: "CEREBRO Y MÚSCULO", tam: 12, negrita: true, color: "accent" },
+    { x: 545, y: 232, texto: "Usan cuerpos cetónicos", tam: 11, color: "foreground" },
+    { x: 545, y: 252, texto: "como combustible cuando", tam: 11, color: "foreground" },
+    { x: 545, y: 272, texto: "escasea la glucosa", tam: 11, color: "foreground" },
+    { x: 120, y: 112, texto: "Grasa movilizada", tam: 11, color: "muted-foreground" },
+    { x: 120, y: 200, texto: "Acetil-CoA", negrita: true, color: "foreground" },
+    { x: 285, y: 200, texto: "Oxalacetato", color: "foreground" },
+    { x: 285, y: 300, texto: "GLUCOSA", tam: 11, negrita: true, color: "success" },
+    { x: 120, y: 396, texto: "Cuerpos cetónicos", tam: 11, negrita: true, color: "accent" },
+  ],
+  partes: [
+    {
+      id: "lipolisis",
+      nombre: "La grasa se moviliza y llega acetil-CoA de sobra",
+      explicacion:
+        "En el ayuno cae la insulina y sube el glucagón, así que el tejido adiposo libera ácidos grasos y el hígado los degrada por beta-oxidación. El resultado es acetil-CoA en abundancia, mucho más del que el ciclo de Krebs va a poder procesar.",
+      trazos: [{ d: "M 120 124 V 182", borde: "accent", grosor: 3 }],
+      rotulo: { x: 62, y: 152, haciaX: 112, haciaY: 152 },
+    },
+    {
+      id: "oxalacetato-desviado",
+      nombre: "El oxalacetato se desvía a fabricar glucosa",
+      explicacion:
+        "Aquí está el nudo del tema. El hígado necesita mantener la glucemia, así que retira oxalacetato del ciclo de Krebs para alimentar la gluconeogénesis. Es la misma molécula que hace falta para que el acetil-CoA pueda entrar al ciclo, de modo que las dos demandas compiten.",
+      trazos: [{ d: "M 285 214 V 284", borde: "success", grosor: 3 }],
+      rotulo: { x: 340, y: 250, haciaX: 297, haciaY: 250 },
+    },
+    {
+      id: "krebs-frenado",
+      nombre: "Sin aceptor, el ciclo de Krebs se frena",
+      explicacion:
+        "El acetil-CoA solo entra al ciclo condensándose con oxalacetato. Con poco oxalacetato disponible, el acetil-CoA se acumula por muy abundante que sea: lo que limita no es el combustible sino el aceptor. Tampoco puede convertirse en glucosa, porque el paso de piruvato a acetil-CoA es irreversible.",
+      trazos: [
+        { d: "M 152 200 H 246", borde: "muted-foreground", grosor: 2, discontinuo: true },
+        { d: "M 186 184 L 212 216 M 212 184 L 186 216", borde: "destructive", grosor: 3 },
+      ],
+      rotulo: { x: 199, y: 148, haciaX: 199, haciaY: 178 },
+    },
+    {
+      id: "cetogenesis",
+      nombre: "El hígado convierte el exceso en cuerpos cetónicos",
+      explicacion:
+        "Ante un acetil-CoA que no puede quemar ni convertir en glucosa, el hígado lo transforma en acetoacetato y beta-hidroxibutirato. Son hidrosolubles, viajan por la sangre sin transportador y atraviesan la barrera hematoencefálica, cosa que los ácidos grasos no hacen.",
+      trazos: [{ d: "M 120 214 V 380", borde: "accent", grosor: 3 }],
+      rotulo: { x: 62, y: 300, haciaX: 112, haciaY: 300 },
+    },
+    {
+      id: "exportacion",
+      nombre: "El hígado los fabrica pero no los usa",
+      explicacion:
+        "Al hepatocito le falta la enzima que reactiva el acetoacetato, así que no puede consumir lo que produce. Eso no es un defecto: garantiza que todo lo fabricado se exporte a los tejidos que lo necesitan, sobre todo al cerebro, que no puede usar ácidos grasos.",
+      trazos: [{ d: "M 200 396 H 545 V 316", borde: "accent", grosor: 3 }],
+      rotulo: { x: 620, y: 396, haciaX: 545, haciaY: 380 },
+    },
+  ],
+  advertencia:
+    "Esquema del mecanismo fisiológico del ayuno. No representa el cuadro patológico que aparece cuando la producción se descontrola, que tiene causas y consecuencias distintas y se estudia aparte.",
+  referencias: [
+    { libro: "guyton", donde: "cap. 69, Metabolismo de los lípidos; y cap. 72, obesidad y ayuno" },
+    { libro: "lippincott", donde: "capítulo de cuerpos cetónicos" },
+  ],
+};
+
+/* ------------------------------------------------------------------ */
+
+const CICLO_UREA: Figura = {
+  slug: "ciclo-de-la-urea",
+  titulo: "Ciclo de la urea: a caballo entre la mitocondria y el citosol",
+  viewBox: "0 0 660 520",
+  fondo: [
+    { d: "M 60 60 h 540 v 180 h -540 Z", borde: "border", grosor: 1.5 },
+    { d: "M 60 240 h 540 v 220 h -540 Z", borde: "border", grosor: 1, discontinuo: true },
+  ],
+  textos: [
+    { x: 330, y: 44, texto: "MATRIZ MITOCONDRIAL", tam: 11, negrita: true, color: "primary" },
+    { x: 330, y: 484, texto: "CITOSOL", tam: 11, negrita: true, color: "muted-foreground" },
+    { x: 140, y: 120, texto: "NH₄⁺ + CO₂", negrita: true, color: "destructive" },
+    { x: 330, y: 120, texto: "Carbamoil fosfato", tam: 11, color: "foreground" },
+    { x: 520, y: 120, texto: "Citrulina", color: "foreground" },
+    { x: 520, y: 300, texto: "Argininosuccinato", tam: 11, color: "foreground" },
+    { x: 520, y: 400, texto: "Arginina", color: "foreground" },
+    { x: 200, y: 400, texto: "Ornitina", color: "foreground" },
+    { x: 200, y: 320, texto: "UREA", negrita: true, tam: 13, color: "success" },
+    { x: 330, y: 258, texto: "la citrulina sale · la ornitina entra", tam: 10, color: "muted-foreground" },
+  ],
+  partes: [
+    {
+      id: "cps1",
+      nombre: "Carbamoil fosfato sintetasa I: la puerta y el freno",
+      explicacion:
+        "Fija el amonio libre con CO₂ y gasta dos ATP en hacerlo. Es el paso limitante del ciclo y solo funciona en presencia de N-acetilglutamato, que actúa como señal de que hay muchos aminoácidos que degradar. Su déficit hereditario es una de las causas de acumulación de amonio en el recién nacido.",
+      trazos: [{ d: "M 196 108 h 66 v 24 h -66 Z", relleno: "destructive", borde: "destructive", grosor: 2 }],
+      rotulo: { x: 229, y: 76, haciaX: 229, haciaY: 106 },
+    },
+    {
+      id: "reparto",
+      nombre: "Los dos nitrógenos vienen de sitios distintos",
+      explicacion:
+        "Uno entra como amonio libre en la mitocondria, y el otro lo aporta el aspartato ya en el citosol. Que la urea lleve dos nitrógenos de procedencia distinta es lo que conecta este ciclo con la transaminación, que es de donde sale el aspartato.",
+      trazos: [{ d: "M 596 300 h 30 V 180 h -30", borde: "accent", grosor: 2.5 }],
+      rotulo: { x: 626, y: 232, haciaX: 610, haciaY: 240 },
+    },
+    {
+      id: "membrana",
+      nombre: "El ciclo cruza la membrana dos veces",
+      explicacion:
+        "Los dos primeros pasos ocurren en la matriz mitocondrial y el resto en el citosol, así que la citrulina tiene que salir y la ornitina volver a entrar. Es de los pocos ciclos metabólicos repartidos entre dos compartimentos, y esa partición aparece en muchas preguntas.",
+      trazos: [{ d: "M 60 240 H 600", borde: "primary", grosor: 3 }],
+      rotulo: { x: 92, y: 212, haciaX: 92, haciaY: 238 },
+    },
+    {
+      id: "arginasa",
+      nombre: "Arginasa: donde nace la urea",
+      explicacion:
+        "Corta la arginina y libera urea y ornitina. La ornitina vuelve a la mitocondria y el ciclo puede empezar otra vez, igual que el oxalacetato en el ciclo de Krebs: es el transportador que se recupera, no un sustrato que se gasta.",
+      trazos: [{ d: "M 268 388 h 66 v 24 h -66 Z", relleno: "success", borde: "success", grosor: 2 }],
+      rotulo: { x: 301, y: 448, haciaX: 301, haciaY: 414 },
+    },
+    {
+      id: "amonio",
+      nombre: "Por qué importa: el amonio es neurotóxico",
+      explicacion:
+        "El amonio libre atraviesa la barrera hematoencefálica y altera el funcionamiento del sistema nervioso. Convertirlo en urea, que es atóxica e hidrosoluble, es lo que permite excretarlo por el riñón. Si el hígado falla o falta una enzima del ciclo, el amonio se acumula y aparece afectación neurológica.",
+      trazos: [{ d: "M 108 108 h 70 v 24 h -70 Z", relleno: "destructive", borde: "destructive", grosor: 2 }],
+      rotulo: { x: 84, y: 168, haciaX: 120, haciaY: 136 },
+    },
+  ],
+  advertencia:
+    "Esquema del recorrido y de la compartimentación, no de las estructuras ni del balance energético completo. Los transportadores de membrana concretos que mueven citrulina y ornitina no se representan.",
+  referencias: [
+    { libro: "guyton", donde: "cap. 70, Metabolismo de las proteínas; y cap. 71, El hígado como órgano" },
+    { libro: "lippincott", donde: "capítulo de eliminación del nitrógeno de los aminoácidos" },
+  ],
+};
+
+/* ------------------------------------------------------------------ */
+
+const CINETICA: Figura = {
+  slug: "cinetica-enzimatica",
+  titulo: "Cinética enzimática: qué mueve cada tipo de inhibidor",
+  viewBox: "0 0 660 420",
+  fondo: [
+    { d: "M 90 50 V 350", borde: "border", grosor: 1.5 },
+    { d: "M 90 350 H 620", borde: "border", grosor: 1.5 },
+    { d: "M 90 96 H 620", borde: "border", grosor: 1, discontinuo: true },
+    { d: "M 90 223 H 400", borde: "border", grosor: 1, discontinuo: true },
+  ],
+  textos: [
+    { x: 80, y: 100, texto: "Vmáx", tam: 11, anclaje: "end", negrita: true },
+    { x: 80, y: 227, texto: "Vmáx/2", tam: 11, anclaje: "end" },
+    { x: 46, y: 200, texto: "velocidad", tam: 11, anclaje: "middle" },
+    { x: 560, y: 378, texto: "[sustrato]", tam: 11 },
+    { x: 165, y: 372, texto: "Km", tam: 11, negrita: true, color: "primary" },
+  ],
+  partes: [
+    {
+      id: "curva-normal",
+      nombre: "La curva sin inhibidor",
+      explicacion:
+        "Al principio la velocidad sube casi en proporción al sustrato, porque hay enzima libre de sobra. Después se aplana: con toda la enzima ocupada, añadir más sustrato ya no acelera nada. Esa saturación es lo que distingue una reacción enzimática de una química corriente.",
+      trazos: [{ d: "M 90 350 C 150 190, 250 118, 610 100", borde: "primary", grosor: 3 }],
+      rotulo: { x: 330, y: 132, haciaX: 330, haciaY: 112 },
+    },
+    {
+      id: "vmax",
+      nombre: "Vmáx: velocidad máxima",
+      explicacion:
+        "La velocidad a la que se acerca la curva cuando toda la enzima está saturada. Depende de cuánta enzima haya y de lo rápido que trabaje cada molécula, no de la afinidad. Nunca se alcanza del todo: es una asíntota.",
+      trazos: [{ d: "M 430 90 h 180", borde: "primary", grosor: 3 }],
+      rotulo: { x: 620, y: 68, haciaX: 560, haciaY: 88 },
+    },
+    {
+      id: "km",
+      nombre: "Km: la concentración que da media velocidad",
+      explicacion:
+        "Es la concentración de sustrato a la que la enzima trabaja a la mitad de su Vmáx, y se usa como medida inversa de afinidad: **Km bajo significa afinidad alta**, porque basta poco sustrato para llegar a media velocidad. Es la relación que más se invierte al estudiarla.",
+      trazos: [{ d: "M 165 350 V 223", borde: "primary", grosor: 3 }],
+      rotulo: { x: 232, y: 262, haciaX: 176, haciaY: 262 },
+    },
+    {
+      id: "competitiva",
+      nombre: "Inhibición competitiva: sube el Km, la Vmáx no cambia",
+      explicacion:
+        "El inhibidor se parece al sustrato y compite por el mismo sitio activo. Hace falta más sustrato para llegar a media velocidad, así que el Km aparente sube. Pero con sustrato suficiente el inhibidor queda desplazado y la Vmáx se alcanza igual: **la competitiva se puede vencer subiendo el sustrato**.",
+      trazos: [{ d: "M 90 350 C 190 245, 330 140, 610 104", borde: "accent", grosor: 3 }],
+      rotulo: { x: 452, y: 176, haciaX: 452, haciaY: 128 },
+    },
+    {
+      id: "no-competitiva",
+      nombre: "Inhibición no competitiva: baja la Vmáx, el Km no cambia",
+      explicacion:
+        "El inhibidor se une en otro sitio y estropea la enzima la esté usando o no. Añadir sustrato no sirve de nada, porque no compiten por el mismo lugar: es como tener menos enzima. Por eso baja la Vmáx y la afinidad de la que queda funcionando sigue igual.",
+      trazos: [{ d: "M 90 350 C 140 268, 230 218, 610 208", borde: "destructive", grosor: 3 }],
+      rotulo: { x: 452, y: 246, haciaX: 452, haciaY: 212 },
+    },
+  ],
+  advertencia:
+    "Esquema cualitativo de la forma de las curvas y de qué parámetro mueve cada inhibidor. Los valores de los ejes son arbitrarios y no representan ninguna enzima concreta; tampoco se incluye la inhibición acompetitiva, que desplaza los dos parámetros a la vez.",
+  referencias: [
+    { libro: "lehninger", donde: "capítulo de enzimas y cinética enzimática" },
+    { libro: "lippincott", donde: "capítulo de enzimas" },
+  ],
+};
+
 export const FIGURAS: Figura[] = [
+  GLUCONEOGENESIS, BETA_OXIDACION, CETOGENESIS, CICLO_UREA, CINETICA,
   SARCOMERO, CRANEO_LATERAL, GLUCOLISIS, KREBS, CADENA_RESPIRATORIA, POTENCIAL_ACCION,
 ];
 

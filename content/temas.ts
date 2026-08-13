@@ -2002,6 +2002,799 @@ export const TEMAS: Tema[] = [
     ],
     relacionados: ["ley-de-laplace", "hipertrofia-vs-hiperplasia", "biologia-celular"],
   },
+  {
+    slug: "gluconeogenesis",
+    titulo: "Gluconeogénesis: fabricar glucosa cuesta más de lo que dio quemarla",
+    tituloSEO: "Gluconeogénesis: los tres rodeos, precursores, regulación recíproca con la glucólisis y por qué el músculo no libera glucosa",
+    bloque: "molecular",
+    unidad: "I8577 · Bioquímica médica",
+    nivel: "mecanismo",
+    minutos: 22,
+    resumen:
+      "No es la glucólisis al revés: rodea sus tres pasos irreversibles con enzimas propias, y eso es justo lo que permite regular cada dirección por separado. Explica por qué el hígado sostiene la glucemia entre comidas y por qué el músculo, que también almacena glucógeno, no puede compartir ni un gramo.",
+    porQueImporta:
+      "El cerebro consume glucosa de forma constante y las reservas de glucógeno del hígado se agotan en menos de un día. A partir de ahí, quien mantiene viva a esa persona es esta vía. Además es el mejor ejemplo de regulación recíproca del metabolismo —dos vías opuestas que nunca corren a la vez—, y contiene la razón mecanicista de por qué las grasas no sirven para fabricar glucosa, que es de las confusiones más persistentes de toda la bioquímica.",
+    secciones: [
+      {
+        titulo: "Por qué no basta con dar marcha atrás",
+        cuerpo: [
+          "De las diez reacciones de la glucólisis, siete son reversibles y la gluconeogénesis las usa tal cual, en sentido contrario. El problema son las otras tres: las de la **hexocinasa**, la **fosfofructocinasa-1** y la **piruvato cinasa**.",
+          "Una reacción irreversible libera tanta energía que volver por el mismo camino sería como subir un agua que ya cayó. Así que la vía no lo intenta: **rodea cada una de las tres con enzimas distintas**. A esos desvíos se les llama rodeos o «bypass».",
+          "Y aquí está lo importante, que no es química sino lógica de control. Si las dos vías compartieran todas sus enzimas, cualquier señal que activara una activaría también la otra, y la célula se limitaría a gastar ATP dando vueltas sin producir nada. Eso tiene nombre: **ciclo fútil**. Tener enzimas propias en los tres puntos clave es lo que permite encender una vía y apagar la otra.",
+        ],
+      },
+      {
+        titulo: "Los tres rodeos, y el que decide quién puede ceder glucosa",
+        cuerpo: [
+          "El **primer rodeo** deshace lo que hizo la hexocinasa: una **glucosa-6-fosfatasa** retira el fosfato y deja glucosa libre. Este paso decide algo que tiene consecuencias en todo el organismo, porque **solo el hígado y el riñón tienen esa enzima**.",
+          "De ahí sale la respuesta a una pregunta que confunde a mucha gente: el músculo almacena glucógeno, y sin embargo no puede ceder glucosa a la sangre. No es que no quiera: le falta la enzima que retira el fosfato, y una glucosa fosforilada no puede salir de la célula. El glucógeno muscular es una despensa privada.",
+          "El **segundo rodeo** es la **fructosa-1,6-bisfosfatasa**, que deshace el paso de la fosfofructocinasa-1. Es el punto de control principal de la vía, igual que aquella lo era de la glucólisis, y las dos responden en sentidos opuestos a las mismas señales.",
+          "El **tercer rodeo** es el más caro y necesita dos enzimas. La **piruvato carboxilasa** convierte el piruvato en oxalacetato dentro de la mitocondria —con biotina como cofactor—, y después la **fosfoenolpiruvato carboxicinasa** lo transforma en fosfoenolpiruvato. Un paso de la glucólisis se ha convertido en dos reacciones y un viaje por la mitocondria.",
+        ],
+      },
+      {
+        titulo: "De dónde sale el carbono",
+        cuerpo: [
+          "Los precursores son tres y conviene tenerlos separados porque vienen de sitios distintos. El **lactato**, que llega del músculo y del eritrocito y que el hígado reconvierte en glucosa: eso es el ciclo de Cori. El **glicerol**, que se libera al romper los triglicéridos del tejido adiposo. Y los **aminoácidos glucogénicos**, sobre todo la alanina que el músculo exporta.",
+          "Falta uno en la lista, y su ausencia es el punto que más importa: **los ácidos grasos no están**. La razón es concreta y no una regla que memorizar. El paso de piruvato a acetil-CoA, catalizado por la piruvato deshidrogenasa, es **irreversible**. Los ácidos grasos de cadena par se degradan a acetil-CoA, y desde ahí no hay camino de vuelta al piruvato ni, por tanto, a la glucosa.",
+          "Merece decirse con precisión, porque la afirmación absoluta también sería falsa. El **glicerol** del triglicérido sí aporta carbonos, así que una grasa contribuye algo a la glucemia, pero por su esqueleto y no por sus cadenas. Y los ácidos grasos de cadena impar dejan un resto de tres carbonos que sí puede entrar. La regla útil es: **de las cadenas de carbono par, no sale glucosa**.",
+        ],
+      },
+      {
+        titulo: "Regulación recíproca: cuando una sube, la otra baja",
+        cuerpo: [
+          "Las señales que activan la glucólisis inhiben la gluconeogénesis, y al revés. El **glucagón**, que aparece en ayuno, activa la vía de fabricar glucosa y frena la de quemarla; la **insulina** hace lo contrario.",
+          "Dentro de la célula el mensajero es una molécula que solo sirve para esto: la **fructosa-2,6-bisfosfato**. Activa la fosfofructocinasa-1 e inhibe la fructosa-1,6-bisfosfatasa a la vez, así que una sola señal empuja las dos enzimas en direcciones opuestas. Es un interruptor de dos posiciones, no dos interruptores independientes.",
+          "El **acetil-CoA** añade otra capa que conecta las grasas con esto. Activa la piruvato carboxilasa, es decir, favorece la gluconeogénesis. Tiene sentido: si abunda el acetil-CoA es que se están quemando grasas, y eso ocurre en ayuno, que es justo cuando hay que fabricar glucosa. Las grasas no aportan carbonos, pero **dan la energía y la señal** para que otros los aporten.",
+        ],
+      },
+      {
+        titulo: "Lo que cuesta",
+        cuerpo: [
+          "Fabricar una glucosa a partir de dos piruvatos consume **cuatro ATP y dos GTP**, seis enlaces de alta energía en total. La glucólisis, al bajar, solo había rendido dos ATP netos.",
+          "La asimetría no es un defecto de diseño: es lo que hace que la vía sea irreversible en la práctica y que solo se recorra cuando de verdad hace falta. Fabricar glucosa es caro, y el organismo lo paga porque el cerebro no negocia.",
+          "Esa energía sale de la beta-oxidación de las grasas, que es lo que sostiene al hígado durante el ayuno. Otra vez: las grasas no se convierten en glucosa, pero pagan la factura de fabricarla.",
+        ],
+      },
+    ],
+    analogia: {
+      campo: "Una calle de sentido único",
+      texto:
+        "Siete tramos de la ruta son de doble sentido y se recorren igual en las dos direcciones. Tres son de sentido único, y para volver hay que tomar desvíos distintos, más largos y con peaje.",
+      dondeSeRompe:
+        "En una ciudad los desvíos existen por conveniencia y aquí existen por termodinámica: no se puede circular en contra por el tramo directo aunque no haya nadie. Y la analogía sugiere que el desvío es un mero rodeo geográfico, cuando la diferencia importa por otra razón: tener carreteras separadas es lo que permite cerrar una dirección mientras la otra sigue abierta, y eso en una ciudad no haría falta.",
+    },
+    figura: "gluconeogenesis",
+    recall: [
+      {
+        pregunta: "Explica por qué el músculo almacena glucógeno y aun así no puede aportar glucosa a la sangre.",
+        referencia:
+          "Porque le falta la glucosa-6-fosfatasa. Al degradar glucógeno, tanto el hígado como el músculo obtienen glucosa-6-fosfato, que lleva carga y por tanto no puede atravesar la membrana. Para liberarla a la sangre hay que retirarle el fosfato, y la enzima que lo hace solo está en el hígado y en el riñón. El músculo, sin ella, únicamente puede usar esa glucosa-6-fosfato para su propio consumo, entrando directamente en su glucólisis. Su glucógeno es por tanto una reserva privada. Lo que sí exporta el músculo son productos que el hígado puede reconvertir: lactato, por el ciclo de Cori, y alanina, que el hígado transamina y usa como precursor. Aporta materia prima, no producto terminado.",
+        pistas: [
+          "¿En qué forma sale la glucosa del glucógeno y qué problema tiene esa forma?",
+          "¿Qué enzima hace falta para poder exportarla, y qué órganos la tienen?",
+          "El músculo sí exporta algo al hígado: ¿qué?",
+        ],
+      },
+      {
+        pregunta: "¿Por qué los ácidos grasos no sirven para fabricar glucosa? Sé preciso, porque la respuesta absoluta también es incorrecta.",
+        referencia:
+          "Porque el paso de piruvato a acetil-CoA, catalizado por la piruvato deshidrogenasa, es irreversible. Los ácidos grasos de cadena par se degradan por beta-oxidación hasta acetil-CoA, y desde ahí no existe ninguna ruta de vuelta al piruvato, de modo que sus carbonos no pueden llegar a glucosa. Ahora la precisión: sí hay dos excepciones. El glicerol procedente de romper el triglicérido sí es precursor gluconeogénico, así que una grasa aporta algo de carbono a la glucemia, pero por su esqueleto y no por sus cadenas. Y los ácidos grasos de cadena impar dejan al final un resto de tres carbonos, el propionil-CoA, que sí puede incorporarse. La formulación correcta es que los carbonos de las cadenas de número par no llegan a glucosa. Aun así, las grasas son imprescindibles en el ayuno porque aportan el ATP que la gluconeogénesis consume.",
+        pistas: [
+          "¿Qué paso entre la glucólisis y el ciclo de Krebs no tiene vuelta atrás?",
+          "Un triglicérido tiene cadenas y también otra cosa: ¿qué?",
+          "Si no aportan carbono, ¿qué aportan las grasas durante el ayuno?",
+        ],
+      },
+    ],
+    predicciones: [
+      {
+        escenario: "Sube la concentración de fructosa-2,6-bisfosfato en un hepatocito.",
+        pregunta: "¿Qué le ocurre a cada una de las dos vías y qué situación fisiológica es esa?",
+        respuesta:
+          "La glucólisis se acelera y la gluconeogénesis se frena. La fructosa-2,6-bisfosfato activa la fosfofructocinasa-1 e inhibe la fructosa-1,6-bisfosfatasa, es decir, empuja a las dos enzimas opuestas en direcciones contrarias con una sola señal. Eso corresponde al estado posprandial: hay insulina alta, sobra glucosa y lo que toca es consumirla y almacenarla, no fabricarla. Lo elegante del mecanismo es que hace imposible que las dos vías corran a la vez, que es exactamente el ciclo fútil que hay que evitar. En ayuno el glucagón hace bajar esta molécula y el interruptor se invierte por completo.",
+      },
+      {
+        escenario: "Un lactante presenta hipoglucemia grave en ayunas y un hígado aumentado de tamaño cargado de glucógeno.",
+        pregunta: "¿Qué punto de la vía razonarías como afectado, y por qué encajan los dos hallazgos a la vez?",
+        respuesta:
+          "El primer rodeo: la glucosa-6-fosfatasa. Es el único paso que explica los dos hallazgos con un solo fallo. Sin esa enzima el hígado no puede retirar el fosfato, así que no puede liberar glucosa a la sangre ni desde el glucógeno ni desde la gluconeogénesis, y aparece hipoglucemia en cuanto se acaba la ingesta. Al mismo tiempo, la glucosa-6-fosfato que se acumula se reconvierte en glucógeno, que se deposita en el hígado y lo agranda. Un almacén lleno y un paciente hipoglucémico solo son compatibles si el problema está en la puerta de salida, no en la reserva. El razonamiento apunta al mecanismo; el diagnóstico concreto requiere estudio dirigido y confirmación.",
+      },
+    ],
+    errores: [
+      {
+        error: "Decir que la gluconeogénesis es la glucólisis en sentido inverso.",
+        correccion:
+          "Comparte las siete reacciones reversibles pero rodea las tres irreversibles con enzimas propias. Esa diferencia no es un tecnicismo: es lo que permite regular cada dirección por separado. Si compartieran todas las enzimas, cualquier señal activaría ambas y la célula solo gastaría ATP en un ciclo fútil.",
+      },
+      {
+        error: "Creer que las grasas se convierten en glucosa porque el organismo mantiene la glucemia durante el ayuno.",
+        correccion:
+          "Los carbonos de las cadenas de número par acaban en acetil-CoA, y el paso de piruvato a acetil-CoA es irreversible, así que no hay vuelta. Lo que sostiene la glucemia son el lactato, el glicerol y los aminoácidos. Las grasas aportan el ATP que la vía consume, y en el ayuno eso es imprescindible, pero no aportan el carbono.",
+      },
+      {
+        error: "Suponer que cualquier célula puede fabricar glucosa y liberarla.",
+        correccion:
+          "La vía completa, con glucosa-6-fosfatasa incluida, está en el hígado y en el riñón. Otros tejidos pueden realizar algunos pasos, pero sin esa última enzima no consiguen glucosa libre y no pueden exportarla. Por eso el músculo no cede glucosa aunque tenga glucógeno.",
+      },
+      {
+        error: "Pensar que fabricar glucosa recupera la energía que se obtuvo al degradarla.",
+        correccion:
+          "Cuesta seis enlaces de alta energía —cuatro ATP y dos GTP— frente a los dos ATP netos que rindió la glucólisis. El balance es claramente negativo, y esa asimetría es precisamente lo que hace que la vía solo se recorra cuando el organismo no tiene alternativa.",
+      },
+      {
+        error: "Tratar el ciclo de Cori como si generase energía.",
+        correccion:
+          "Traslada la carga metabólica del músculo al hígado, no la crea. El músculo obtiene ATP con la glucólisis anaerobia y el hígado gasta bastante más para reconvertir ese lactato en glucosa. Para el organismo en conjunto el balance es negativo; lo que aporta es permitir que el músculo siga trabajando aunque no le llegue oxígeno suficiente.",
+      },
+    ],
+    tarjetas: [
+      { front: "¿Cuántos pasos de la glucólisis tiene que rodear la gluconeogénesis?", back: "Tres: hexocinasa, fosfofructocinasa-1 y piruvato cinasa." },
+      { front: "¿Qué enzima permite liberar glucosa libre a la sangre?", back: "La glucosa-6-fosfatasa." },
+      { front: "¿Qué órganos tienen glucosa-6-fosfatasa?", back: "El hígado y el riñón." },
+      { front: "¿Por qué el músculo no puede ceder glucosa de su glucógeno?", back: "Porque carece de glucosa-6-fosfatasa y la glucosa fosforilada no sale de la célula." },
+      { front: "¿Qué cofactor necesita la piruvato carboxilasa?", back: "Biotina." },
+      { front: "¿En qué compartimento se forma el oxalacetato del tercer rodeo?", back: "En la matriz mitocondrial." },
+      { front: "Nombra los tres precursores principales de la gluconeogénesis.", back: "Lactato, glicerol y aminoácidos glucogénicos." },
+      { front: "¿Por qué los ácidos grasos de cadena par no aportan carbono a la glucosa?", back: "Porque el paso de piruvato a acetil-CoA es irreversible." },
+      { front: "¿Qué molécula activa la glucólisis e inhibe la gluconeogénesis a la vez?", back: "La fructosa-2,6-bisfosfato." },
+      { front: "¿Cuántos enlaces de alta energía cuesta fabricar una glucosa desde dos piruvatos?", back: "Seis: cuatro ATP y dos GTP." },
+    ],
+    faq: [
+      {
+        q: "¿Qué es la gluconeogénesis?",
+        a: "Es la vía que fabrica glucosa a partir de precursores que no son hidratos de carbono, sobre todo lactato, glicerol y aminoácidos. Ocurre principalmente en el hígado y en menor medida en el riñón, y su función es mantener la glucemia cuando las reservas de glucógeno se agotan, algo que sucede en menos de un día de ayuno.",
+      },
+      {
+        q: "¿Por qué la gluconeogénesis no es la glucólisis al revés?",
+        a: "Porque tres reacciones de la glucólisis son irreversibles: las de la hexocinasa, la fosfofructocinasa-1 y la piruvato cinasa. La gluconeogénesis las rodea con enzimas propias. Además de ser necesario por termodinámica, tener enzimas distintas en esos puntos es lo que permite activar una vía y apagar la otra en lugar de correrlas a la vez y gastar energía sin resultado.",
+      },
+      {
+        q: "¿Se puede fabricar glucosa a partir de la grasa?",
+        a: "A partir de las cadenas de ácidos grasos de número par, no: se degradan a acetil-CoA y el paso que va de piruvato a acetil-CoA es irreversible, de modo que no hay camino de vuelta. Sí aportan carbono el glicerol del triglicérido y el resto final de los ácidos grasos de cadena impar. Además las grasas aportan el ATP que la gluconeogénesis consume, así que son imprescindibles en el ayuno aunque no den el carbono.",
+      },
+      {
+        q: "¿Qué es el ciclo de Cori?",
+        a: "Es el recorrido por el que el lactato producido por el músculo o el eritrocito viaja al hígado, que lo reconvierte en glucosa y la devuelve a la circulación. No genera energía para el organismo: el hígado gasta más de lo que el músculo obtuvo. Lo que aporta es permitir que el músculo siga funcionando cuando no le llega oxígeno suficiente, trasladando el coste al hígado.",
+      },
+    ],
+    fuentes: [
+      "Guyton y Hall, Tratado de fisiología médica, 13.ª ed., cap. 68: formación de hidratos de carbono a partir de proteínas y grasas",
+      "Lippincott Illustrated Reviews: Bioquímica, capítulo de gluconeogénesis",
+      "Lehninger, Principios de bioquímica (Nelson y Cox), capítulo de gluconeogénesis y regulación recíproca",
+    ],
+    relacionados: ["glucolisis", "ciclo-de-krebs", "reacciones-del-metabolismo"],
+  },
+
+  {
+    slug: "beta-oxidacion",
+    titulo: "Beta-oxidación: por qué la grasa rinde tanto y por qué el cerebro no puede usarla",
+    tituloSEO: "Beta-oxidación de ácidos grasos: lanzadera de carnitina, los cuatro pasos, rendimiento y regulación",
+    bloque: "molecular",
+    unidad: "I8577 · Bioquímica médica",
+    nivel: "mecanismo",
+    minutos: 22,
+    resumen:
+      "Cuatro reacciones que se repiten en bucle y recortan dos carbonos por vuelta. Su rendimiento no viene de que cada paso sea especial, sino de que una cadena larga da muchas vueltas. Y todo depende de un transporte previo —la lanzadera de carnitina— que es a la vez el freno de la vía y el punto donde se decide si el cuerpo quema grasa o la fabrica.",
+    porQueImporta:
+      "Es la fuente principal de energía en reposo y durante el ayuno, y el sustrato preferido del corazón incluso en condiciones normales. Entender su regulación explica por qué no se puede quemar y almacenar grasa a la vez, y por qué el cerebro depende de glucosa aunque el cuerpo esté lleno de reservas: no es que le falte combustible, es que ese combustible no llega adonde hace falta.",
+    secciones: [
+      {
+        titulo: "El nombre dice dónde ocurre la acción",
+        cuerpo: [
+          "En una cadena de ácido graso, el carbono unido al grupo carboxilo es el **alfa** y el siguiente es el **beta**. Toda la vía consiste en oxidar ese segundo carbono hasta poder cortar la cadena por ahí, y de ahí el nombre.",
+          "Antes de nada, el ácido graso se activa uniéndose a la coenzima A para formar **acil-CoA**. Ese paso cuesta el equivalente a dos ATP, y es un detalle que hay que descontar del balance final: la grasa rinde muchísimo, pero no gratis.",
+          "La secuencia después es siempre la misma: **oxidación, hidratación, oxidación y corte**. Cada vuelta produce un FADH₂, un NADH y un acetil-CoA, y deja la cadena dos carbonos más corta para volver a empezar.",
+        ],
+      },
+      {
+        titulo: "La puerta: la lanzadera de carnitina",
+        cuerpo: [
+          "Los ácidos grasos de cadena larga **no atraviesan solos la membrana mitocondrial interna**. Necesitan intercambiar la coenzima A por **carnitina**, entrar como acilcarnitina y recuperar la coenzima A dentro.",
+          "Ese transporte es el **paso limitante** de toda la vía, y por tanto su punto de control. Lo que lo regula es una sola molécula: el **malonil-CoA**, que inhibe la enzima que carga el ácido graso sobre la carnitina.",
+          "El detalle es más elegante de lo que parece. El malonil-CoA es el primer intermediario de la **síntesis** de ácidos grasos. Cuando la célula está fabricando grasa, su presencia bloquea la entrada de grasa a la mitocondria. **La misma molécula que inicia una vía cierra la puerta de la contraria**, así que el cuerpo no puede quemar y almacenar a la vez. Y no hace falta memorizarlo como una regla: se deduce.",
+          "Los ácidos grasos de cadena corta y media no necesitan la lanzadera y entran solos. Esa diferencia importa porque significa que su oxidación escapa a este control.",
+        ],
+      },
+      {
+        titulo: "Por qué rinde tanto",
+        cuerpo: [
+          "Comparar por vuelta lleva a error. Una vuelta de beta-oxidación da un FADH₂, un NADH y un acetil-CoA, lo cual no es espectacular. Lo que cambia el resultado es **cuántas vueltas hay**.",
+          "Un ácido graso de dieciséis carbonos da siete vueltas y produce ocho acetil-CoA, que después entran al ciclo de Krebs y rinden por su cuenta. Frente a eso, una glucosa aporta dos piruvatos y por tanto dos acetil-CoA.",
+          "Hay además una razón química de fondo: **los ácidos grasos están mucho menos oxidados que los hidratos de carbono**. Sus carbonos apenas llevan oxígeno unido, así que queda más camino por recorrer hasta CO₂, y ese camino son electrones. Por eso un gramo de grasa aporta más del doble de energía que un gramo de hidrato de carbono, y por eso el organismo almacena a largo plazo en grasa y no en glucógeno.",
+        ],
+      },
+      {
+        titulo: "Lo que la vía no puede hacer",
+        cuerpo: [
+          "El producto final es acetil-CoA, y eso impone dos límites que conviene tener claros.",
+          "El primero ya se vio: como el paso de piruvato a acetil-CoA es irreversible, **de aquí no sale glucosa**. Los ácidos grasos de cadena par no aportan carbono a la gluconeogénesis por muchos que se quemen.",
+          "El segundo es el que explica algo que se ve en la clínica: **el cerebro no usa ácidos grasos**. No atraviesan bien la barrera hematoencefálica y además viajan unidos a albúmina. Un cuerpo con reservas de grasa enormes puede tener un cerebro sin combustible si la glucosa cae, y esa es exactamente la situación que fuerza al hígado a fabricar cuerpos cetónicos: una forma de acetil-CoA que sí viaja y sí cruza.",
+          "Y hay un tercer límite, de otro tipo. La beta-oxidación necesita que el ciclo de Krebs y la cadena respiratoria funcionen para reoxidar el NADH y el FADH₂ y para procesar el acetil-CoA. **Sin oxígeno esta vía no sirve de nada**, a diferencia de la glucólisis. Un tejido isquémico no puede recurrir a la grasa.",
+        ],
+      },
+    ],
+    analogia: {
+      campo: "Cortar una barra de pan en rebanadas",
+      texto:
+        "Cada pasada del cuchillo separa una rebanada del mismo grosor y deja una barra un poco más corta, hasta que no queda barra. El rendimiento no depende de que cada corte sea especial, sino de lo larga que fuera la barra.",
+      dondeSeRompe:
+        "Cortar pan no produce nada más que rebanadas, y cada vuelta de la beta-oxidación entrega además dos transportadores cargados de electrones que son donde está la mayor parte de la energía. La imagen tampoco recoge lo esencial de la regulación: para empezar a cortar hay que entrar antes en la cocina, y esa puerta —la carnitina— está cerrada mientras el cuerpo esté fabricando pan en lugar de comérselo.",
+    },
+    figura: "beta-oxidacion",
+    recall: [
+      {
+        pregunta: "Explica el papel de la lanzadera de carnitina y por qué su regulación impide quemar y fabricar grasa a la vez.",
+        referencia:
+          "Los ácidos grasos de cadena larga no atraviesan por sí solos la membrana mitocondrial interna. Para entrar, intercambian la coenzima A por carnitina, cruzan como acilcarnitina y recuperan la coenzima A en la matriz. Ese transporte es el paso limitante de la beta-oxidación y por tanto su punto de control. Lo regula el malonil-CoA, que inhibe la enzima encargada de cargar el ácido graso sobre la carnitina. Lo interesante es qué es el malonil-CoA: el primer intermediario de la síntesis de ácidos grasos. Así que cuando la célula está fabricando grasa, esa misma molécula cierra la puerta de entrada a la mitocondria y bloquea su degradación. Es un mecanismo recíproco que hace imposible que las dos vías funcionen a la vez, y no hay que memorizarlo como una regla porque se deduce de qué molécula hace de señal. Los ácidos grasos de cadena corta y media no usan la lanzadera y escapan a este control.",
+        pistas: [
+          "¿Qué problema tienen los ácidos grasos largos con la membrana interna?",
+          "¿Qué molécula inhibe la entrada, y de qué vía es el primer intermediario?",
+          "¿Qué ácidos grasos no necesitan la lanzadera?",
+        ],
+      },
+      {
+        pregunta: "¿Por qué el cerebro no puede usar ácidos grasos, y qué consecuencia tiene eso en el ayuno?",
+        referencia:
+          "Porque los ácidos grasos no atraviesan bien la barrera hematoencefálica y además circulan unidos a albúmina, que tampoco pasa. El resultado es que una persona con reservas de grasa abundantes puede tener el cerebro sin combustible si la glucosa disponible cae, ya que el cerebro depende de glucosa de forma casi exclusiva en condiciones normales. Esa es precisamente la situación que fuerza la respuesta del ayuno: el hígado degrada ácidos grasos, acumula acetil-CoA que no puede procesar en el ciclo de Krebs, y lo convierte en cuerpos cetónicos. Los cuerpos cetónicos son hidrosolubles, viajan libres en el plasma y sí cruzan la barrera, de modo que funcionan como una forma transportable de acetil-CoA. Es la manera que tiene el organismo de hacer llegar al cerebro la energía de la grasa sin enviar la grasa.",
+        pistas: [
+          "¿Cómo viajan los ácidos grasos por el plasma y qué implica eso?",
+          "¿De qué depende el cerebro en condiciones normales?",
+          "¿Qué molécula sí cruza y de dónde viene?",
+        ],
+      },
+    ],
+    predicciones: [
+      {
+        escenario: "Falla el transportador que introduce los ácidos grasos de cadena larga en la mitocondria, pero los de cadena media entran con normalidad.",
+        pregunta: "¿Qué esperarías que ocurriera durante un ayuno prolongado?",
+        respuesta:
+          "El paciente no podría obtener energía de la mayor parte de su grasa, que es de cadena larga, así que dependería mucho más de la glucosa y se quedaría sin ella antes de lo normal: aparecería hipoglucemia en ayunas. Y habría un dato llamativo: sin beta-oxidación hepática suficiente no se acumula acetil-CoA, de modo que tampoco se producen cuerpos cetónicos. Es decir, hipoglucemia sin la cetosis que cabría esperar, una combinación que orienta hacia un problema de oxidación de ácidos grasos y no hacia otra causa. Los de cadena media seguirían aportando algo, ya que no necesitan la lanzadera. El razonamiento identifica el mecanismo; confirmar la enfermedad concreta requiere estudio dirigido.",
+      },
+      {
+        escenario: "Una célula tiene mucho malonil-CoA en el citosol.",
+        pregunta: "¿En qué estado metabólico está y qué le pasa a la beta-oxidación?",
+        respuesta:
+          "Está en estado de abundancia, después de comer y con insulina alta: el malonil-CoA es el primer intermediario de la síntesis de ácidos grasos, así que su presencia indica que la célula está fabricando grasa. La beta-oxidación queda bloqueada, porque el malonil-CoA inhibe la enzima que carga los ácidos grasos sobre la carnitina y sin ese transporte no pueden entrar a la mitocondria. El resultado es que las dos vías no coinciden nunca. Conviene notar que el bloqueo actúa sobre el transporte y no sobre las enzimas de la vía: la maquinaria de degradación está intacta, simplemente no le llega sustrato.",
+      },
+    ],
+    errores: [
+      {
+        error: "Creer que la beta-oxidación produce ATP directamente.",
+        correccion:
+          "No produce ninguno de forma directa. Entrega FADH₂, NADH y acetil-CoA; el ATP aparece después, cuando los transportadores ceden sus electrones en la cadena respiratoria y el acetil-CoA se procesa en el ciclo de Krebs. Es la misma distinción que con el ciclo de Krebs: son vías que recogen electrones, no que fabriquen energía.",
+      },
+      {
+        error: "Pensar que la grasa rinde más porque cada paso de su degradación es más eficiente.",
+        correccion:
+          "Cada vuelta rinde algo modesto. Rinde más en total por dos motivos: una cadena larga da muchas vueltas, y los carbonos de un ácido graso están mucho menos oxidados que los de un azúcar, así que queda más camino por recorrer hasta CO₂ y más electrones que extraer.",
+      },
+      {
+        error: "Suponer que la grasa puede sustituir a la glucosa en cualquier tejido.",
+        correccion:
+          "El cerebro no usa ácidos grasos, porque no cruzan bien la barrera hematoencefálica y viajan unidos a albúmina. El eritrocito tampoco puede usarlos, porque no tiene mitocondrias. Por eso el organismo mantiene la glucemia aunque le sobre grasa, y por eso el hígado fabrica cuerpos cetónicos como forma transportable de esa energía.",
+      },
+      {
+        error: "Olvidar el coste de activar el ácido graso.",
+        correccion:
+          "Unirlo a coenzima A antes de empezar consume el equivalente a dos ATP, y ese gasto hay que descontarlo del balance. No cambia la conclusión de que la grasa rinde mucho, pero un cálculo que lo ignore da una cifra sistemáticamente alta.",
+      },
+      {
+        error: "Creer que la beta-oxidación es una alternativa útil cuando falta oxígeno.",
+        correccion:
+          "Es lo contrario: depende por completo del oxígeno. Necesita que la cadena respiratoria reoxide el NADH y el FADH₂ y que el ciclo de Krebs procese el acetil-CoA, y ambas cosas se paran sin oxígeno. La única vía que produce ATP sin oxígeno es la glucólisis, y por eso un tejido isquémico no puede recurrir a la grasa.",
+      },
+    ],
+    tarjetas: [
+      { front: "¿Cuántos carbonos se retiran en cada vuelta de la beta-oxidación?", back: "Dos, que salen como acetil-CoA." },
+      { front: "¿Qué produce cada vuelta de la beta-oxidación?", back: "Un FADH₂, un NADH y un acetil-CoA." },
+      { front: "¿Cuál es el orden de los cuatro pasos de cada vuelta?", back: "Oxidación, hidratación, oxidación y tiólisis." },
+      { front: "¿Qué molécula transporta los ácidos grasos largos al interior de la mitocondria?", back: "La carnitina." },
+      { front: "¿Cuál es el paso limitante de la beta-oxidación?", back: "La entrada a la mitocondria por la lanzadera de carnitina." },
+      { front: "¿Qué molécula inhibe la lanzadera de carnitina?", back: "El malonil-CoA." },
+      { front: "¿De qué vía es el malonil-CoA el primer intermediario?", back: "De la síntesis de ácidos grasos." },
+      { front: "¿Qué ácidos grasos entran a la mitocondria sin necesitar carnitina?", back: "Los de cadena corta y media." },
+      { front: "¿Cuánto cuesta activar un ácido graso antes de empezar?", back: "El equivalente a dos ATP." },
+      { front: "¿Por qué la beta-oxidación no funciona sin oxígeno?", back: "Porque necesita la cadena respiratoria para reoxidar NADH y FADH₂." },
+    ],
+    faq: [
+      {
+        q: "¿Qué es la beta-oxidación?",
+        a: "Es la vía que degrada los ácidos grasos en la matriz mitocondrial. Repite un ciclo de cuatro reacciones —oxidación, hidratación, oxidación y corte— que retira dos carbonos en cada vuelta y produce un FADH₂, un NADH y un acetil-CoA. Se llama así porque la oxidación clave ocurre sobre el carbono beta, el segundo contando desde el grupo carboxilo.",
+      },
+      {
+        q: "¿Para qué sirve la carnitina en el metabolismo de las grasas?",
+        a: "Sirve para transportar los ácidos grasos de cadena larga al interior de la mitocondria, ya que no atraviesan solos la membrana interna. El ácido graso intercambia su coenzima A por carnitina, entra como acilcarnitina y recupera la coenzima A dentro. Ese transporte es el paso limitante de la beta-oxidación y su principal punto de regulación.",
+      },
+      {
+        q: "¿Por qué la grasa aporta más energía que los hidratos de carbono?",
+        a: "Por dos motivos. Sus cadenas son largas, así que dan muchas vueltas de beta-oxidación y producen muchos acetil-CoA. Y sus carbonos están mucho menos oxidados que los de un azúcar, es decir, llevan menos oxígeno unido, de modo que queda más camino que recorrer hasta CO₂ y más electrones que extraer. Por eso el organismo almacena a largo plazo en forma de grasa y no de glucógeno.",
+      },
+      {
+        q: "¿Se pueden quemar y fabricar grasas al mismo tiempo?",
+        a: "No, y el mecanismo que lo impide es directo. El malonil-CoA, que es el primer intermediario de la síntesis de ácidos grasos, inhibe la enzima que introduce los ácidos grasos en la mitocondria para degradarlos. Mientras la célula fabrica grasa, la puerta de entrada a la degradación está cerrada, de modo que una sola molécula garantiza que las dos vías no coincidan.",
+      },
+    ],
+    fuentes: [
+      "Guyton y Hall, Tratado de fisiología médica, 13.ª ed., cap. 69: «Metabolismo de los lípidos»",
+      "Lippincott Illustrated Reviews: Bioquímica, capítulo de metabolismo de los ácidos grasos",
+      "Lehninger, Principios de bioquímica (Nelson y Cox), capítulo de oxidación de ácidos grasos",
+    ],
+    relacionados: ["ciclo-de-krebs", "fosforilacion-oxidativa", "gluconeogenesis"],
+  },
+  {
+    slug: "cetogenesis",
+    titulo: "Cuerpos cetónicos: cómo se le hace llegar al cerebro la energía de la grasa",
+    tituloSEO: "Cetogénesis: por qué el ayuno produce cuerpos cetónicos, papel del oxalacetato y diferencia con la cetoacidosis",
+    bloque: "molecular",
+    unidad: "I8577 · Bioquímica médica",
+    nivel: "mecanismo",
+    minutos: 20,
+    resumen:
+      "En el ayuno el hígado retira oxalacetato para fabricar glucosa, y sin él el acetil-CoA que llega de las grasas no puede entrar al ciclo de Krebs. Lo convierte entonces en cuerpos cetónicos: una forma de acetil-CoA que viaja por la sangre y cruza al cerebro. Es una adaptación normal, y conviene no confundirla con el cuadro patológico que se le parece.",
+    porQueImporta:
+      "Es el tema que integra de golpe la beta-oxidación, el ciclo de Krebs y la gluconeogénesis, y donde se ve que una vía puede pararse por falta de aceptor y no de combustible. Además, distinguir la cetosis fisiológica del ayuno de la cetoacidosis es una diferencia que importa: la primera es una adaptación y la segunda un fallo de control, y confundirlas hace ilegible buena parte de la fisiopatología del metabolismo.",
+    secciones: [
+      {
+        titulo: "El cuello de botella es el oxalacetato",
+        cuerpo: [
+          "En el ayuno pasan dos cosas a la vez en el hígado. Por un lado le llegan ácidos grasos en abundancia, que degrada por beta-oxidación y convierte en **mucho acetil-CoA**. Por otro, tiene que sostener la glucemia, así que **retira oxalacetato** del ciclo de Krebs para alimentar la gluconeogénesis.",
+          "El problema es que el acetil-CoA solo entra al ciclo condensándose con oxalacetato. Y el oxalacetato se está yendo a otra parte.",
+          "El resultado es que **el ciclo se frena por falta de aceptor, no de combustible**. Sobra acetil-CoA y falta con quién condensarlo. Esta idea vale más que el propio tema: una vía puede detenerse porque se agota lo que recibe al sustrato, aunque el sustrato abunde.",
+          "Y tampoco hay salida por el otro lado: el acetil-CoA no puede convertirse en glucosa, porque el paso de piruvato a acetil-CoA es irreversible. Queda acorralado. La frase clásica «las grasas arden en el fuego de los hidratos de carbono» describe justamente esto: sin el aporte de oxalacetato, que en último término procede de los hidratos, la grasa no termina de quemarse.",
+        ],
+      },
+      {
+        titulo: "La solución: hacerlo transportable",
+        cuerpo: [
+          "El hígado condensa el acetil-CoA sobrante y forma **acetoacetato** y **beta-hidroxibutirato**, que son los dos cuerpos cetónicos que importan. Hay un tercero, la **acetona**, que se produce en menor cantidad, no se aprovecha como combustible y se elimina por el aliento.",
+          "Lo que resuelve esta conversión es un problema de logística. Los ácidos grasos viajan unidos a albúmina y no cruzan bien la barrera hematoencefálica; los cuerpos cetónicos son **hidrosolubles, viajan libres y sí cruzan**. Son, en la práctica, acetil-CoA en formato exportable.",
+          "Sus destinatarios son el cerebro y el músculo. El cerebro es el que justifica el mecanismo: no puede usar ácidos grasos y consume glucosa de forma constante, así que en un ayuno prolongado pasa a cubrir una parte importante de sus necesidades con cuerpos cetónicos. Eso reduce el consumo de glucosa y, con él, la cantidad de proteína muscular que habría que degradar para fabricarla. **La cetogénesis ahorra músculo.**",
+        ],
+      },
+      {
+        titulo: "El hígado fabrica lo que no puede usar",
+        cuerpo: [
+          "Al hepatocito le falta la enzima que reactiva el acetoacetato para volver a convertirlo en acetil-CoA. Es decir: **produce cuerpos cetónicos y no puede consumirlos**.",
+          "Visto de fuera parece un despilfarro, y es lo contrario. Si el hígado pudiera usarlos, se los quedaría, porque es el órgano donde se están fabricando y donde la concentración es más alta. Al no poder, **todo lo que produce sale hacia los tejidos que lo necesitan**.",
+          "Es un ejemplo bonito de una idea general: a veces la función de un sistema se garantiza quitándole una capacidad, no añadiéndosela.",
+        ],
+      },
+      {
+        titulo: "Cetosis fisiológica y cetoacidosis no son lo mismo",
+        cuerpo: [
+          "En el ayuno la producción de cuerpos cetónicos **está regulada**. La insulina, aunque baja, no es nula, y su presencia limita la lipólisis y por tanto el flujo de ácidos grasos al hígado. El sistema se autolimita: sube el nivel de cuerpos cetónicos, pero dentro de un rango que los amortiguadores del plasma toleran.",
+          "El cuadro patológico aparece cuando ese freno desaparece. Sin insulina que limite la lipólisis, el flujo de ácidos grasos al hígado no tiene techo, la producción de cuerpos cetónicos se dispara, y como son ácidos, superan la capacidad amortiguadora y el pH baja. Eso es una **acidosis metabólica** y se estudia junto al equilibrio ácido-base.",
+          "La diferencia, dicha con precisión, no es de tipo de molécula sino **de magnitud y de control**: la misma vía, con freno o sin él. Conviene también evitar el atajo de tratar todo aumento de cuerpos cetónicos como patológico, porque el ayuno normal produce cetosis y no es una enfermedad.",
+          "El manejo clínico de la cetoacidosis se rige por guías vigentes y no se aborda aquí: Corpus explica el mecanismo.",
+        ],
+      },
+    ],
+    analogia: {
+      campo: "Un almacén sin muelles de carga",
+      texto:
+        "El hígado tiene mercancía de sobra —acetil-CoA— pero se ha quedado sin palés, que son el oxalacetato. No puede sacar el producto por la vía habitual, así que lo reempaqueta en cajas pequeñas que sí caben por la puerta y las manda a otros almacenes.",
+      dondeSeRompe:
+        "Un almacén podría fabricar más palés, y el hígado en ayuno no puede: necesita ese oxalacetato para fabricar glucosa, que es una obligación que no puede saltarse. Y la analogía sugiere que el reempaquetado es una solución de emergencia, cuando en realidad los cuerpos cetónicos son un combustible perfectamente normal para el cerebro, no un producto de segunda.",
+    },
+    figura: "cetogenesis",
+    recall: [
+      {
+        pregunta: "Explica por qué el ayuno produce cuerpos cetónicos, partiendo del oxalacetato.",
+        referencia:
+          "En el ayuno el hígado recibe muchos ácidos grasos movilizados desde el tejido adiposo y los degrada por beta-oxidación, con lo que genera abundante acetil-CoA. Al mismo tiempo tiene que mantener la glucemia, así que retira oxalacetato del ciclo de Krebs para alimentar la gluconeogénesis. El acetil-CoA solo puede entrar al ciclo condensándose con oxalacetato, de modo que al escasear el aceptor el ciclo se frena y el acetil-CoA se acumula, por muy abundante que sea. Tampoco puede convertirse en glucosa, porque el paso de piruvato a acetil-CoA es irreversible. Acorralado, el hígado lo condensa para formar acetoacetato y beta-hidroxibutirato, que son hidrosolubles, viajan libres por el plasma y atraviesan la barrera hematoencefálica. Funcionan así como una forma transportable de acetil-CoA que permite llevar al cerebro la energía de la grasa, ya que los ácidos grasos no llegan hasta allí.",
+        pistas: [
+          "¿Para qué necesita el hígado el oxalacetato en el ayuno?",
+          "¿Qué hace falta para que el acetil-CoA entre al ciclo de Krebs?",
+          "¿Por qué no puede convertirse en glucosa?",
+        ],
+      },
+      {
+        pregunta: "¿Qué separa la cetosis fisiológica del ayuno de la cetoacidosis? Responde en términos de mecanismo.",
+        referencia:
+          "La misma vía funcionando con freno o sin él. En el ayuno normal la insulina está baja pero no ausente, y esa insulina residual limita la lipólisis del tejido adiposo y por tanto el flujo de ácidos grasos que llega al hígado. La producción de cuerpos cetónicos sube pero se autolimita, y su concentración se mantiene dentro de lo que los sistemas amortiguadores del plasma toleran, sin que el pH se altere de forma significativa. En el cuadro patológico ese freno desaparece: sin insulina que contenga la lipólisis, la llegada de ácidos grasos al hígado no tiene techo y la producción se dispara. Como los cuerpos cetónicos son ácidos, al superar la capacidad amortiguadora consumen bicarbonato y el pH baja, apareciendo una acidosis metabólica. La diferencia no está en la molécula ni en la ruta, sino en la magnitud y en la presencia o ausencia de regulación.",
+        pistas: [
+          "¿Qué hormona limita la lipólisis, y en qué se diferencian las dos situaciones respecto a ella?",
+          "¿Los cuerpos cetónicos son neutros o ácidos?",
+          "¿Qué le pasa a los amortiguadores del plasma cuando la producción no tiene techo?",
+        ],
+      },
+    ],
+    predicciones: [
+      {
+        escenario: "Una persona en ayuno recibe una pequeña cantidad de hidratos de carbono.",
+        pregunta: "¿Qué le ocurre a la producción de cuerpos cetónicos y por qué?",
+        respuesta:
+          "Cae con rapidez, y por dos caminos que actúan a la vez. El primero es hormonal: los hidratos elevan la insulina, que frena la lipólisis, con lo que llegan menos ácidos grasos al hígado y se genera menos acetil-CoA. El segundo es el que explica de verdad el tema: al haber glucosa disponible el hígado deja de necesitar tanto oxalacetato para la gluconeogénesis, ese oxalacetato vuelve a estar disponible en el ciclo de Krebs y el acetil-CoA vuelve a tener con quién condensarse. En cuanto el ciclo puede procesarlo, deja de sobrar y no hay nada que desviar a cuerpos cetónicos. Es la demostración práctica de que el cuello de botella era el aceptor.",
+      },
+      {
+        escenario: "Un fármaco hipotético permitiera al hepatocito consumir sus propios cuerpos cetónicos.",
+        pregunta: "¿A quién perjudicaría eso y por qué?",
+        respuesta:
+          "Al cerebro, sobre todo. El hígado es el sitio donde los cuerpos cetónicos se fabrican y donde su concentración es más alta, así que si pudiera usarlos se quedaría con una parte importante antes de que salieran a la circulación. La razón de que el hepatocito carezca de la enzima que reactiva el acetoacetato no es un descuido evolutivo: garantiza que todo lo producido se exporte a los tejidos que no pueden fabricarlo. El cerebro, que no puede usar ácidos grasos, depende por completo de que ese envío llegue. El caso ilustra que a veces la función de un sistema se asegura quitándole una capacidad y no añadiéndosela.",
+      },
+    ],
+    errores: [
+      {
+        error: "Creer que la cetosis es siempre patológica.",
+        correccion:
+          "El ayuno normal produce cuerpos cetónicos y eso es una adaptación, no una enfermedad. Permite que el cerebro use la energía de la grasa y reduce la cantidad de proteína muscular que habría que degradar para fabricar glucosa. Lo patológico es la producción sin freno, que es otra cosa en magnitud y en control.",
+      },
+      {
+        error: "Decir que el ciclo de Krebs se frena en el ayuno por falta de acetil-CoA.",
+        correccion:
+          "Es justo al revés: sobra acetil-CoA. Lo que falta es oxalacetato, que el hígado está desviando a fabricar glucosa, y sin él el acetil-CoA no puede entrar al ciclo. La vía se detiene por falta de aceptor, no de sustrato, y esa distinción es el núcleo del tema.",
+      },
+      {
+        error: "Contar la acetona entre los cuerpos cetónicos útiles.",
+        correccion:
+          "Se produce en cantidad mucho menor, no se aprovecha como combustible y se elimina por vía respiratoria. Los que funcionan como fuente de energía son el acetoacetato y el beta-hidroxibutirato. Meter los tres en el mismo saco hace pensar que la acetona tiene un papel metabólico que no tiene.",
+      },
+      {
+        error: "Suponer que si el cuerpo fabrica cuerpos cetónicos es porque le falta energía.",
+        correccion:
+          "Le sobra energía en forma de grasa: lo que le falta es glucosa, y una forma de llevar esa energía al cerebro. Los cuerpos cetónicos no son un recurso de desesperación sino un sistema de transporte, y por eso aparecen justo cuando hay mucha grasa disponible y poca glucosa.",
+      },
+      {
+        error: "Pensar que el hígado consume los cuerpos cetónicos que fabrica.",
+        correccion:
+          "No puede, porque carece de la enzima que reactiva el acetoacetato. Y eso es funcional: si pudiera usarlos se quedaría con ellos, ya que es donde más concentrados están. Al no poder, todo lo que produce se exporta a los tejidos que lo necesitan.",
+      },
+    ],
+    tarjetas: [
+      { front: "¿Cuáles son los dos cuerpos cetónicos que sirven de combustible?", back: "El acetoacetato y el beta-hidroxibutirato." },
+      { front: "¿Qué cuerpo cetónico no se aprovecha y se elimina por el aliento?", back: "La acetona." },
+      { front: "¿Qué molécula escasea en el hígado durante el ayuno y frena el ciclo de Krebs?", back: "El oxalacetato." },
+      { front: "¿Por qué se desvía el oxalacetato en el ayuno?", back: "Porque el hígado lo usa para la gluconeogénesis." },
+      { front: "¿Por qué los cuerpos cetónicos llegan al cerebro y los ácidos grasos no?", back: "Porque son hidrosolubles, viajan libres y cruzan la barrera hematoencefálica." },
+      { front: "¿Por qué el hígado no puede usar los cuerpos cetónicos que fabrica?", back: "Porque carece de la enzima que reactiva el acetoacetato." },
+      { front: "¿Qué ventaja aporta que el cerebro use cuerpos cetónicos en el ayuno prolongado?", back: "Reduce el consumo de glucosa y con ello la degradación de proteína muscular." },
+      { front: "¿Qué hormona limita la lipólisis y mantiene la cetosis del ayuno dentro de un rango?", back: "La insulina, aunque esté baja." },
+      { front: "¿Por qué la producción descontrolada de cuerpos cetónicos baja el pH?", back: "Porque son ácidos y superan la capacidad amortiguadora del plasma." },
+      { front: "¿Qué significa que «las grasas arden en el fuego de los hidratos de carbono»?", back: "Que sin oxalacetato, que procede en último término de los hidratos, el acetil-CoA de las grasas no puede oxidarse por completo." },
+    ],
+    faq: [
+      {
+        q: "¿Qué son los cuerpos cetónicos y para qué sirven?",
+        a: "Son el acetoacetato y el beta-hidroxibutirato, que el hígado fabrica a partir del acetil-CoA sobrante cuando escasea la glucosa. Sirven de combustible alternativo para el cerebro y el músculo. Su ventaja es que, a diferencia de los ácidos grasos, son hidrosolubles, viajan libres por el plasma y atraviesan la barrera hematoencefálica, de modo que llevan al cerebro la energía de la grasa.",
+      },
+      {
+        q: "¿Por qué se producen cuerpos cetónicos durante el ayuno?",
+        a: "Porque el hígado retira oxalacetato del ciclo de Krebs para fabricar glucosa, y sin oxalacetato el acetil-CoA que llega de degradar las grasas no puede entrar al ciclo. Ese acetil-CoA tampoco puede convertirse en glucosa, ya que el paso desde piruvato es irreversible. Al acumularse, el hígado lo transforma en cuerpos cetónicos, que sí puede exportar.",
+      },
+      {
+        q: "¿La cetosis es lo mismo que la cetoacidosis?",
+        a: "No. La cetosis del ayuno es una adaptación regulada: la insulina, aunque baja, limita la lipólisis, así que la producción se mantiene dentro de un rango que los amortiguadores del plasma toleran. La cetoacidosis aparece cuando ese freno desaparece y la producción se dispara; como los cuerpos cetónicos son ácidos, el pH baja y se produce una acidosis metabólica. La diferencia está en la magnitud y en el control, no en la vía.",
+      },
+      {
+        q: "¿Por qué el cerebro no puede usar grasa directamente?",
+        a: "Porque los ácidos grasos circulan unidos a albúmina y no atraviesan bien la barrera hematoencefálica. Por eso el cerebro depende de glucosa en condiciones normales, y por eso el organismo necesita convertir la energía de la grasa en una forma que sí pueda llegar hasta él. Esa forma son los cuerpos cetónicos.",
+      },
+    ],
+    fuentes: [
+      "Guyton y Hall, Tratado de fisiología médica, 13.ª ed., cap. 69 (Metabolismo de los lípidos) y cap. 72 (obesidad y ayuno)",
+      "Lippincott Illustrated Reviews: Bioquímica, capítulo de cuerpos cetónicos",
+      "Lehninger, Principios de bioquímica (Nelson y Cox), capítulo de oxidación de ácidos grasos y cuerpos cetónicos",
+    ],
+    relacionados: ["beta-oxidacion", "gluconeogenesis", "ciclo-de-krebs"],
+  },
+
+  {
+    slug: "ciclo-de-la-urea",
+    titulo: "Ciclo de la urea: convertir un veneno en algo que el riñón pueda tirar",
+    tituloSEO: "Ciclo de la urea: pasos, compartimentación mitocondria-citosol, regulación y por qué el amonio es neurotóxico",
+    bloque: "molecular",
+    unidad: "I8577 · Bioquímica médica",
+    nivel: "mecanismo",
+    minutos: 20,
+    resumen:
+      "Degradar aminoácidos deja amonio libre, que es tóxico para el sistema nervioso y no se puede almacenar. El hígado lo fija en urea, atóxica e hidrosoluble, mediante un ciclo repartido entre la mitocondria y el citosol. Es la única salida importante que tiene el organismo para el nitrógeno.",
+    porQueImporta:
+      "Es lo que conecta el metabolismo de las proteínas con la neurología y con la insuficiencia hepática. Explica por qué un hígado que falla produce afectación del sistema nervioso, por qué existen enfermedades hereditarias que se manifiestan en los primeros días de vida, y por qué el nitrógeno no tiene una reserva como sí la tienen la glucosa y la grasa: lo que sobra hay que eliminarlo, no guardarlo.",
+    secciones: [
+      {
+        titulo: "El problema: el nitrógeno no se puede almacenar",
+        cuerpo: [
+          "El organismo guarda el exceso de glucosa como glucógeno y el de energía como grasa. Con el nitrógeno no hay equivalente: **no existe una reserva de aminoácidos**. Lo que no se usa, se degrada.",
+          "Al degradar un aminoácido se separan dos partes. El **esqueleto de carbono** entra al metabolismo energético y puede acabar en glucosa o en acetil-CoA. El **grupo amino** queda suelto, y ahí empieza el problema.",
+          "El amonio libre es **neurotóxico**. Atraviesa la barrera hematoencefálica y altera el funcionamiento del sistema nervioso. Así que el organismo no puede permitirse acumularlo ni siquiera un poco, y necesita convertirlo continuamente en algo inofensivo.",
+          "Esa conversión es la urea: **atóxica, muy hidrosoluble y fácil de excretar por el riñón**. Y solo el hígado tiene el ciclo completo, lo que convierte a este órgano en el único lugar donde el nitrógeno del cuerpo puede salir de circulación.",
+        ],
+      },
+      {
+        titulo: "Los dos nitrógenos vienen de sitios distintos",
+        cuerpo: [
+          "La molécula de urea lleva dos átomos de nitrógeno, y este es el detalle que más se olvida: **no proceden del mismo sitio**.",
+          "El primero entra como **amonio libre** en la matriz mitocondrial, y en buena parte llega hasta allí transportado por la glutamina desde otros tejidos. El segundo lo aporta el **aspartato** ya en el citosol.",
+          "Que uno venga del aspartato es lo que enlaza este ciclo con la transaminación. Los grupos amino de muchos aminoácidos se transfieren primero al glutamato y de ahí al aspartato, que actúa como mensajero. Sin transaminación no habría aspartato cargado y el ciclo se quedaría a medias.",
+        ],
+      },
+      {
+        titulo: "Un ciclo partido en dos compartimentos",
+        cuerpo: [
+          "Los dos primeros pasos ocurren en la **matriz mitocondrial** y los tres restantes en el **citosol**. Por eso la **citrulina** tiene que salir de la mitocondria y la **ornitina** volver a entrar.",
+          "Es de los pocos ciclos metabólicos repartidos entre dos compartimentos, y esa partición aparece constantemente en las preguntas porque es una característica poco común.",
+          "El primer paso lo cataliza la **carbamoil fosfato sintetasa I**, que fija el amonio con CO₂ gastando dos ATP. Es el **paso limitante** y su regulación es peculiar: solo funciona en presencia de **N-acetilglutamato**, una molécula que se produce cuando abundan los aminoácidos. Es decir, el ciclo se activa por la señal de que hay mucho nitrógeno que eliminar, no por el nitrógeno directamente.",
+          "Al final, la **arginasa** corta la arginina y libera urea y ornitina. La ornitina vuelve a la mitocondria y el ciclo puede empezar otra vez. Igual que el oxalacetato en el ciclo de Krebs, **la ornitina es el transportador que se recupera**, no un sustrato que se consume.",
+        ],
+      },
+      {
+        titulo: "Cuando falla",
+        cuerpo: [
+          "Si el ciclo no funciona, el amonio se acumula y aparece afectación neurológica. Las causas se agrupan en dos familias.",
+          "Las **hereditarias**: el déficit de una de las enzimas del ciclo. Como el ciclo es imprescindible desde el nacimiento, suelen manifestarse en los primeros días de vida, cuando el recién nacido empieza a degradar proteínas. El déficit de carbamoil fosfato sintetasa I es una de ellas.",
+          "Las **adquiridas**: sobre todo la insuficiencia hepática. Un hígado dañado no consigue procesar el nitrógeno que le llega, el amonio sube y afecta al sistema nervioso. Ese es el vínculo mecanicista entre enfermedad hepática y alteración neurológica, y explica por qué en ese contexto una carga elevada de proteínas puede empeorar la situación.",
+          "Aquí conviene una precisión honesta: **la afectación neurológica de la insuficiencia hepática no se explica solo por el amonio**. Se conoce su papel central y está bien documentado, pero se considera un cuadro con varios factores implicados, y no es exacto presentarlo como si el amonio fuera la única causa. El manejo se rige por guías vigentes que hay que consultar en su fuente.",
+        ],
+      },
+    ],
+    analogia: {
+      campo: "Una planta de tratamiento de residuos",
+      texto:
+        "El nitrógeno sobrante es un residuo peligroso que no se puede almacenar ni verter tal cual. El hígado lo recoge, lo estabiliza en una forma inerte y soluble, y el riñón se encarga de sacarlo del sistema.",
+      dondeSeRompe:
+        "Una planta de residuos puede acumular material hasta procesarlo, y aquí no hay margen: el amonio es tóxico desde el primer momento y el organismo carece de depósito donde esperar. Además la analogía sugiere que la urea es basura, cuando en el riñón cumple un papel adicional importante, ya que contribuye al gradiente osmótico de la médula renal que permite concentrar la orina.",
+    },
+    figura: "ciclo-de-la-urea",
+    recall: [
+      {
+        pregunta: "Explica por qué existe el ciclo de la urea, partiendo de una diferencia entre el nitrógeno y los otros nutrientes.",
+        referencia:
+          "Porque el nitrógeno es el único de los tres grandes nutrientes que no tiene forma de reserva. El exceso de glucosa se guarda como glucógeno y el exceso de energía como grasa, pero no existe un almacén de aminoácidos: lo que no se usa se degrada. Al degradar un aminoácido, el esqueleto de carbono entra al metabolismo energético y el grupo amino queda libre como amonio. Ese amonio es neurotóxico, atraviesa la barrera hematoencefálica y no puede acumularse ni siquiera en pequeña cantidad, así que el organismo necesita eliminarlo de forma continua. El ciclo de la urea lo fija en una molécula atóxica, muy hidrosoluble y fácil de excretar por el riñón. Solo el hígado tiene el ciclo completo, lo que lo convierte en el único punto por el que el nitrógeno del organismo puede salir de circulación, y explica por qué su fallo produce acumulación de amonio y afectación neurológica.",
+        pistas: [
+          "¿Dónde se guarda el exceso de glucosa? ¿Y el de nitrógeno?",
+          "Al degradar un aminoácido quedan dos partes: ¿cuáles y qué destino tiene cada una?",
+          "¿Qué propiedades hacen de la urea una buena forma de excreción?",
+        ],
+      },
+      {
+        pregunta: "Describe la compartimentación del ciclo y de dónde procede cada uno de los dos nitrógenos de la urea.",
+        referencia:
+          "El ciclo está repartido entre dos compartimentos: los dos primeros pasos ocurren en la matriz mitocondrial y los tres restantes en el citosol. Por eso la citrulina, formada dentro de la mitocondria, tiene que salir al citosol, y la ornitina, regenerada al final, tiene que volver a entrar. Es de los pocos ciclos metabólicos partidos entre dos compartimentos. En cuanto a los nitrógenos, no proceden del mismo sitio: el primero entra como amonio libre en la mitocondria, transportado en buena parte por glutamina desde otros tejidos, y se fija con CO₂ para formar carbamoil fosfato. El segundo lo aporta el aspartato, ya en el citosol, lo que enlaza el ciclo con la transaminación, porque el aspartato recibe su grupo amino de otros aminoácidos a través del glutamato. La ornitina, por su parte, no aporta nitrógeno a la urea: es el transportador que se recupera en cada vuelta, igual que el oxalacetato en el ciclo de Krebs.",
+        pistas: [
+          "¿Qué dos moléculas tienen que cruzar la membrana mitocondrial y en qué sentido?",
+          "Uno de los nitrógenos entra como amonio libre; el otro llega en una molécula concreta: ¿cuál?",
+          "¿Qué papel juega la ornitina, si no aporta nitrógeno?",
+        ],
+      },
+    ],
+    predicciones: [
+      {
+        escenario: "Un recién nacido presenta amonio elevado y afectación neurológica a los pocos días de vida, con un hígado estructuralmente normal.",
+        pregunta: "¿Hacia qué tipo de problema orienta el razonamiento y por qué aparece justo entonces?",
+        respuesta:
+          "Hacia un déficit hereditario de alguna enzima del ciclo de la urea, y no hacia un daño hepático, porque el hígado está estructuralmente sano: lo que falla es una función concreta, no el órgano. Aparece en los primeros días porque durante la vida fetal la placenta se encarga de retirar el amonio a la circulación materna, de modo que el defecto queda enmascarado. Al nacer, esa vía desaparece y el recién nacido empieza a degradar proteínas por su cuenta, así que el amonio se acumula en cuanto la carga de nitrógeno aumenta. El razonamiento acota el mecanismo y el momento; identificar qué enzima concreta falla exige estudio dirigido y confirmación bioquímica.",
+      },
+      {
+        escenario: "Se bloquea la síntesis de N-acetilglutamato sin tocar ninguna enzima del ciclo.",
+        pregunta: "¿Sigue funcionando el ciclo de la urea?",
+        respuesta:
+          "Prácticamente no. El N-acetilglutamato no es un sustrato ni un intermediario del ciclo: es el activador obligatorio de la carbamoil fosfato sintetasa I, que cataliza el primer paso. Sin él esa enzima no trabaja, así que el amonio no llega a fijarse y todo el ciclo queda parado desde el principio, aunque las cinco enzimas estén intactas. El caso ilustra que un punto de regulación puede ser tan limitante como una enzima ausente, y también por qué el ciclo se activa por la señal de que abundan los aminoácidos —que es cuando se produce el N-acetilglutamato— y no por la presencia del amonio en sí.",
+      },
+    ],
+    errores: [
+      {
+        error: "Creer que los dos nitrógenos de la urea vienen del mismo aminoácido.",
+        correccion:
+          "Uno entra como amonio libre en la mitocondria y el otro lo aporta el aspartato en el citosol. Esa doble procedencia es lo que conecta el ciclo con la transaminación, y perderla de vista impide entender cómo llegan hasta aquí los grupos amino de aminoácidos degradados en otros tejidos.",
+      },
+      {
+        error: "Situar todo el ciclo en el citosol o todo en la mitocondria.",
+        correccion:
+          "Los dos primeros pasos son mitocondriales y los tres siguientes citosólicos, por lo que la citrulina sale y la ornitina entra. Es una de las pocas rutas partidas entre compartimentos, y esa partición explica la necesidad de transportadores específicos en la membrana.",
+      },
+      {
+        error: "Pensar que la ornitina aporta nitrógeno a la urea.",
+        correccion:
+          "No lo aporta: es el transportador que se regenera en cada vuelta, igual que el oxalacetato en el ciclo de Krebs. Confundir el papel del transportador con el del sustrato hace que el balance de nitrógenos no cuadre nunca.",
+      },
+      {
+        error: "Suponer que el organismo puede almacenar el exceso de aminoácidos como hace con la glucosa.",
+        correccion:
+          "No existe reserva de nitrógeno. El exceso se degrada, y su grupo amino hay que eliminarlo de forma continua porque el amonio es tóxico desde el primer momento. Esa ausencia de depósito es justamente la razón de que exista este ciclo.",
+      },
+      {
+        error: "Explicar la afectación neurológica de la insuficiencia hepática solo por el amonio.",
+        correccion:
+          "El papel del amonio es central y está bien documentado, pero se considera un cuadro en el que intervienen varios factores. Presentarlo como causa única es escribir con más certeza de la que tiene el asunto, y además lleva a esperar que la clínica se correlacione con las cifras de amonio de forma más estrecha de lo que ocurre en la práctica.",
+      },
+    ],
+    tarjetas: [
+      { front: "¿Por qué hay que eliminar el nitrógeno en lugar de almacenarlo?", back: "Porque no existe reserva de aminoácidos y el amonio libre es neurotóxico." },
+      { front: "¿En qué órgano está completo el ciclo de la urea?", back: "En el hígado." },
+      { front: "¿De dónde procede cada uno de los dos nitrógenos de la urea?", back: "Uno del amonio libre en la mitocondria; el otro del aspartato en el citosol." },
+      { front: "¿Qué enzima cataliza el paso limitante del ciclo de la urea?", back: "La carbamoil fosfato sintetasa I." },
+      { front: "¿Qué molécula activa obligatoriamente a la carbamoil fosfato sintetasa I?", back: "El N-acetilglutamato." },
+      { front: "¿Qué dos moléculas cruzan la membrana mitocondrial en el ciclo de la urea?", back: "La citrulina sale y la ornitina entra." },
+      { front: "¿Qué enzima libera la urea y qué otra molécula genera?", back: "La arginasa, que libera urea y ornitina." },
+      { front: "¿Qué papel cumple la ornitina en el ciclo?", back: "Es el transportador que se regenera en cada vuelta; no aporta nitrógeno." },
+      { front: "¿Por qué un déficit hereditario del ciclo se manifiesta al nacer y no antes?", back: "Porque durante la vida fetal la placenta retira el amonio a la circulación materna." },
+      { front: "¿Qué propiedades hacen de la urea una buena forma de excretar nitrógeno?", back: "Es atóxica y muy hidrosoluble, así que el riñón la elimina con facilidad." },
+    ],
+    faq: [
+      {
+        q: "¿Para qué sirve el ciclo de la urea?",
+        a: "Para convertir el amonio, que es tóxico para el sistema nervioso, en urea, que es atóxica e hidrosoluble y el riñón puede excretar. Es necesario porque el organismo no tiene forma de almacenar el nitrógeno sobrante: los aminoácidos que no se usan se degradan y su grupo amino queda libre. Solo el hígado dispone del ciclo completo.",
+      },
+      {
+        q: "¿Dónde ocurre el ciclo de la urea?",
+        a: "Está repartido entre dos compartimentos del hepatocito. Los dos primeros pasos ocurren en la matriz mitocondrial y los tres restantes en el citosol, de modo que la citrulina tiene que salir de la mitocondria y la ornitina volver a entrar. Es una de las pocas rutas metabólicas partidas entre compartimentos.",
+      },
+      {
+        q: "¿Por qué el amonio es tóxico?",
+        a: "Porque atraviesa la barrera hematoencefálica y altera el funcionamiento del sistema nervioso. El organismo no dispone de ningún depósito donde acumularlo mientras espera, así que necesita convertirlo en urea de forma continua. Cuando el ciclo falla, por un déficit hereditario o por insuficiencia hepática, el amonio se eleva y aparece afectación neurológica.",
+      },
+      {
+        q: "¿Qué relación tiene el ciclo de la urea con la insuficiencia hepática?",
+        a: "Un hígado dañado no procesa todo el nitrógeno que le llega, de modo que el amonio se acumula y contribuye a la alteración neurológica que acompaña a la insuficiencia hepática. Conviene precisar que ese cuadro no se explica solo por el amonio: su papel es central y está bien documentado, pero se considera que intervienen varios factores.",
+      },
+    ],
+    fuentes: [
+      "Guyton y Hall, Tratado de fisiología médica, 13.ª ed., cap. 70 (Metabolismo de las proteínas) y cap. 71 (El hígado como órgano)",
+      "Lippincott Illustrated Reviews: Bioquímica, capítulo de eliminación del nitrógeno de los aminoácidos",
+      "Lehninger, Principios de bioquímica (Nelson y Cox), capítulo de oxidación de aminoácidos y producción de urea",
+    ],
+    relacionados: ["reacciones-del-metabolismo", "gluconeogenesis", "ph-pka-ionizacion"],
+  },
+
+  {
+    slug: "enzimas-cinetica",
+    titulo: "Enzimas: qué significan de verdad Km y Vmáx",
+    tituloSEO: "Cinética enzimática: Michaelis-Menten, Km y Vmáx, tipos de inhibición y regulación alostérica",
+    bloque: "molecular",
+    unidad: "I8577 · Bioquímica médica",
+    nivel: "fundamento",
+    minutos: 22,
+    resumen:
+      "Una enzima no cambia hacia dónde va una reacción: cambia lo rápido que llega. De esa idea salen las dos constantes que la describen, y saber cuál mueve cada tipo de inhibidor convierte una tabla que se memoriza en algo que se deduce.",
+    porQueImporta:
+      "Es la base de la farmacología: la mayoría de los fármacos son inhibidores enzimáticos, y entender por qué unos se vencen subiendo el sustrato y otros no explica su comportamiento. También ordena la bioquímica entera, porque cada vía tiene una enzima que fija su velocidad, y aparece en el laboratorio cada vez que se mide una enzima en sangre.",
+    secciones: [
+      {
+        titulo: "Lo que una enzima hace y lo que no puede hacer",
+        cuerpo: [
+          "Una enzima acelera una reacción **bajando su energía de activación**: estabiliza el estado de transición, ese punto intermedio inestable por el que hay que pasar. No aporta energía a la reacción.",
+          "De ahí salen dos límites que conviene tener claros desde el principio. Primero: **una enzima no cambia el equilibrio**, solo la velocidad a la que se alcanza. Acelera igual la ida que la vuelta. Si una reacción es desfavorable, seguirá siéndolo con enzima; lo que cambia es que llegará antes a donde iba a llegar de todos modos.",
+          "Segundo: **la enzima no se consume**. Sale intacta de cada ciclo y vuelve a empezar, y por eso hace falta tan poca cantidad para procesar mucho sustrato.",
+          "Lo que sí aporta la enzima, además de velocidad, es **especificidad**. El sitio activo solo admite determinadas moléculas, y esa selectividad es lo que permite que en el mismo citoplasma ocurran cientos de reacciones distintas sin estorbarse.",
+        ],
+      },
+      {
+        titulo: "La curva y las dos constantes",
+        cuerpo: [
+          "Si se mide la velocidad de una enzima a concentraciones crecientes de sustrato, la curva sube deprisa al principio y luego se aplana. Al principio hay enzima libre de sobra y añadir sustrato acelera; al final toda la enzima está ocupada y añadir más no sirve de nada. Eso es la **saturación**, y es lo que distingue una reacción enzimática de una química corriente.",
+          "La velocidad a la que la curva se aplana es la **Vmáx**. Depende de cuánta enzima haya y de lo rápido que trabaje cada molécula. Nunca se alcanza del todo: es una asíntota.",
+          "La **Km** es la concentración de sustrato a la que la enzima trabaja a la mitad de su Vmáx. Se usa como medida inversa de afinidad, y aquí está el punto que más se invierte al estudiarlo: **una Km baja significa afinidad alta**, porque basta poco sustrato para llegar a media velocidad.",
+          "El ejemplo que fija esta idea ya apareció en glucólisis. La hexocinasa tiene Km baja y trabaja incluso con glucemias bajas; la glucocinasa hepática tiene Km alta y solo se activa cuando la glucosa abunda. La misma reacción, dos afinidades, dos papeles fisiológicos opuestos.",
+        ],
+      },
+      {
+        titulo: "Los inhibidores, deducidos en lugar de memorizados",
+        cuerpo: [
+          "Un **inhibidor competitivo** se parece al sustrato y ocupa el mismo sitio activo. Como compiten, hace falta más sustrato para llegar a media velocidad: **la Km aparente sube**. Pero con sustrato suficiente el inhibidor queda desplazado, así que **la Vmáx no cambia**. La consecuencia práctica es que este tipo de inhibición **se puede vencer subiendo el sustrato**.",
+          "Un **inhibidor no competitivo** se une en otro sitio y estropea la enzima, esté o no ocupada. Añadir sustrato no ayuda, porque no compiten por el mismo lugar. El efecto es como tener menos enzima: **baja la Vmáx** y la afinidad de la que sigue funcionando no cambia, así que **la Km se mantiene**.",
+          "No hace falta memorizar la tabla si se retiene la pregunta que la genera: **¿compiten por el mismo sitio?** Si sí, el efecto se puede diluir con sustrato y por eso solo se mueve la Km. Si no, no hay forma de desplazarlo y lo que cae es el techo.",
+          "Existe un tercer tipo, la inhibición **acompetitiva**, que se une solo al complejo enzima-sustrato y baja ambos parámetros a la vez. Se menciona para que la tabla no parezca completa cuando no lo es.",
+        ],
+      },
+      {
+        titulo: "Regulación: más allá de la curva",
+        cuerpo: [
+          "Las enzimas que controlan una vía no siguen la curva sencilla que se acaba de describir. Suelen ser **alostéricas**: tienen sitios de unión aparte del activo, donde moléculas reguladoras las activan o las inhiben, y su curva es sigmoidea en vez de hiperbólica.",
+          "Esa forma en S importa, porque significa que la enzima es **muy sensible a cambios pequeños** de concentración dentro de un rango estrecho. Funciona más como un interruptor que como un regulador gradual, y por eso las enzimas reguladoras de las vías son casi siempre de este tipo. La fosfofructocinasa-1 es el ejemplo canónico.",
+          "El caso particular más frecuente es la **inhibición por producto final**: el producto de una vía inhibe su primera enzima. Es retroalimentación negativa aplicada a la bioquímica, y evita fabricar de más.",
+          "Además hay otras dos formas de regular que no cambian la cantidad de enzima: la **modificación covalente**, casi siempre añadir o quitar un fosfato, que enciende o apaga la enzima en segundos; y la **activación de precursores inactivos**, que es como se manejan enzimas peligrosas como las digestivas o las de la coagulación, fabricándolas en forma inerte y activándolas solo donde deben actuar.",
+        ],
+      },
+    ],
+    analogia: {
+      campo: "Un túnel a través de una montaña",
+      texto:
+        "La enzima no cambia la altura de los dos valles, así que no decide hacia dónde acabará fluyendo el agua: abre un túnel que hace el paso mucho más corto. Y el túnel sirve igual en los dos sentidos.",
+      dondeSeRompe:
+        "Un túnel está siempre abierto y una enzima no: puede regularse, inhibirse, fosforilarse o fabricarse inactiva. Además la imagen sugiere un paso pasivo, cuando la enzima participa activamente uniéndose al sustrato y estabilizando el estado de transición. Y no recoge la especificidad, que es la mitad de la razón por la que existen las enzimas: un túnel deja pasar a cualquiera.",
+    },
+    figura: "cinetica-enzimatica",
+    recall: [
+      {
+        pregunta: "Explica qué significan Km y Vmáx, y por qué una Km baja indica afinidad alta.",
+        referencia:
+          "La Vmáx es la velocidad máxima que alcanza la enzima cuando está saturada de sustrato: depende de cuánta enzima haya y de lo rápido que trabaje cada molécula, y nunca se alcanza del todo porque es una asíntota. La Km es la concentración de sustrato a la que la enzima trabaja exactamente a la mitad de su Vmáx. Se usa como medida inversa de afinidad porque describe cuánto sustrato hace falta para que la enzima funcione a medio gas: si una enzima llega a media velocidad con muy poco sustrato, es que se une con facilidad, y eso es afinidad alta con Km baja. Al revés, una enzima que necesita mucha concentración para llegar a la mitad tiene poca afinidad y Km alta. El ejemplo que lo fija es el par hexocinasa y glucocinasa: la primera tiene Km baja y trabaja incluso con glucemias bajas, mientras que la hepática tiene Km alta y solo actúa cuando la glucosa abunda, lo que les da papeles fisiológicos opuestos.",
+        pistas: [
+          "¿Qué mide exactamente la Km: velocidad o concentración?",
+          "Si una enzima llega a media velocidad con muy poco sustrato, ¿se une bien o mal?",
+          "Piensa en la pareja de enzimas que fosforilan glucosa.",
+        ],
+      },
+      {
+        pregunta: "¿Cómo distinguirías una inhibición competitiva de una no competitiva sin memorizar la tabla?",
+        referencia:
+          "Preguntando si el inhibidor y el sustrato compiten por el mismo sitio. Si el inhibidor es parecido al sustrato y ocupa el sitio activo, entonces compiten: hará falta más sustrato para alcanzar la media velocidad, así que la Km aparente sube, pero con sustrato suficiente el inhibidor queda desplazado y la Vmáx se alcanza igual. De ahí la propiedad práctica más útil: la inhibición competitiva se puede vencer subiendo la concentración de sustrato. Si el inhibidor se une en otro sitio y estropea la enzima esté ocupada o no, no compiten por nada: añadir sustrato no lo desplaza, el efecto equivale a tener menos enzima funcionando, baja la Vmáx y la afinidad de la que queda activa no cambia, de modo que la Km se mantiene. Con esa única pregunta se reconstruye la tabla entera, y conviene añadir que existe un tercer tipo, el acompetitivo, que se une solo al complejo enzima-sustrato y desplaza los dos parámetros a la vez.",
+        pistas: [
+          "Todo depende de una sola pregunta sobre el sitio de unión.",
+          "Si compiten, ¿qué pasa cuando hay muchísimo sustrato?",
+          "Si no compiten, el efecto se parece a otra cosa: ¿a qué?",
+        ],
+      },
+    ],
+    predicciones: [
+      {
+        escenario: "Un paciente ha ingerido una sustancia que es sustrato de la misma enzima que otra molécula más tóxica, y se administra en cantidad suficiente para ocupar la enzima.",
+        pregunta: "¿Qué tipo de inhibición se está aprovechando y por qué funciona?",
+        respuesta:
+          "Una inhibición competitiva. Las dos moléculas compiten por el mismo sitio activo, así que aumentar mucho la concentración de una desplaza a la otra y reduce la velocidad a la que se transforma. Funciona precisamente por la propiedad que define a este tipo de inhibición: el efecto depende de las concentraciones relativas y puede invertirse cambiándolas. Con un inhibidor no competitivo esta estrategia no serviría de nada, porque no se une al mismo sitio y no hay forma de desplazarlo con más sustrato. El razonamiento explica el mecanismo; qué sustancia se usa y en qué condiciones es una decisión clínica que se rige por guías vigentes y por toxicología, no por este texto.",
+      },
+      {
+        escenario: "Se mide una enzima reguladora de una vía y su curva de velocidad frente a sustrato sale sigmoidea en lugar de hiperbólica.",
+        pregunta: "¿Qué dice eso sobre la enzima y qué ventaja funcional tiene esa forma?",
+        respuesta:
+          "Dice que es una enzima alostérica, con más de un sitio de unión y con cooperatividad entre ellos, de modo que unirse a una molécula facilita las siguientes. La ventaja funcional es la sensibilidad: en la zona central de la curva, un cambio pequeño en la concentración de sustrato o de un modulador produce un cambio grande en la velocidad. La enzima se comporta más como un interruptor que como un regulador gradual, que es exactamente lo que interesa en el punto donde una vía se controla. Por eso las enzimas que fijan la velocidad de las rutas metabólicas, como la fosfofructocinasa-1, suelen ser de este tipo, y por eso su cinética no se describe bien con el modelo sencillo de Michaelis-Menten.",
+      },
+    ],
+    errores: [
+      {
+        error: "Creer que una enzima desplaza el equilibrio de la reacción hacia los productos.",
+        correccion:
+          "Acelera por igual la reacción directa y la inversa, así que el equilibrio final es el mismo con enzima y sin ella. Lo único que cambia es el tiempo que se tarda en alcanzarlo. Una reacción termodinámicamente desfavorable sigue siéndolo aunque tenga enzima.",
+      },
+      {
+        error: "Interpretar que una Km alta significa mucha afinidad.",
+        correccion:
+          "Es al revés, y es el error más repetido del tema. La Km es la concentración necesaria para llegar a media velocidad, así que cuanto más sustrato haga falta, peor se une la enzima: Km alta es afinidad baja. Conviene recordarlo con el par hexocinasa y glucocinasa.",
+      },
+      {
+        error: "Decir que un inhibidor competitivo baja la Vmáx.",
+        correccion:
+          "No la baja, porque con sustrato suficiente queda desplazado del sitio activo y la enzima alcanza su velocidad máxima igual. Lo que sube es la Km aparente. Esa es justamente la razón de que este tipo de inhibición pueda vencerse aumentando el sustrato, cosa imposible en la no competitiva.",
+      },
+      {
+        error: "Aplicar el modelo de Michaelis-Menten a las enzimas reguladoras de una vía.",
+        correccion:
+          "Esas enzimas suelen ser alostéricas y su curva es sigmoidea, no hiperbólica, así que ni la Km ni la Vmáx se interpretan igual. La forma en S les da una sensibilidad muy alta en un rango estrecho, que es lo que las hace útiles como puntos de control. Aplicarles el modelo simple lleva a conclusiones equivocadas.",
+      },
+      {
+        error: "Suponer que regular una vía significa cambiar la cantidad de enzima.",
+        correccion:
+          "Esa es la vía lenta, de horas o días. Las regulaciones rápidas no tocan la cantidad: añadir o quitar un fosfato enciende o apaga la enzima en segundos, y los moduladores alostéricos actúan de inmediato. Además, algunas enzimas se fabrican en forma inactiva y se activan solo donde deben trabajar.",
+      },
+    ],
+    tarjetas: [
+      { front: "¿Qué hace una enzima para acelerar una reacción?", back: "Baja la energía de activación estabilizando el estado de transición." },
+      { front: "¿Modifica una enzima el equilibrio de la reacción?", back: "No: solo la velocidad a la que se alcanza." },
+      { front: "¿Qué es la Km?", back: "La concentración de sustrato a la que la enzima alcanza la mitad de su Vmáx." },
+      { front: "¿Qué indica una Km baja sobre la afinidad?", back: "Afinidad alta: basta poco sustrato para llegar a media velocidad." },
+      { front: "¿De qué depende la Vmáx?", back: "De la cantidad de enzima y de la velocidad de cada molécula." },
+      { front: "¿Qué parámetro modifica un inhibidor competitivo?", back: "Sube la Km aparente; la Vmáx no cambia." },
+      { front: "¿Qué parámetro modifica un inhibidor no competitivo?", back: "Baja la Vmáx; la Km no cambia." },
+      { front: "¿Qué tipo de inhibición se vence aumentando el sustrato?", back: "La competitiva." },
+      { front: "¿Qué forma tiene la curva de una enzima alostérica y qué ventaja aporta?", back: "Sigmoidea: la hace muy sensible a cambios pequeños en un rango estrecho." },
+      { front: "¿Qué es la inhibición por producto final?", back: "Que el producto de una vía inhibe su primera enzima: retroalimentación negativa." },
+    ],
+    faq: [
+      {
+        q: "¿Qué es la Km de una enzima?",
+        a: "Es la concentración de sustrato a la que la enzima trabaja a la mitad de su velocidad máxima. Se usa como medida inversa de la afinidad: una Km baja significa que basta poco sustrato para alcanzar media velocidad, es decir, que la enzima se une bien; una Km alta indica lo contrario. Es una propiedad de cada enzima y no depende de cuánta haya.",
+      },
+      {
+        q: "¿Cuál es la diferencia entre inhibición competitiva y no competitiva?",
+        a: "La competitiva ocurre cuando el inhibidor se parece al sustrato y ocupa el mismo sitio activo, de modo que sube la Km aparente pero la Vmáx no cambia y el efecto puede vencerse aumentando el sustrato. La no competitiva ocurre cuando el inhibidor se une en otro sitio y estropea la enzima esté ocupada o no: baja la Vmáx, la Km no cambia y añadir sustrato no sirve de nada.",
+      },
+      {
+        q: "¿Una enzima puede hacer que ocurra una reacción que no ocurriría?",
+        a: "No. Una enzima solo acelera reacciones que ya son termodinámicamente posibles, bajando su energía de activación. No aporta energía ni desplaza el equilibrio, y acelera por igual la reacción directa y la inversa. Lo que consigue es que se alcance en un tiempo útil un equilibrio al que la reacción llegaría de todos modos.",
+      },
+      {
+        q: "¿Qué es una enzima alostérica?",
+        a: "Es una enzima con sitios de unión adicionales al activo, donde moléculas reguladoras la activan o la inhiben. Su curva de velocidad frente a sustrato es sigmoidea en vez de hiperbólica, lo que la hace muy sensible a cambios pequeños de concentración dentro de un rango estrecho. Por eso las enzimas que controlan la velocidad de una vía metabólica suelen ser de este tipo.",
+      },
+    ],
+    fuentes: [
+      "Lehninger, Principios de bioquímica (Nelson y Cox), capítulo de enzimas y cinética enzimática",
+      "Lippincott Illustrated Reviews: Bioquímica, capítulo de enzimas",
+      "Katzung, Farmacología básica y clínica, capítulo de receptores y farmacodinámica, para la aplicación a inhibidores",
+    ],
+    relacionados: ["reacciones-del-metabolismo", "glucolisis", "ph-pka-ionizacion"],
+  },
 ];
 
 export const getTema = (slug: string) => TEMAS.find((t) => t.slug === slug);

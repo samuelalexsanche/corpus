@@ -14,11 +14,11 @@ estricto en verde, 176 tests en verde. ~6,200 líneas en 52 archivos fuente.
 | Arquitectura y stack | ✅ Completo |
 | Sistema de diseño | ✅ Completo (claro/oscuro, tokens, accesible) |
 | Currículum | ✅ 13 bloques, 81 unidades |
-| Temas desarrollados | 🟡 15, a un ritmo de 5 por sesión |
+| Temas desarrollados | 🟡 20, a un ritmo de 5 por sesión |
 | Modos de estudio | ✅ 8 modos funcionando |
 | Ruta personalizada | ✅ planificador en /curriculum |
 | SRS | ✅ SM-2 con persistencia local exportable |
-| Figuras | 🟡 6 figuras anotadas; 8 de 15 temas con apoyo visual |
+| Figuras | 🟡 11 figuras anotadas; 13 de 20 temas con apoyo visual |
 | Casos clínicos | 🟡 6 |
 | Exportar a Anki | ✅ global y por tema |
 | Buscador | ✅ sobre catálogo, temas, unidades, casos y morfemas |
